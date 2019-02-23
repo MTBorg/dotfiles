@@ -1,0 +1,199 @@
+// Place in ~/.config/rofi
+
+configuration {
+	width: 25;
+	lines:	5;
+	columns: 1;
+	bw:		0;
+	font:	"Inconsolata 14";
+	location: 0; // Centered window
+	yoffset: 	0;
+	xoffset: 	0;
+	fixed-num-lines:	true;
+	show-icons:			false;
+	terminal:			"rofi-sensible-terminal";
+	case-sensitive:		false;	
+	cycle:				true;	
+	sidebar-mode:		true;
+	eh:					1;
+	auto-select:		false;
+	fullscreen:			false;
+	hide-scrollbar:		true;
+	click-to-exit:		true;
+
+	//Key bindings
+	kb-row-down:			"Down,Alt+j";
+	kb-row-up:				"Up,Alt+k";
+	kb-move-word-back:		"Alt+b";
+	kb-move-word-forward:	"Alt+w";
+	//kb-accept-entry:		"Control+Return"; // Run entered text as command
+	kb-remove-char-back:	"Alt+x,BackSpace";
+	kb-mode-next:			"Alt+l";
+	kb-mode-previous:		"Alt+h";
+}
+
+* {
+   	background:                 	#000000;
+	background-light:		#1f1f1f;
+   	foreground:			#00979a; 
+	border:				#1f1f1f;
+	highlighted:			#00ff88;
+	background-color:			#000000;
+
+	window-background-color:	@background-light;
+	mainbox-background-color:	@background-light;
+	listview-border-color:		@background-light;
+	prompt-text-color:			@highlighted;
+	button-text-color:			@foreground;
+
+	normal-foreground:			@foreground;
+	normal-background:			@background;
+	urgent-background:			@background;
+	urgent-foreground:          @foreground;
+	active-background:           @background;
+	active-foreground:           @foreground;
+	selected-normal-background:   	@background-light;
+	selected-normal-foreground:   @highlighted;
+	selected-urgent-background:    	@background;
+	selected-urgent-foreground:    @foreground;
+	selected-active-background:		@background-light;
+	selected-active-foreground:     @highlighted;
+	alternate-normal-background:   	@background;
+	alternate-normal-foreground:    @foreground;
+	alternate-urgent-background:    @background;
+	alternate-urgent-foreground:    @foreground;
+	alternate-active-background:    @background-light;
+	alternate-active-foreground:    @foreground;
+}
+
+#window {
+    background-color: @window-background-color;
+    border:           0;
+    padding:          0;
+}
+
+#mainbox {
+    border:  0;
+    padding: 0;
+	background-color: @mainbox-background-color;
+}
+
+#message {
+    border:       2px 0px 0px ;
+    border-color: @separatorcolor;
+    padding:      1px ;
+}
+
+#textbox {
+    text-color: @foreground;
+}
+
+#listview {
+    fixed-height: 0;
+    border:       0px 0px 0px ;
+    border-color: @listview-border-color;
+    spacing:      2px ;
+    padding:      2px 0px 0px ;
+}
+
+#element {
+    border:  0;
+    padding: 1px ;
+}
+
+#element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+#element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+#element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+
+#element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+#element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+
+#element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+
+#element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+
+#element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+#element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+#scrollbar {
+    width:        4px ;
+    border:       0;
+    handle-width: 8px ;
+    padding:      0;
+}
+
+#sidebar {
+    border:       2px 0px 0px ;
+    border-color: @separatorcolor;
+}
+
+#button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+#inputbar {
+    spacing:    0;
+    text-color: @normal-foreground;
+    padding:    1px ;
+}
+
+#case-indicator {
+    spacing:    0;
+    text-color: #ff0000;
+}
+
+#entry {
+    spacing:    0;
+    text-color: @highlighted;
+}
+
+#prompt, button{
+    spacing:    0;
+}
+
+#button {
+	text-color:	@button-text-color;
+}
+
+#prompt {
+	text-color:	@prompt-text-color;
+}
+
+#inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+
+#textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em ;
+    text-color: @highlighted;
+}
