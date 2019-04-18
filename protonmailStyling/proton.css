@@ -1,10 +1,27 @@
 #pm_main{
  background-color:#1f1f1f;
- color:#ffffff;
+ color:#00979a;
+}
+
+.pm_button{
+ color:#00979a;
 }
 
 #ptSidebar{
  background-color:#000000;
+}
+
+.headerSecured-container{
+ background:#000000;
+ color:#00979a;
+}
+
+.active, .active span{
+ color:#00ff88;
+}
+
+.sidebarApp-link{
+ color:#00979a !important;
 }
 
 .conversation{
