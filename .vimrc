@@ -1,26 +1,32 @@
 set nocompatible
 set autoindent
 set cursorline
-set expandtab
+set colorcolumn=90
 set foldenable
 set foldmethod=syntax
+set history=100
 set hlsearch
 set incsearch
-"set laststatus=2 " Always show status bar
+set ignorecase
+set laststatus=2
 set nospell
+set noerrorbells
 set number relativenumber
 set numberwidth=1
-set smartindent
-set tabstop=4
-set so=999 " Center cursor vertically when possible
+set tabstop=2
+set showmatch
+set timeoutlen=1000 ttimeoutlen=0 "This makes visual blocks fast
 syntax on
 
+let mapleader=" "
+
+" Keybindings
+noremap <silent> <Leader>e :Explore<CR>
+
+filetype plugin on
+
 " Colors
-hi String ctermfg=48
-
-
-autocmd FileType python set foldmethod=indent
-
+colorscheme monokai_pro
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -30,8 +36,8 @@ let g:airline#extensions#ale#enabled = 1
 " ALE
 highlight clear ALEError
 highlight clear ALEErrorLine
-highlight ALEErrorSign ctermbg=124
-highlight ALEErrorSign ctermfg=48
+" highlight ALEErrorSign ctermbg=124
+highlight ALEErrorSign ctermfg=124
 highlight clear ALEWarning
 highlight clear ALEWarningLine
 let g:ale_enabled = 1
@@ -44,7 +50,8 @@ let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
 let g:ale_lint_delay = 0
 let g:ale_linters = { 
-    \ 'python': ["flake8"]
+    \ 'python': ["flake8"],
+    \ "javascript": ["eslint"]
     \}
 
 execute pathogen#infect() 
