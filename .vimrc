@@ -28,11 +28,6 @@ filetype plugin on
 " Colors
 colorscheme monokai_pro
 
-" Airline
-let g:airline_powerline_fonts = 1
-let g:airline_theme="lucius"
-let g:airline#extensions#ale#enabled = 1
-
 " ALE
 highlight clear ALEError
 highlight clear ALEErrorLine
