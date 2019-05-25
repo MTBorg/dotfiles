@@ -18,11 +18,15 @@ set showmatch
 set timeoutlen=1000 ttimeoutlen=0 "This makes visual blocks fast
 syntax on
 
-let mapleader=" "
+let mapleader="§"
 
 " Keybindings
 nnoremap <silent> <Leader>e :Explore<CR>
 nnoremap <silent> <Leader>l :ALELint<CR>
+noremap <silent> <Leader>n /<+++><CR>cf>
+noremap <silent> <Leader>N ?<+++><CR>cf>
+inoremap <silent> <Leader>m <+++>
+nnoremap <silent> <Leader>m i<+++>
 
 filetype plugin on
 
