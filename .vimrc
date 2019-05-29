@@ -18,11 +18,24 @@ set showmatch
 set timeoutlen=1000 ttimeoutlen=0 "This makes visual blocks fast
 syntax on
 
-let mapleader=" "
+let mapleader="§"
 
 " Keybindings
+"""""""""""""""""""""""""""""""
 nnoremap <silent> <Leader>e :Explore<CR>
 nnoremap <silent> <Leader>l :ALELint<CR>
+" Next marker
+nnoremap <silent> <Leader>n /<+++><CR>cf>
+inoremap <silent> <Leader>n <Esc>/<+++><CR>cf>
+" Previous marker
+nnoremap <silent> <Leader>N ?<+++><CR>cf>
+inoremap <silent> <Leader>N <Esc>?<+++><CR>cf>
+" Place marker
+inoremap <silent> <Leader>m <+++>
+nnoremap <silent> <Leader>m i<+++>
+" Used to finish tab completion when enter is pressed
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"""""""""""""""""""""""""""""
 
 filetype plugin on
 
