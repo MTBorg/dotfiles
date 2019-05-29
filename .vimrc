@@ -19,6 +19,8 @@ set timeoutlen=1000 ttimeoutlen=0 "This makes visual blocks fast
 syntax on
 
 let mapleader="§"
+" Latex support
+let g:tex_flavor="latex"
 
 " Keybindings
 """""""""""""""""""""""""""""""
