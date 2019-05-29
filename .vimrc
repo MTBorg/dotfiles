@@ -24,7 +24,7 @@ let g:tex_flavor="latex"
 
 " Keybindings
 """""""""""""""""""""""""""""""
-nnoremap <silent> <Leader>e :Explore<CR>
+nnoremap <silent> <Leader>e :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>l :ALELint<CR>
 " Next marker
 nnoremap <silent> <Leader>n /<+++><CR>cf>
@@ -37,13 +37,10 @@ inoremap <silent> <Leader>m <+++>
 nnoremap <silent> <Leader>m i<+++>
 " Used to finish tab completion when enter is pressed
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" Cancel search
-nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 """""""""""""""""""""""""""""
-
-filetype plugin on
 
 " Colors
 colorscheme onedark
 
+autocmd BufNewFile filetype plugin on
 execute pathogen#infect() 
