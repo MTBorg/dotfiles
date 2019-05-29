@@ -37,6 +37,8 @@ inoremap <silent> <Leader>m <+++>
 nnoremap <silent> <Leader>m i<+++>
 " Used to finish tab completion when enter is pressed
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Cancel search
+nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 """""""""""""""""""""""""""""
 
 filetype plugin on
