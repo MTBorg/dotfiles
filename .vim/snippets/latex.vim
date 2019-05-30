@@ -45,10 +45,10 @@ endfunction
 " Math
 nnoremap <Leader>m i$$<Esc>i
 " Equations
-nnoremap <Leader>e :call Command("begin", "equation", 1)<CR>
-nnoremap <Leader>*e :call Command("begin", "equation*", 1)<CR>
-inoremap <Leader>e <Esc>:call Command("begin", "equation", 1)<CR>
-inoremap <Leader>*e <Esc>:call Command("begin", "equation*", 1)<CR>
+nnoremap <Leader>eq :call Command("begin", "equation", 1)<CR>
+nnoremap <Leader>*eq :call Command("begin", "equation*", 1)<CR>
+inoremap <Leader>eq <Esc>:call Command("begin", "equation", 1)<CR>
+inoremap <Leader>*eq <Esc>:call Command("begin", "equation*", 1)<CR>
 " Sections
 nnoremap <Leader>s :call Command("section", "", 0)<CR>
 nnoremap <Leader>ss :call Command("subsubsection", "", 0)<CR>
