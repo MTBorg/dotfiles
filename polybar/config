@@ -71,9 +71,8 @@ module-margin-right = 2
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
-;font-3 = FontAwesome:style=Regular
 font-3 = Font Awesome 5 Free Solid:style=Regular
-font-4 = Materical Icons:style=Regular
+font-4 = Font Awesome 5 Brands Regular:style=Solid
 
 modules-left = bspwm i3 
 modules-center = 
@@ -249,7 +248,7 @@ label =  %percentage_used%%
 [module/wlan]
 type = internal/network
 interface = wlo1
-interval = 3.0
+interval = 5.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
@@ -271,7 +270,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 [module/eth]
 type = internal/network
 interface = eno1
-interval = 3.0
+interval = 5.0
 
 format-connected-underline = #55aa55
 format-connected-prefix = " "
@@ -441,10 +440,10 @@ menu-2-1-exec = menu-open-0
 
 [module/spotify]
 type = custom/script
-interval = 1
+interval = 5
 format-prefix = " "
 format = <label>
-exec = python /home/martin/spotify_status.py -f '{artist}: {song}'
+exec = python ~/spotify_status.py -t 16 -f '{artist} - {song}'
 format-underline = #1db954
 
 [settings]
