@@ -22,3 +22,6 @@
 [submodule "polybar/polybar-spotify"]
 	path = polybar/polybar-spotify
 	url = https://github.com/Jvanrhijn/polybar-spotify
+[submodule ".vim/bundle/AutoComplPop"]
+	path = .vim/bundle/AutoComplPop
+	url = https://github.com/vim-scripts/AutoComplPop

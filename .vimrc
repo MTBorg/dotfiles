@@ -1,3 +1,5 @@
+set omnifunc=syntaxcomplete#Complete
+set completeopt+=menuone,noselect,noinsert
 set nocompatible
 set autoindent
 set cursorline
@@ -38,7 +40,7 @@ nnoremap <silent> <Leader>m i<+++>
 " Used to finish tab completion when enter is pressed
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 """""""""""""""""""""""""""""
-
+"
 " Colors
 colorscheme onedark
 
