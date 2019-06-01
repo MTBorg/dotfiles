@@ -17,7 +17,6 @@ set tabstop=2
 set showmatch
 set timeoutlen=1000 ttimeoutlen=0 "This makes visual blocks fast
 set viminfo+=n~/.vim/.viminfo "Different folder for viminfo file (disable if not on linux)
-syntax on
 
 let mapleader="§"
 " Latex support
@@ -43,5 +42,9 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Colors
 colorscheme onedark
 
-filetype plugin on
+" Pathogen
 execute pathogen#infect() 
+execute pathogen#helptags()
+
+autocmd BufEnter * syntax on
+filetype plugin on
