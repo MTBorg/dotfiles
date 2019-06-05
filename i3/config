@@ -30,7 +30,7 @@ font pango: Fira Code 14
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite -c ~/Configs/termite/config
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+q kill
@@ -38,7 +38,7 @@ bindsym $mod+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec rofi -show run -config ~/Configs/rofi/config.rasi
+bindsym $mod+d exec rofi -show run
 
 # change focus
 # Using default Vim keys instead
@@ -187,7 +187,7 @@ set $border		    #1f1f1f
 #}
 
 # Start compton
-exec compton --config ~/Configs/compton/compton.conf
+exec compton --config ~/.config/compton/compton.conf
 
 #Set swedish keyboard layout
 exec "setxkbmap se"
@@ -212,7 +212,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # Start polybar
-exec_always --no-startup-id ~/Configs/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # Bind ranger
 bindsym $mod+f exec termite -e ranger
