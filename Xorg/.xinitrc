@@ -1,4 +1,4 @@
 #! /bin/bash
-exec i3 -c ~/Configs/i3/config
+exec i3
 exec setxkbmap sv
 exec xset -b #Mute the beeping sound
