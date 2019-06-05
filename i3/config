@@ -213,7 +213,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # Start polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id ~/Configs/polybar/launch.sh
 
 # Bind ranger
 bindsym $mod+f exec termite -e ranger
