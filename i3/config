@@ -188,7 +188,7 @@ set $border		    #1f1f1f
 #}
 
 # Start compton
-exec compton --config ~/.config/compton/compton.conf
+exec compton --config ~/Configs/compton/compton.conf
 
 #Set swedish keyboard layout
 exec "setxkbmap se"
