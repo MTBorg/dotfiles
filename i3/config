@@ -30,7 +30,7 @@ font pango: Fira Code 14
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec termite -c ~/Configs/termite/config
 
 # kill focused window
 bindsym $mod+q kill
