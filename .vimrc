@@ -4,7 +4,7 @@ set nocompatible
 set autoindent
 set cursorline
 set colorcolumn=90
-set foldenable
+set nofoldenable
 set foldmethod=syntax
 set history=100
 set hlsearch
@@ -39,6 +39,9 @@ inoremap <silent> <Leader>m <+++>
 nnoremap <silent> <Leader>m i<+++>
 " Used to finish tab completion when enter is pressed
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Bind popup navigation to ctrl-j and ctrl-k
+inoremap <expr> <C-j> ((pumvisible())?("\<C-n>"):("j"))
+inoremap <expr> <C-k> ((pumvisible())?("\<C-p>"):("k"))
 """""""""""""""""""""""""""""
 "
 " Colors
