@@ -18,6 +18,7 @@ set numberwidth=1
 set tabstop=2
 set showmatch
 set timeoutlen=1000 ttimeoutlen=0 "This makes visual blocks fast
+set updatetime=100
 set viminfo+=n~/.vim/.viminfo "Different folder for viminfo file (disable if not on linux)
 
 let mapleader="§"
