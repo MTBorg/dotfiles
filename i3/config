@@ -193,7 +193,7 @@ exec compton --config ~/.config/compton/compton.conf
 exec "setxkbmap se"
 
 #Set wallpaper
-exec "feh --bg-scale ~/Pictures/wallpapers/blue.jpg"
+exec "feh --bg-scale ~/Pictures/wallpaper.jpg"
 
 # class			    border	    backgr.	    text	indicator	child_border
 client.focused		$border	    $bg_hl      $fg_hl	$border		$border
