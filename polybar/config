@@ -76,7 +76,7 @@ font-4 = Font Awesome 5 Brands Regular:style=Solid
 
 modules-left = bspwm i3 
 modules-center = 
-modules-right = spotify xbacklight alsa memory cpu wlan eth battery date powermenu mpd
+modules-right = spotify xbacklight pulseaudio memory cpu wlan eth battery date powermenu mpd
 
 tray-position = right
 tray-padding = 2
@@ -303,10 +303,10 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+label-volume =  
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
+label-muted = 
 label-muted-foreground = #666
 
 bar-volume-width = 10
@@ -443,7 +443,7 @@ type = custom/script
 interval = 5
 format-prefix = " "
 format = <label>
-exec = python ~/.config/polybar-spotify/spotify_status.py -t 16 -f '{artist} - {song}'
+exec = python ~/.config/polybar/polybar-spotify/spotify_status.py -t 16 -f '{artist} - {song}'
 format-underline = #1db954
 
 [settings]
