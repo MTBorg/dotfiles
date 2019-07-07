@@ -1,9 +1,22 @@
-.netrwhist
-.viminfo
-user-dirs.dirs
-user-dirs.locale
-Code - OSS
-Electron
-Mullvad VPN
-spotify
-dconf
+/*
+
+#Everything will be ignored but the following files/directories
+!compton
+!firefox
+!.git
+!.gitmodules
+!i3
+!init_scripts
+!kitty
+!packagelists
+!polybar
+!protonmailStyling
+!ranger
+!README.md
+!rofi
+!sudo
+!termite
+!.vim
+!viminit.sh
+!.vimrc
+!Xorg
