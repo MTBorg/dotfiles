@@ -44,7 +44,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <C-j> ((pumvisible())?("\<C-n>"):("j"))
 inoremap <expr> <C-k> ((pumvisible())?("\<C-p>"):("k"))
 " Cancel search
-nnoremap <esc> :noh<return><esc>
+nnoremap <CR> :noh<CR><CR>
 """""""""""""""""""""""""""""
 "
 " Colors
