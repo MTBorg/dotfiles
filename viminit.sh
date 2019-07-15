@@ -1,7 +1,4 @@
 git submodule update --init --recursive
+rm -rf ~/.vimrc ~/.vim
 ln -s -f ~/.config/.vimrc ~/.vimrc
 ln -s -f ~/.config/.vim/ ~/.vim
-#eval "cp .vimrc ~ &&
-#	cd .vim &&
-#	git submodule update --init --recursive &&
-#	cp -r . ~/.vim"
