@@ -19,6 +19,7 @@
 !.vim
 !viminit.sh
 !.vimrc
+**/.viminfo
 !Xorg
 !gtk-3.0/settings.ini
 !z
