@@ -7,10 +7,12 @@ ignored_directories=(
 	"init_scripts"
 	"z"
 	"packagelists"
+	"protonmailStyling"
 )
 
 # The directory in which to place the symlinks.
 config_directory=~/config_test/
+# The directory in which to place the backup of the previous configuration
 backup_directory=~/config_backup/
 
 # Backup the current config
@@ -20,8 +22,8 @@ if [ -d $config_directory ]; then
 		read input
 		if [ $input == "y" ]; then
 			echo "Overwriting backup"
-			echo "Creating backup of existing config directory $config_directory"
-			test=$(sudo cp -rf $config_directory $backup_directory)
+			echo "Creating backup of existing config directory $config_directory in directory $backup_directory"
+			sudo cp -rf $config_directory $backup_directory
 		elif [ $input == "n" ]; then
 			echo "Skipping overwriting backup, exiting..."
 			exit 1
@@ -31,7 +33,7 @@ if [ -d $config_directory ]; then
 		fi
 	else
 		echo "Creating backup of existing config directory $config_directory"
-		test=$(sudo cp -rf $config_directory $backup_directory)
+		sudo cp -rf $config_directory $backup_directory
 	fi
 else
 	echo "Could not find folder $config_directory. Skip backup and continue?(y/n)"
@@ -46,6 +48,10 @@ else
 		exit 1
 	fi
 fi
+
+# Update git submodules
+echo "Updating git submodules"
+git submodule update --init --recursive
 
 cd ..
 directories=$(ls -d */ | sed 's/\///')
