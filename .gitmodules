@@ -40,3 +40,6 @@
 [submodule "z"]
 	path = z
 	url = https://github.com/rupa/z/
+[submodule ".vim/bundle/terminus"]
+	path = .vim/bundle/terminus
+	url = https://github.com/wincent/terminus
