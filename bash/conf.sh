@@ -7,9 +7,12 @@ if [ -f "/etc/arch-release" ]; then
 fi
 
 # Use vim as editor when running command fc
-FCEDIT=vim
+export FCEDIT=vim
 
 # Color the command prompt
-PS1="\e[0;32m[\u@\h \W]$ \e[m"
+export PS1="\e[0;32m[\u@\h \W]$ \e[m"
+
+# Use vim as standard editor
+export EDITOR="vim"
 
 source ~/.config/z/z.sh
