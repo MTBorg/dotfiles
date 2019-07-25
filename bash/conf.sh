@@ -1,9 +1,15 @@
 alias h="history"
+alias ll="ls -al"
+
+# Arch Linux specific keybindings
+if [ -f "/etc/arch-release" ]; then
+	alias p="pacman"
+fi
 
 # Use vim as editor when running command fc
 FCEDIT=vim
 
 # Color the command prompt
-export PS1="\e[0;32m[\u@\h \W]$ \e[m"
+PS1="\e[0;32m[\u@\h \W]$ \e[m"
 
 source ~/.config/z/z.sh
