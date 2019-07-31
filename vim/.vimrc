@@ -13,10 +13,12 @@ set ignorecase
 set laststatus=2
 set nospell
 set noerrorbells
+set noswapfile
 set number relativenumber
 set numberwidth=1
 set tabstop=2
 set showmatch
+set shiftwidth=2
 set timeoutlen=1000 ttimeoutlen=0 "This makes visual blocks fast
 set updatetime=100
 set viminfo+=n~/.vim/.viminfo "Different folder for viminfo file (disable if not on linux)
