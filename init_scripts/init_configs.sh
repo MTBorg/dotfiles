@@ -8,6 +8,7 @@ ignored_directories=(
 	"z"
 	"packagelists"
 	"protonmailStyling"
+	"tmux"
 )
 
 # Scripts to ignore, any script placed in this array won't be run.
