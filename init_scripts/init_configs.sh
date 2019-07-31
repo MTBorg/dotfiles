@@ -10,10 +10,39 @@ ignored_directories=(
 	"protonmailStyling"
 )
 
+# Scripts to ignore, any script placed in this array won't be run.
+ignored_scripts=(
+	"init_configs.sh"
+)
+
 # The directory in which to place the symlinks.
 config_directory=~/config_test/
 # The directory in which to place the backup of the previous configuration
 backup_directory=~/config_backup/
+
+# Runs all scripts in folder init_scripts and not in $ignored_scripts
+function runInitScripts {
+	scripts=$(ls)
+	for script in $scripts
+	do
+		for ignored_script in "${ignored_scripts[@]}"
+		do
+		ignored=false
+			if [ "$script" == "$ignored_script" ]
+			then
+				echo "Ignoring script $ignored_script" 
+				ignored=true
+				break
+			fi
+		done
+	
+		if [ $ignored = false ]
+		then
+			echo "Running script $script"
+			bash $script
+		fi
+	done
+}
 
 # Backup the current config
 if [ -d $config_directory ]; then
@@ -81,3 +110,7 @@ do
 		ln -s -f $symTarget $config_directory
 	fi
 done
+
+echo "Running init scripts"
+cd init_scripts
+runInitScripts
