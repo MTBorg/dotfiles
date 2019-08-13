@@ -1,6 +1,7 @@
 alias h="history"
 alias ll="ls -al"
 alias gst="git status"
+alias grep="grep --color=auto"
 
 # Arch Linux specific keybindings
 if [ -f "/etc/arch-release" ]; then
