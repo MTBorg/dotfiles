@@ -1,3 +1,4 @@
+
 alias h="history"
 alias ll="ls -al"
 alias gst="git status"
@@ -25,4 +26,5 @@ export LESS_TERMCAP_se=$'\e[0m' # Standout-mode end
 export LESS_TERMCAP_us=$'\e[01;32m' # Underline start
 export LESS_TERMCAP_ue=$'\e[0m' # Underline end
 
-source ~/.config/z/z.sh
+Z_PATH=$(dirname $BASH_SOURCE)/../z/z.sh
+source $Z_PATH
