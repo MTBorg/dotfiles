@@ -43,3 +43,6 @@
 [submodule ".vim/bundle/terminus"]
 	path = vim/.vim/bundle/terminus
 	url = https://github.com/wincent/terminus
+[submodule "vim/.vim/bundle/emmet-vim"]
+	path = vim/.vim/bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim
