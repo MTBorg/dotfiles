@@ -121,7 +121,8 @@ function init_config_folders {
 		if [ $ignored = false ]
 		then
 			symTarget=$(pwd)/$directory
-			echo "Initializing directory $symTarget"
+			echo "Symlinking directory $symTarget to $config_directory/$directory"
+			rm -rf $config_directory/$directory #Make sure the destination does not exist
 			ln -s -f $symTarget $config_directory
 		fi
 	done
