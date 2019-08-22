@@ -3,8 +3,7 @@
 ignored_directories=( 
 	"bash" 
 	"sudo"
-	"util_scripts"
-	"init_scripts"
+	"scripts"
 	"z"
 	"packagelists"
 	"protonmailStyling"
@@ -13,7 +12,7 @@ ignored_directories=(
 
 # Scripts to ignore, any script placed in this array won't be run.
 ignored_scripts=(
-	"init_configs.sh"
+	"${BASH_SOURCE[0]}" #Ignore this script
 )
 
 # The directory in which to place the symlinks.
@@ -29,7 +28,7 @@ function main {
 	echo "Creating backup"
 	create_backup
 
-	cd ..
+	cd ../..
 	
 	# Make sure the config directory actually exists
 	echo "Creating config directory $config_directory"
@@ -39,13 +38,12 @@ function main {
 	init_config_folders
 
 	echo "Running init scripts"
-	cd init_scripts
 	runInitScripts
 }
 
-# Runs all scripts in folder init_scripts and not in $ignored_scripts
+# Runs all scripts in folder scripts/init and not in $ignored_scripts
 function runInitScripts {
-	scripts=$(ls)
+	scripts=$(ls scripts/init)
 	for script in $scripts
 	do
 		for ignored_script in "${ignored_scripts[@]}"
@@ -62,7 +60,7 @@ function runInitScripts {
 		if [ $ignored = false ]
 		then
 			echo "Running script $script"
-			bash $script
+			bash scripts/init/$script
 		fi
 	done
 }
@@ -121,7 +119,7 @@ function init_config_folders {
 		if [ $ignored = false ]
 		then
 			symTarget=$(pwd)/$directory
-			echo "Symlinking directory $symTarget to $config_directory/$directory"
+			echo "Symlinking directory $symTarget to $config_directory$directory"
 			rm -rf $config_directory/$directory #Make sure the destination does not exist
 			ln -s -f $symTarget $config_directory
 		fi
