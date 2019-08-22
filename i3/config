@@ -26,9 +26,6 @@ font pango: Fira Code 14
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec termite
-
 # kill focused window
 bindsym $mod+q kill
 
@@ -173,22 +170,6 @@ client.unfocused    #000000     #000000     $fg     $border     #000000
 # Lock screen
 bindsym $mod+Shift+q exec i3lock --fuzzy -o
 
-# Sound control
- bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 2%+ && volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)"
- bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 2%- && volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)"
- bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle && if amixer get Master | grep -Fq '[off]'; then volnoti-show -m; else volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1); fi"
-# Use these if volnoti is not installed
-# bindsym XF86AudioRaiseVolume exec amixer -q set Master 2db+
-# bindsym XF86AudioLowerVolume exec amixer -q set Master 2db-
-# bindsym XF86AudioMute exec amixer -q set Master toggle
-bindsym XF86AudioPlay exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
-bindsym XF86AudioNext exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next" 
-bindsym XF86AudioPrev exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
-
-# Brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
-
 # Start applications
 exec compton --config ~/.config/compton/compton.conf
 exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -196,6 +177,7 @@ exec --no-startup-id mullvad-vpn
 exec --no-startup-id volnoti
 exec "feh --bg-scale ~/Pictures/wallpaper.jpg" # Set wallpaper
 exec "setxkbmap se" # Set swedish keyboard layout
+exec_always sxhkd
 
 # Bind ranger
 bindsym $mod+f exec termite -e ranger
@@ -209,3 +191,23 @@ gaps outer 0
 
 # Dont focus on mouse hover
 focus_follows_mouse no
+
+########### Use these keybindings if not using the sxhkd configs
+# Sound control
+# bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 2%+ && volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)"
+# bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 2%- && volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)"
+# bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle && if amixer get Master | grep -Fq '[off]'; then volnoti-show -m; else volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1); fi"
+# Use these if volnoti is not installed
+# bindsym XF86AudioRaiseVolume exec amixer -q set Master 2db+
+# bindsym XF86AudioLowerVolume exec amixer -q set Master 2db-
+# bindsym XF86AudioMute exec amixer -q set Master toggle
+# bindsym XF86AudioPlay exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+# bindsym XF86AudioNext exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next" 
+# bindsym XF86AudioPrev exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+
+# Brightness controls
+# bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+# bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+
+# start a terminal
+# bindsym $mod+Return exec termite

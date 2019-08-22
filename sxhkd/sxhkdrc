@@ -1,0 +1,23 @@
+# Terminal
+mod4 + Return
+	termite
+
+#Volume up/down
+{XF86MonBrightnessUp,XF86MonBrightnessDown}
+	xbacklight {-inc, -dec} 5
+	
+# Play/pause spotify
+XF86AudioPlay
+	dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+
+# Next/previous spotify track
+{XF86AudioNext,XF86AudioPrev} 
+	dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.{Next,Previous} 
+
+# Increase/decrease volume
+{XF86AudioRaiseVolume,XF86AudioLowerVolume}
+	amixer set Master 2%{+,-} && volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)
+
+# Mute sound
+XF86AudioMute
+	pactl set-sink-mute 0 toggle && if amixer get Master | grep -Fq '[off]'; then volnoti-show -m; else volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1); fi
