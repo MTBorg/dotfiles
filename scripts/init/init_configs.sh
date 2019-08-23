@@ -8,6 +8,7 @@ ignored_directories=(
 	"packagelists"
 	"protonmailStyling"
 	"tmux"
+	"modprobe"
 )
 
 # Scripts to ignore, any script placed in this array won't be run.
