@@ -28,4 +28,4 @@
 !vim
 !tmux
 !sxhkd
-!modprobe
+!modprobe.d
