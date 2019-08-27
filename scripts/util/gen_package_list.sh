@@ -1,1 +1,1 @@
-pacman -Q >> ../packagelists/$(date +%Y-%m-%d).txt
+pacman -Q >> ../../packagelists/$(date +%Y-%m-%d).txt
