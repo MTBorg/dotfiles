@@ -1,8 +1,11 @@
-
+# Aliases
 alias h="history"
 alias ll="ls -al"
 alias gst="git status"
 alias grep="grep --color=auto"
+if ! [ -x bat ]; then # Use bat if installed
+	alias cat="bat"
+fi
 
 # Arch Linux specific keybindings
 if [ -f "/etc/arch-release" ]; then
