@@ -2,7 +2,7 @@
 alias sudo="sudo " # This allows the use of sudo before aliases
 alias h="history"
 alias ll="ls -al"
-if ! [ -x bat ]; then 
+if ! [ -x git ]; then 
 	alias g="git"
 fi
 alias grep="grep --color=auto"
