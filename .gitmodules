@@ -52,3 +52,6 @@
 [submodule "vim/.vim/bundle/vim-test"]
 	path = vim/.vim/bundle/vim-test
 	url = https://github.com/janko/vim-test
+[submodule "vim/.vim/bundle/vim-tmux-runner"]
+	path = vim/.vim/bundle/vim-tmux-runner
+	url = https://github.com/christoomey/vim-tmux-runner
