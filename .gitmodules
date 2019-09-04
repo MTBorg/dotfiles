@@ -49,3 +49,6 @@
 [submodule "vim/.vim/bundle/--force"]
 	path = vim/.vim/bundle/--force
 	url = https://github.com/rust-lang/rust.vim
+[submodule "vim/.vim/bundle/vim-test"]
+	path = vim/.vim/bundle/vim-test
+	url = https://github.com/janko/vim-test
