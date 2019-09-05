@@ -2,5 +2,7 @@
 	co = checkout
   ci = commit
   st = status
-  br = branch§
+  br = branch
 	a = add
+	sla = log --oneline --decorate --graph --all -20
+  slap = log --oneline --decorate --graph --all
