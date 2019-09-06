@@ -57,4 +57,5 @@ execute pathogen#infect()
 execute pathogen#helptags()
 
 autocmd BufEnter * syntax on
+autocmd BufEnter *.tsx set filetype=typescript.vim
 filetype plugin on
