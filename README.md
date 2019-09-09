@@ -1,8 +1,8 @@
-# Init vim
+# Init vim (deprecated)
 ```
 bash viminit.sh
 ```
-# Bash
+# Bash (deprecated)
 ```bash
 bash init_scripts/bash_init.sh && source ~/.bashrc
 ```
