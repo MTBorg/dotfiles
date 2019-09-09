@@ -55,6 +55,9 @@
 [submodule "vim/.vim/bundle/vim-tmux-runner"]
 	path = vim/.vim/bundle/vim-tmux-runner
 	url = https://github.com/christoomey/vim-tmux-runner
+[submodule "vim/.vim/bundle/tsuquyomi"]
+	path = vim/.vim/bundle/tsuquyomi
+	url = https://github.com/Quramy/tsuquyomi
 [submodule "vim/.vim/bundle/lalrpop.vim"]
 	path = vim/.vim/bundle/lalrpop.vim
 	url = https://github.com/qnighy/lalrpop.vim
