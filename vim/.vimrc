@@ -30,7 +30,9 @@ let g:tex_flavor="latex"
 " Keybindings
 """""""""""""""""""""""""""""""
 nnoremap <silent> <Leader>e :NERDTreeToggle<CR>
-nnoremap <silent> <Leader>l :ALELint<CR>
+nnoremap <silent> <Leader>al :ALELint<CR>
+nnoremap <silent> <Leader>af :ALEFix<CR>
+
 " Next marker
 nnoremap <silent> <Leader>n /<+++><CR>cf>
 inoremap <silent> <Leader>n <Esc>/<+++><CR>cf>

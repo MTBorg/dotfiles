@@ -16,5 +16,9 @@ let g:ale_lint_on_save = 1
 let g:ale_lint_delay = 0
 let g:ale_linters = { 
     \ 'python': ["flake8"],
-    \ "javascript": ["eslint"]
+    \ "javascript": ["eslint"],
+		\ "typescript": ["tslint", "eslint"]
+\}
+let g:ale_fixers = {
+	\ "typescript": ["prettier"],
 \}
