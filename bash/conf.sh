@@ -32,6 +32,19 @@ export LESS_TERMCAP_se=$'\e[0m' # Standout-mode end
 export LESS_TERMCAP_us=$'\e[01;32m' # Underline start
 export LESS_TERMCAP_ue=$'\e[0m' # Underline end
 
+# Pyenv
+export PATH="~/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# These two lines are necessary for pipenv to run under pyenv apparently
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# Ranger
+export RANGER_LOAD_DEFAULT_RC FALSE
+
 # Start ssh-agent (i have no idea how this works)
 # Taken from https://wiki.archlinux.org/index.php/SSH_keys#SSH_agents
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
