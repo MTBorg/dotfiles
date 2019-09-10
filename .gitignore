@@ -15,7 +15,6 @@
 !rofi
 !sudo
 !termite
-**/.viminfo
 !Xorg
 !gtk-3.0/settings.ini
 !z
@@ -27,3 +26,7 @@
 !sxhkd
 !modprobe.d
 !git
+
+# These should always be ignored
+vim/.vim/view/
+vim/.vim/.viminf*
