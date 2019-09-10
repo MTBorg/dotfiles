@@ -32,5 +32,14 @@ export LESS_TERMCAP_se=$'\e[0m' # Standout-mode end
 export LESS_TERMCAP_us=$'\e[01;32m' # Underline start
 export LESS_TERMCAP_ue=$'\e[0m' # Underline end
 
+# Start ssh-agent (i have no idea how this works)
+# Taken from https://wiki.archlinux.org/index.php/SSH_keys#SSH_agents
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
+fi
+if [[ ! "$SSH_AUTH_SOCK" ]]; then
+    eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")" > /dev/null
+fi
+
 Z_PATH=$(dirname $BASH_SOURCE)/../z/z.sh
 source $Z_PATH
