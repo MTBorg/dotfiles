@@ -2,7 +2,8 @@ set omnifunc=syntaxcomplete#Complete
 set completeopt+=menuone,noselect,noinsert
 set nocompatible
 set autoindent
-set cursorline
+" set cursorline " This is nice but makes vim slow in some case
+set synmaxcol=90 " Limit syntax highlighting to amount of columns (you might want to disable this if you're on a fast system
 set colorcolumn=90
 set nofoldenable
 set foldmethod=syntax
