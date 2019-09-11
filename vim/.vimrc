@@ -33,7 +33,10 @@ let g:tex_flavor="latex"
 " Resource .vimrc
 nnoremap <silent> <Leader>up :source ~/.vimrc<CR>
 
+" NERDTree
 nnoremap <silent> <Leader>e :NERDTreeToggle<CR>
+
+" ALE
 nnoremap <silent> <Leader>al :ALELint<CR>
 nnoremap <silent> <Leader>af :ALEFix<CR>
 
