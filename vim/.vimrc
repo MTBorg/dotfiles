@@ -30,6 +30,9 @@ let g:tex_flavor="latex"
 
 " Keybindings
 """""""""""""""""""""""""""""""
+" Resource .vimrc
+nnoremap <silent> <Leader>up :source ~/.vimrc<CR>
+
 nnoremap <silent> <Leader>e :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>al :ALELint<CR>
 nnoremap <silent> <Leader>af :ALEFix<CR>
