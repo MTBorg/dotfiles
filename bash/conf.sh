@@ -9,6 +9,9 @@ alias grep="grep --color=auto"
 if ! [ -x bat ]; then # Use bat if installed
 	alias cat="bat"
 fi
+alias sysstart="systemctl start"
+alias sysstop="systemctl stop"
+alias sysstatus="systemctl status"
 
 # Arch Linux specific keybindings
 if [ -f "/etc/arch-release" ]; then
