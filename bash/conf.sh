@@ -13,6 +13,9 @@ alias sysstart="systemctl start"
 alias sysstop="systemctl stop"
 alias sysstatus="systemctl status"
 
+#Activate vi mode with <Esc>:
+set -o vi
+
 # Arch Linux specific keybindings
 if [ -f "/etc/arch-release" ]; then
 	alias p="pacman"
