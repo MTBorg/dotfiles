@@ -26,6 +26,7 @@
 !sxhkd
 !modprobe.d
 !git
+!alacritty
 
 # These should always be ignored
 vim/.vim/view/
