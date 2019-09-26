@@ -65,7 +65,7 @@ colorscheme onedark
 execute pathogen#infect() 
 execute pathogen#helptags()
 
-command Conf :sp ~/.vimrc
+command! Conf :sp ~/.vimrc
 
 autocmd BufEnter * syntax on
 autocmd BufEnter *.tsx set filetype=typescript.vim
