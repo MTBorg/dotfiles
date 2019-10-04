@@ -1,10 +1,12 @@
 " ALE
-highlight clear ALEError
-highlight clear ALEErrorLine
-" highlight ALEErrorSign ctermbg=124
-highlight ALEErrorSign ctermfg=124
-highlight clear ALEWarning
-highlight clear ALEWarningLine
+" highlight clear ALEError
+" highlight clear ALEErrorLine
+" highlight clear ALEErrorSign
+" highlight ALEError cterm=underline
+" " highlight ALEErrorSign ctermbg=124
+" highlight ALEErrorSign ctermfg=124 cterm=underline
+" highlight clear ALEWarning
+" highlight clear ALEWarningLine
 let g:ale_enabled = 1
 let g:ale_warn_about_trailing_blank_lines = 1
 let g:ale_warn_about_trailing_whitespace = 1
