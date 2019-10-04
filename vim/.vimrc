@@ -56,6 +56,9 @@ inoremap <expr> <C-j> ((pumvisible())?("\<C-n>"):("j"))
 inoremap <expr> <C-k> ((pumvisible())?("\<C-p>"):("k"))
 " Cancel search
 nnoremap <CR> :noh<CR><CR>
+" Tags
+nnoremap <Leader>tp :ptag<CR>
+nnoremap <Leader>tc :pclose<CR>
 """""""""""""""""""""""""""""
 "
 " Colors
