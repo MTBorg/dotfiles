@@ -28,6 +28,7 @@
 !git
 !alacritty
 !inputrc
+!ctags
 
 # These should always be ignored
 vim/.vim/view/
