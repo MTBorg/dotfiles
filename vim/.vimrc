@@ -64,10 +64,6 @@ nnoremap <Leader>tc :pclose<CR>
 " Colors
 colorscheme onedark
 
-" Pathogen
-execute pathogen#infect() 
-execute pathogen#helptags()
-
 command! Conf :sp ~/.vimrc
 
 autocmd BufEnter * syntax on
