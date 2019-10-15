@@ -35,3 +35,4 @@
 vim/.vim/view/
 vim/.vim/.viminf*
 vim/.vim/plugged
+.netrwhist
