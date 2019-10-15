@@ -29,6 +29,7 @@
 !alacritty
 !inputrc
 !ctags
+!fish
 
 # These should always be ignored
 vim/.vim/view/
