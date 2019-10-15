@@ -64,6 +64,32 @@ nnoremap <Leader>tc :pclose<CR>
 " Colors
 colorscheme onedark
 
+call plug#begin('~/.vim/plugged')
+
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'w0rp/ale'
+Plug 'tpope/vim-fugitive'
+Plug 'sheerun/vim-polyglot'
+Plug 'ap/vim-css-color'
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle' }
+Plug 'vim-scripts/AutoComplPop'
+Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-commentary'
+Plug 'wincent/terminus'
+Plug 'mattn/emmet-vim'
+Plug 'rust-lang/rust.vim'
+Plug 'janko/vim-test'
+Plug 'christoomey/vim-tmux-runner'
+Plug 'qnighy/lalrpop.vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-repeat'
+Plug 'TaDaa/vimade'
+
+call plug#end()
+
 command! Conf :sp ~/.vimrc
 
 autocmd BufEnter * syntax on
