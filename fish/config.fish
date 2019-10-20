@@ -16,3 +16,5 @@ end
 if type -q bat
 	alias cat "bat"
 end
+
+set -U fish_greeting
