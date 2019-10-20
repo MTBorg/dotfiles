@@ -16,7 +16,7 @@
 !sudo
 !termite
 !Xorg
-!gtk-3.0/settings.ini
+!gtk-3.0
 !z
 !scripts
 !bash
