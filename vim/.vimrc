@@ -86,7 +86,6 @@ Plug 'christoomey/vim-tmux-runner'
 Plug 'qnighy/lalrpop.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-repeat'
-Plug 'TaDaa/vimade'
 
 call plug#end()
 
