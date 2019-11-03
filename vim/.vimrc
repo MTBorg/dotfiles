@@ -87,6 +87,7 @@ Plug 'qnighy/lalrpop.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-repeat'
 Plug 'mileszs/ack.vim'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 
