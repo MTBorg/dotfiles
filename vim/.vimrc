@@ -89,6 +89,7 @@ Plug 'tpope/vim-repeat'
 Plug 'mileszs/ack.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Yggdroot/indentLine'
+Plug 'tmsvg/pear-tree'
 
 call plug#end()
 
