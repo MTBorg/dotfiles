@@ -30,6 +30,7 @@
 !inputrc
 !ctags
 !fish
+!zsh
 
 # These should always be ignored
 vim/.vim/view/
