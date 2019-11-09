@@ -101,3 +101,6 @@ source $ZSH/oh-my-zsh.sh
 
 #Disable user@host in prompt plugin agnoster
 export DEFAULT_USER=`whoami`
+
+# Add syntax highlighting (source relative to this file's path)
+source $0:A/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
