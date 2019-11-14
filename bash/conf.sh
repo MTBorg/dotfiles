@@ -12,6 +12,12 @@ fi
 alias sysstart="systemctl start"
 alias sysstop="systemctl stop"
 alias sysstatus="systemctl status"
+if ! [ -x docker ]; then
+	alias dock="docker"
+fi
+if ! [ -x docker-compose ]; then
+	alias dockc="docker-compose"
+fi
 
 #Activate vi mode with <Esc>:
 set -o vi
