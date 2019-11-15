@@ -26,4 +26,5 @@ let g:ale_fixers = {
 	\ "typescript": ["prettier"],
 	\ "rust": ["rustfmt"],
 	\ "java": ["prettier"],
+	\ "javascript": ["eslint", "prettier"]
 \}
