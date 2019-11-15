@@ -44,6 +44,7 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'airblade/vim-gitgutter'
 	Plug 'janko/vim-test'
 	Plug 'ctrlpvim/ctrlp.vim'
+	Plug 'ap/vim-css-color'
 call plug#end()
 
 colorscheme gotham
