@@ -31,6 +31,7 @@
 !ctags
 !fish
 !zsh
+!nvim
 
 # These should always be ignored
 vim/.vim/view/
