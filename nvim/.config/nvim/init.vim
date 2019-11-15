@@ -43,6 +43,7 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	"Misc
 	Plug 'airblade/vim-gitgutter'
 	Plug 'janko/vim-test'
+	Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 colorscheme gotham
