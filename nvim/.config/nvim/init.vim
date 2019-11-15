@@ -12,21 +12,37 @@ set termguicolors "Enable true colors
 filetype plugin indent on
 syntax on
 
+let mapleader="§"
+
 " NERDTree
 nnoremap <silent> <Leader>e :NERDTreeToggle<CR>
 
 call plug#begin('~/.local/share/nvim/plugged/')
-	Plug 'whatyouhide/vim-gotham' "Color scheme
+	"Color scheme
+	Plug 'whatyouhide/vim-gotham' 
+
+	"NERDTree
 	Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle' }
 	Plug 'Xuyuanp/nerdtree-git-plugin'
+
+	"Tim Pope plugins
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-surround'
-	Plug 'airblade/vim-gitgutter'
+
+	"Airline
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
+
+	"Tmux
 	Plug 'edkolev/tmuxline.vim'
+	Plug 'christoomey/vim-tmux-runner'
+	Plug 'christoomey/vim-tmux-navigator'
+
+	"Misc
+	Plug 'airblade/vim-gitgutter'
+	Plug 'janko/vim-test'
 call plug#end()
 
 colorscheme gotham
