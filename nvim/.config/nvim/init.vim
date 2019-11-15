@@ -12,6 +12,9 @@ set termguicolors "Enable true colors
 filetype plugin indent on
 syntax on
 
+" NERDTree
+nnoremap <silent> <Leader>e :NERDTreeToggle<CR>
+
 call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'whatyouhide/vim-gotham' "Color scheme
 	Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle' }
