@@ -1,7 +1,9 @@
 # Aliases
 alias sudo="sudo " # This allows the use of sudo before aliases
 alias h="history"
-alias ll="ls -al"
+alias ll="ls -al --color=auto"
+alias ls="ls --color=auto"
+alias grep="grep --color=auto"
 if ! [ -x git ]; then 
 	alias g="git"
 fi
@@ -18,6 +20,12 @@ fi
 if ! [ -x docker-compose ]; then
 	alias dockc="docker-compose"
 fi
+
+# Check window size after each command
+shopt -s checkwinsize
+
+# Append to history file, don't overwrite
+shopt -s histappend
 
 #Activate vi mode with <Esc>:
 set -o vi
@@ -66,5 +74,6 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
     eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")" > /dev/null
 fi
 
+# Source z
 Z_PATH=$(dirname $BASH_SOURCE)/../z/z.sh
 source $Z_PATH
