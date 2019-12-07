@@ -145,7 +145,8 @@ Mount ESP partition
 # mount /dev/nvme0n1p1 /boot/EFI
 ```
 
-Install grub for x86_64 efi architecture (you should be able to change the bootloader-id flag to whatever you want, it is not important)
+Install grub for x86_64 efi architecture (you should be able to change the bootloader-id flag to whatever you want, it is not important).
+If you have problems with arch installation not showing up in the boot menu try adding the --removable flag to the command below (see this [link](https://wiki.archlinux.org/index.php/GRUB#Default/fallback_boot_path))
 ```
 # grub-install --target=x86_64-efi  --bootloader-id=grub_uefi --recheck
 ```
