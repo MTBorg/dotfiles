@@ -32,6 +32,7 @@
 !fish
 !zsh
 !nvim
+!shell
 
 # These should always be ignored
 vim/.vim/view/
