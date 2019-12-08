@@ -1,6 +1,6 @@
 # Terminal
 mod4 + Return
-	termite
+	$TERMINAL
 
 #Volume up/down
 {XF86MonBrightnessUp,XF86MonBrightnessDown}
