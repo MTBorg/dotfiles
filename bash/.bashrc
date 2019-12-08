@@ -75,5 +75,5 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
 fi
 
 # Source z
-Z_PATH=~/configs/z/z.sh
+Z_PATH=~/dotfiles/z/z.sh
 source $Z_PATH
