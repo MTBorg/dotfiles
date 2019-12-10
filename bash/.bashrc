@@ -38,14 +38,8 @@ fi
 # Place in history file in cache folder
 export HISTFILE=$HOME/.cache/.bash_history
 
-# Use vim as editor when running command fc
-export FCEDIT=vim
-
 # Color the command prompt
 export PS1="\e[0;32m[\u@\h \W]$ \e[m"
-
-# Use vim as standard editor
-export EDITOR="vim"
 
 # Color man pages
 export LESS_TERMCAP_md=$'\e[01;32m' # Bold start
