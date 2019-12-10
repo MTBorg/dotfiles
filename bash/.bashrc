@@ -35,6 +35,9 @@ if [ -f "/etc/arch-release" ]; then
 	alias p="pacman"
 fi
 
+# Place in history file in cache folder
+export HISTFILE=$HOME/.cache/.bash_history
+
 # Use vim as editor when running command fc
 export FCEDIT=vim
 
