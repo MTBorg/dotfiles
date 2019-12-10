@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/martin/configs/oh-my-zsh/"
+export ZSH=$HOME/dotfiles/oh-my-zsh/
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -103,4 +103,4 @@ source $ZSH/oh-my-zsh.sh
 export DEFAULT_USER=`whoami`
 
 # Add syntax highlighting (source relative to this file's path)
-source $0:A/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
