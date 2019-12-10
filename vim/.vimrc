@@ -90,6 +90,7 @@ Plug 'mileszs/ack.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Yggdroot/indentLine'
 Plug 'tmsvg/pear-tree'
+Plug 'nikvdp/ejs-syntax', {'for': 'ejs'}
 
 call plug#end()
 
