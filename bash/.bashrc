@@ -40,15 +40,6 @@ export RANGER_LOAD_DEFAULT_RC FALSE
 # Place z's data file in cache folder
 export _Z_DATA=$HOME/.cache/.z
 
-# Start ssh-agent (i have no idea how this works)
-# Taken from https://wiki.archlinux.org/index.php/SSH_keys#SSH_agents
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
-fi
-if [[ ! "$SSH_AUTH_SOCK" ]]; then
-    eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")" > /dev/null
-fi
-
 # Source z
 Z_PATH=~/dotfiles/z/z.sh
 source $Z_PATH
