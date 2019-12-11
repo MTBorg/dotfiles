@@ -78,8 +78,11 @@ source $ZSH/oh-my-zsh.sh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=5"
 
-# This solves remnant characters when tab completing
+# This solves remnant characters when auto-completion
 export LC_ALL=en_US.UTF-8
+
+# Dont show ".." and "." when using auto-completion
+zstyle ":completion:*" special-dirs false
 
 # User configuration
 
@@ -112,6 +115,4 @@ export LC_ALL=en_US.UTF-8
 export DEFAULT_USER=`whoami`
 
 # Show hidden files when using tab-completion
-compinit
-_comp_options+=(globdots)
-# setopt globdots
+setopt globdots
