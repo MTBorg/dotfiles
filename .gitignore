@@ -33,6 +33,7 @@
 !zsh
 !nvim
 !shell
+!aliases
 
 # These should always be ignored
 vim/.vim/view/
