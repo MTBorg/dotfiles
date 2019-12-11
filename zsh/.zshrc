@@ -78,6 +78,9 @@ source $ZSH/oh-my-zsh.sh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=5"
 
+# This solves remnant characters when tab completing
+export LC_ALL=en_US.UTF-8
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -107,3 +110,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=5"
 
 #Disable user@host in prompt plugin agnoster
 export DEFAULT_USER=`whoami`
+
+# Show hidden files when using tab-completion
+compinit
+_comp_options+=(globdots)
+# setopt globdots
