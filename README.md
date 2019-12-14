@@ -29,40 +29,42 @@ Some key features/components of this install:
 - GRUB
 - Swap partition instead of swap file
 
-Use wifi-menu to connect to network:
+#### Connect to internet using either wifi-menu or an ethernet cable
 
-Edit /etc/pacman.d/mirrorlist on the Arch computer and paste the faster servers
+#### Edit /etc/pacman.d/mirrorlist on the Arch computer and paste the faster servers
 ```
 vim /etc/pacmand.d/mirrorlist
 ```
-Update package indexes:
+
+#### Update package indexes:
 ```
 # pacman -Syyy
 ```
 
-Create efi, boot, swap and lvm partitions (in that order for the rest of the command to work):
+#### Create efi, boot, swap and lvm partitions (in that order for the rest of the command to work):
 ```
 # fdisk /dev/sda
 ```
 
-Create file systems for the boot and ESP partitions
+#### Create file systems for the boot and ESP partitions
 ```
 # mkfs.fat -F32 /dev/nvme0n1p1
 # mkfs.ext2 /dev/nvme0n1p2
 ```
 
-Activate swap partition
+#### Activate swap partition
 ```
 mkswap /dev/nvme0n1p3
 swapon /dev/nvme0n1p3
 ```
-Set up encryption
+
+#### Set up encryption
 ```
 # cryptsetup luksFormat /dev/nvme0n1p4
 # cryptsetup open --type luks /dev/nvme0n1p4 lvm
 ```
 
-Set up lvm:
+#### Set up lvm:
 ```
 # pvcreate --dataalignment 1m /dev/mapper/lvm
 # vgcreate volgroup0 /dev/mapper/lvm
@@ -72,96 +74,105 @@ Set up lvm:
 # vgscan
 # vgchange -ay
 ```
-Create file systems for the root and home partitions
+
+#### Create file systems for the root and home partitions
 ```
 # mkfs.ext4 /dev/volgroup0/lv_root
 # mkfs.ext4 /dev/volgroup0/lv_home
 ```
 
-Mount the root partition
+#### Mount the root partition
 ```
 # mount /dev/volgroup0/lv_root /mnt
 ```
-Create mount directories
+
+#### Create mount directories
 ```
 # mkdir /mnt/boot
 # mkdir /mnt/home
 ```
 
-Mount boot and home directory
+#### Mount boot and home directory
 ```
 # mount /dev/nvme0n1p2 /mnt/boot
 # mount /dev/volgroup0/lv_home /mnt/home
 ```
 
-Install arch
+#### Install arch
 ```
 # pacstrap -i /mnt base linux linux-firmware
 ```
 
-Generate fstab file
+#### Generate fstab file
 ```
 # genfstab -U -p /mnt >> /mnt/etc/fstab
 ```
 
-Change root to arch installation
+#### Change root to arch installation
 ```
 # arch-chroot /mnt
 ```
 
-Install base packages + vim
+#### Install base packages + vim
 ```
 # pacman -S base-devel grub efibootmgr dosfstools openssh os-prober mtools linux-headers linux-lts linux-lts-headers lvm2 vim
 ```
 
+#### Configure initial ramdisk
 Edit /etc/mkinitcpio.conf and add encrypt lvm2 in between block and filesystems
+```
+vim /etc/mkinitcpio.conf
+```
 
+#### Create initial ramdisk
 ```
 # mkinitcpio -p linux
 # mkinitcpio -p linux-lts
 ```
-Set and generate locale
+
+#### Set and generate locale
 ```
 # vim /etc/locale.gen (uncomment en_US.UTF-8 if you want us UTF-8 locale)
 # locale-gen
 ```
 
-Set root password
+#### Set root password
 ```
 # passwd
 ```
 
-Edit /etc/default/grub:
+#### Configure grub
 add cryptdevice=<PARTUUID>:volgroup0 to the GRUB_CMDLINE_LINUX_DEFAULT line.
-  
-If using standard device naming, the option will look like this: cryptdevice=/dev/sda3:volgroup0
+If using standard device naming, the option will look like this: cryptdevice=/dev/nvme0n1p4:volgroup0
 ```
 vim /etc/default/grub
 ```
 
-Mount ESP partition
+#### Mount ESP partition
 ```
 # mkdir /boot/EFI
 # mount /dev/nvme0n1p1 /boot/EFI
 ```
 
-Install grub for x86_64 efi architecture (you should be able to change the bootloader-id flag to whatever you want, it is not important).
+#### Install grub for x86_64 efi architecture
+(you should be able to change the bootloader-id flag to whatever you want, it is not important).
 If you have problems with arch installation not showing up in the boot menu try adding the --removable flag to the command below (see this [link](https://wiki.archlinux.org/index.php/GRUB#Default/fallback_boot_path))
 ```
 # grub-install --target=x86_64-efi  --bootloader-id=grub_uefi --recheck
 ```
 
-Not sure what this does to be honest...
+#### Not sure what this does to be honest (something with locales i guess)...
 ```
 # cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
 ```
 
-Generate grub-config
+#### Generate grub-config
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-Exit live environment, unmount devices and restart system (might complain about busy devices but should not matter)
+
+#### Exit live environment, unmount devices and restart system (might complain about busy devices but should not matter)
 ```
 $ exit
 # umount -a
