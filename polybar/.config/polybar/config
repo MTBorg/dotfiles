@@ -247,7 +247,7 @@ label =  %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlo1
+interface = ${env:POLYBAR_WLAN_INTERFACE:wlo1}
 interval = 5.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -269,7 +269,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = eno1
+interface = ${env:POLYBAR_ETH_INTERFACE:eno1}
 interval = 5.0
 
 format-connected-underline = #55aa55
