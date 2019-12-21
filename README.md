@@ -7,6 +7,10 @@ e.g.
 ```
 stow i3
 ```
+Lots of the configs also the depend on gitsubmodules so be sure to init all submodules:
+```
+git submodule update --init --recursive
+```
 
 ### DEPRECATED
 Run config init script in the folder scripts/init
