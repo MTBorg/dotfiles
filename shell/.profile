@@ -2,6 +2,8 @@ export TERMINAL=alacritty
 
 export GPG_TTY=$(tty)
 
+[ -f $HOME/dev.env ] && source $HOME/dev.env
+
 # Use vim as editor when running command fc
 export FCEDIT=vim
 
