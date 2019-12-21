@@ -76,7 +76,7 @@ font-4 = Font Awesome 5 Brands Regular:style=Solid;1
 
 modules-left = bspwm i3 
 modules-center = 
-modules-right = spotify xbacklight pulseaudio memory cpu wlan eth battery date powermenu mpd
+modules-right = system-bluetooth-bluetoothctl spotify xbacklight pulseaudio memory cpu wlan eth battery date powermenu mpd
 
 tray-position = right
 tray-padding = 2
@@ -445,6 +445,13 @@ format-prefix = " "
 format = <label>
 exec = python ~/.config/polybar/polybar-spotify/spotify_status.py -t 16 -f '{play_pause} {artist} - {song}' -p ','
 format-underline = #1db954
+
+[module/system-bluetooth-bluetoothctl]
+type = custom/script
+exec = ~/.config/polybar/polybar-scripts/system-bluetooth-bluetoothctl.sh
+tail = true
+click-left = ~/.config/polybar/polybar-scripts/system-bluetooth-bluetoothctl.sh --toggle &
+format-underline = #0000ff
 
 [settings]
 screenchange-reload = true
