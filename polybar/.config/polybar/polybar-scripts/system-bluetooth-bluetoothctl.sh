@@ -3,7 +3,6 @@
 bluetooth_print() {
     bluetoothctl | while read -r; do
         if [ "$(systemctl is-active "bluetooth.service")" = "active" ]; then
-						printf ''
 
             devices_paired=$(bluetoothctl paired-devices | grep Device | cut -d ' ' -f 2)
             counter=0
@@ -12,7 +11,8 @@ bluetooth_print() {
                 device_info=$(bluetoothctl info "$line")
 
                 if echo "$device_info" | grep -q "Connected: yes"; then
-                    device_alias=$(echo "$device_info" | grep "Alias" | cut -d ' ' -f 2-)
+                		device_alias=$(echo "$device_info" | grep "Alias" | cut -d ' ' -f 2-)
+										printf ''
 
                     if [ $counter -gt 0 ]; then
                         printf ", %s" "$device_alias"
