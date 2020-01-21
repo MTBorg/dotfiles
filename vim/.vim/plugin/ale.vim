@@ -26,5 +26,6 @@ let g:ale_fixers = {
 	\ "typescript": ["prettier"],
 	\ "rust": ["rustfmt"],
 	\ "java": ["prettier"],
-	\ "javascript": ["eslint", "prettier"]
+	\ "javascript": ["eslint", "prettier"],
+	\ "cpp": ["clang-format"]
 \}
