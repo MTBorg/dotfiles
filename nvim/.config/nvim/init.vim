@@ -25,11 +25,9 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle' }
 	Plug 'Xuyuanp/nerdtree-git-plugin'
 
-	"Tim Pope plugins
+	"Git
 	Plug 'tpope/vim-fugitive'
-	Plug 'tpope/vim-repeat'
-	Plug 'tpope/vim-commentary'
-	Plug 'tpope/vim-surround'
+	Plug 'airblade/vim-gitgutter'
 
 	"Airline
 	Plug 'vim-airline/vim-airline'
@@ -44,10 +42,12 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-tsserver coc-python coc-json'}
 
 	"Misc
-	Plug 'airblade/vim-gitgutter'
 	Plug 'janko/vim-test'
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'ap/vim-css-color'
+	Plug 'tpope/vim-repeat'
+	Plug 'tpope/vim-commentary'
+	Plug 'tpope/vim-surround'
 call plug#end()
 
 colorscheme gotham
