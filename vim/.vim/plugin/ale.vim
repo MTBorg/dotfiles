@@ -18,7 +18,7 @@ let g:ale_lint_on_save = 1
 let g:ale_lint_delay = 0
 let g:ale_fix_on_save = 1
 let g:ale_linters = { 
-    \ 'python': ["flake8"],
+    \ 'python': ["pylint"],
     \ "javascript": ["eslint"],
 		\ "typescript": ["tslint", "eslint"]
 \}
@@ -27,5 +27,6 @@ let g:ale_fixers = {
 	\ "rust": ["rustfmt"],
 	\ "java": ["prettier"],
 	\ "javascript": ["eslint", "prettier"],
-	\ "cpp": ["clang-format"]
+	\ "cpp": ["clang-format"],
+	\ "python": ["black"]
 \}
