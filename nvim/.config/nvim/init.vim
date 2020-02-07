@@ -9,6 +9,9 @@ set autoindent
 set number relativenumber
 set cc=80
 set termguicolors "Enable true colors
+set updatetime=200 "This makes the git gutter update faster
+set noswapfile
+set numberwidth=1
 filetype plugin indent on
 syntax on
 
