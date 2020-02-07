@@ -40,6 +40,9 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'christoomey/vim-tmux-runner'
 	Plug 'christoomey/vim-tmux-navigator'
 
+	"Coc
+	Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-tsserver coc-python coc-json'}
+
 	"Misc
 	Plug 'airblade/vim-gitgutter'
 	Plug 'janko/vim-test'
