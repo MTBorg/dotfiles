@@ -17,8 +17,18 @@ syntax on
 
 let mapleader="§"
 
-" NERDTree
-nnoremap <silent> <Leader>e :NERDTreeToggle<CR>
+" Keybindings
+""""""""""""""""""""""""""
+	" Resource .vimrc
+	nnoremap <silent> <Leader>up :source ~/.config/nvim/init.vim<CR>
+	
+	" NERDTree
+	nnoremap <silent> <Leader>e :NERDTreeToggle<CR>
+
+	" Bind popup navigation to ctrl-j and ctrl-k
+	inoremap <expr> <C-j> ((pumvisible())?("\<C-n>"):("j"))
+	inoremap <expr> <C-k> ((pumvisible())?("\<C-p>"):("k"))
+""""""""""""""""""""""""""
 
 call plug#begin('~/.local/share/nvim/plugged/')
 	"Color scheme
