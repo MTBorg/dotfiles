@@ -64,4 +64,10 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'Yggdroot/indentline'
 call plug#end()
 
+" Resource config when saved
+augroup vimrchook
+	au!
+	autocmd bufwritepost $MYVIMRC source $MYVIMRC
+augroup END
+
 colorscheme gotham
