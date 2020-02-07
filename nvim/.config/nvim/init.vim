@@ -48,6 +48,7 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-surround'
+	Plug 'Yggdroot/indentline'
 call plug#end()
 
 colorscheme gotham
