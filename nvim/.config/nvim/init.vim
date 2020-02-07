@@ -52,7 +52,10 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'christoomey/vim-tmux-navigator'
 
 	"Coc
-	Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-tsserver coc-python coc-json'}
+	Plug 'neoclide/coc.nvim', {
+		\ 'branch': 'release', 
+		\ 'do': ':CocInstall coc-tsserver coc-python coc-json coc-eslint coc-prettier coc-css coc-html'
+	\}
 
 	"Misc
 	Plug 'janko/vim-test'
