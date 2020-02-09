@@ -29,6 +29,11 @@ let mapleader="§"
 	" WhichKey
 	nnoremap <silent> <Leader>? :WhichKey '§'<CR>
 
+	" Vim-fugitive
+	nnoremap <silent> <Leader>gd :Gdiffsplit<CR>
+	nnoremap <silent> <Leader>gst :Gstatus<CR>
+	nnoremap <silent> <Leader>gb :Gblame<CR>
+
 	" Bind popup navigation to ctrl-j and ctrl-k
 	inoremap <expr> <C-j> ((pumvisible())?("\<C-n>"):("j"))
 	inoremap <expr> <C-k> ((pumvisible())?("\<C-p>"):("k"))
