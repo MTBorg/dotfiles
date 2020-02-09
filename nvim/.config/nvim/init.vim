@@ -26,6 +26,9 @@ let mapleader="§"
 	" NERDTree
 	nnoremap <silent> <Leader>e :NERDTreeToggle<CR>
 
+	" WhichKey
+	nnoremap <silent> <Leader>? :WhichKey '§'<CR>
+
 	" Bind popup navigation to ctrl-j and ctrl-k
 	inoremap <expr> <C-j> ((pumvisible())?("\<C-n>"):("j"))
 	inoremap <expr> <C-k> ((pumvisible())?("\<C-p>"):("k"))
@@ -67,6 +70,7 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'tpope/vim-surround'
 	Plug 'Yggdroot/indentline'
 	Plug 'honza/vim-snippets'
+	Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 call plug#end()
 
 " Resource config when saved
