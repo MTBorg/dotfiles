@@ -37,6 +37,9 @@ let mapleader="§"
 	" Bind popup navigation to ctrl-j and ctrl-k
 	inoremap <expr> <C-j> ((pumvisible())?("\<C-n>"):("j"))
 	inoremap <expr> <C-k> ((pumvisible())?("\<C-p>"):("k"))
+
+	" Jump window
+	nnoremap <silent> <Leader>j :jumps<CR>
 """"""""""""""""""""""""""
 
 call plug#begin('~/.local/share/nvim/plugged/')
