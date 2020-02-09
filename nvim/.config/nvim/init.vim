@@ -12,6 +12,7 @@ set termguicolors "Enable true colors
 set updatetime=200 "This makes the git gutter update faster
 set noswapfile
 set numberwidth=1
+set encoding=UTF-8
 filetype plugin indent on
 syntax on
 
@@ -54,7 +55,7 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	"Coc
 	Plug 'neoclide/coc.nvim', {
 		\ 'branch': 'release', 
-		\ 'do': ':CocInstall coc-tsserver coc-python coc-json coc-eslint coc-prettier coc-css coc-html'
+		\ 'do': ':CocInstall coc-tsserver coc-python coc-json coc-eslint coc-prettier coc-css coc-html coc-snippets'
 	\}
 
 	"Misc
@@ -65,6 +66,7 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-surround'
 	Plug 'Yggdroot/indentline'
+	Plug 'honza/vim-snippets'
 call plug#end()
 
 " Resource config when saved
