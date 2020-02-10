@@ -21,7 +21,7 @@ let mapleader="§"
 " Keybindings
 """"""""""""""""""""""""""
 	" Resource .vimrc
-	nnoremap <silent> <Leader>up :source ~/.config/nvim/init.vim<CR>
+	nnoremap <silent> <Leader>src :source ~/.config/nvim/init.vim<CR>
 	
 	" NERDTree
 	nnoremap <silent> <Leader>e :NERDTreeToggle<CR>
