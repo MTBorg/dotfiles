@@ -40,6 +40,9 @@ let mapleader="§"
 
 	" Jump window
 	nnoremap <silent> <Leader>j :jumps<CR>
+
+	" Undotree
+	nnoremap <silent> <Leader>u :UndotreeToggle<CR>
 """"""""""""""""""""""""""
 
 call plug#begin('~/.local/share/nvim/plugged/')
@@ -79,6 +82,7 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'Yggdroot/indentline'
 	Plug 'honza/vim-snippets'
 	Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+	Plug 'mbbill/undotree'
 call plug#end()
 
 " Resource config when saved
