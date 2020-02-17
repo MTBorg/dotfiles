@@ -95,4 +95,6 @@ augroup END
 " Identine lines plugin messes up quotes in json files, so disable it for json
 autocmd filetype json :IndentLinesDisable
 
+autocmd BufEnter *.tsx set filetype=typescript.vim
+
 colorscheme gotham
