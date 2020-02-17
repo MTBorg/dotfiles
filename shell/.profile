@@ -5,10 +5,10 @@ export GPG_TTY=$(tty)
 [ -f $HOME/dev.env ] && source $HOME/dev.env
 
 # Use vim as editor when running command fc
-export FCEDIT=vim
+export FCEDIT=nvim
 
 # Use vim as standard editor
-export EDITOR="vim"
+export EDITOR=nvim
 
 # Start ssh-agent (i have no idea how this works)
 # Taken from https://wiki.archlinux.org/index.php/SSH_keys#SSH_agents
