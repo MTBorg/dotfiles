@@ -84,6 +84,7 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 	Plug 'mbbill/undotree'
 	Plug 'mileszs/ack.vim'
+	Plug 'mattn/emmet-vim'
 call plug#end()
 
 " Resource config when saved
