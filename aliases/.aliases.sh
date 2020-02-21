@@ -16,10 +16,10 @@ alias sysstatus="systemctl status"
 alias sysenable="systemctl enable"
 alias sysdisable="systemctl disable"
 if ! [ -x docker ]; then
-	alias dock="docker"
+	alias d="docker"
 fi
 if ! [ -x docker-compose ]; then
-	alias dockc="docker-compose"
+	alias dc="docker-compose"
 fi
 
 # Arch Linux specific aliases
