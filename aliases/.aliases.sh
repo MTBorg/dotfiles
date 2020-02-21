@@ -12,6 +12,7 @@ if ! [ -x bat ]; then # Use bat if installed
 fi
 alias sysstart="systemctl start"
 alias sysstop="systemctl stop"
+alias sysrestart="systemctl restart"
 alias sysstatus="systemctl status"
 alias sysenable="systemctl enable"
 alias sysdisable="systemctl disable"
