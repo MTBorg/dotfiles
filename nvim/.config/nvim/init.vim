@@ -85,6 +85,7 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'mbbill/undotree'
 	Plug 'mileszs/ack.vim'
 	Plug 'mattn/emmet-vim'
+	Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " Resource config when saved
