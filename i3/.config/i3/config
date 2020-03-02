@@ -27,7 +27,7 @@ font pango: Fira Code 14
 floating_modifier $mod
 
 # kill focused window
-bindsym $mod+q kill
+bindsym $mod+Shift+q kill
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -146,7 +146,7 @@ client.focused		$border	    $bg_hl      $fg_hl	$border		$border
 client.unfocused    #000000     #000000     $fg     $border     #000000
 
 # Lock screen
-bindsym $mod+Shift+q exec i3lock --fuzzy -o
+bindsym $mod+Shift+f exec i3lock --fuzzy -o
 
 # Start applications
 exec compton --config ~/.config/compton/compton.conf
