@@ -84,6 +84,7 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 	Plug 'mbbill/undotree'
 	Plug 'mileszs/ack.vim'
+	Plug 'sheerun/vim-polyglot'
 	Plug 'mattn/emmet-vim'
 	Plug 'ryanoasis/vim-devicons'
 call plug#end()
