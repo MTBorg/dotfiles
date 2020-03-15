@@ -119,7 +119,7 @@ swapon /dev/nvme0n1p3
 
 #### Install base packages + vim
 ```
-# pacman -S base-devel grub efibootmgr dosfstools openssh os-prober mtools linux-headers linux-lts linux-lts-headers lvm2 vim
+# pacman -S base-devel grub efibootmgr dosfstools openssh os-prober linux-headers linux-lts linux-lts-headers lvm2 vim
 ```
 
 #### Configure initial ramdisk
