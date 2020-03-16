@@ -1,5 +1,5 @@
 #! /bin/bash
-exec i3
+exec bspwm
 exec setxkbmap sv
 exec xset -b #Mute the beeping sound
 
