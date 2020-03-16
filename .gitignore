@@ -34,6 +34,7 @@
 !nvim
 !shell
 !aliases
+!cava
 
 # These should always be ignored
 vim/.vim/view/
