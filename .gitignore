@@ -35,6 +35,7 @@
 !shell
 !aliases
 !cava
+!bspwm
 
 # These should always be ignored
 vim/.vim/view/
