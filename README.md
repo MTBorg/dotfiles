@@ -116,7 +116,7 @@ Some key features/components of this install:
 # mount /dev/nvme0n1p1 /mnt/efi
 ```
 
-#### Install base package and linux kernel/firmware (you can skip the `linux-lts` packages if you don't want the LTS-kernel)
+#### Install base package, linux kernel/firmware (you can skip the `linux-lts` packages if you don't want the LTS-kernel) and other packages
 
 ```
 # pacstrap -i /mnt base \
@@ -125,7 +125,6 @@ Some key features/components of this install:
   linux-headers \
   linux-lts \
   linux-lts-headers \
-  base-devel \
   grub \
   efibootmgr \
   dosfstools \ 
