@@ -105,13 +105,15 @@ swapon /dev/nvme0n1p3
 ```
 # mkdir /mnt/boot
 # mkdir /mnt/home
+# mkdir /mnt/efi
 ```
 
-#### Mount boot and home directory
+#### Mount the boot, home and EFI partitions
 
 ```
 # mount /dev/nvme0n1p2 /mnt/boot
 # mount /dev/volgroup0/lv_home /mnt/home
+# mount /dev/nvme0n1p1 /mnt/efi
 ```
 
 #### Install arch
@@ -175,20 +177,13 @@ If using standard device naming, the option will look like this: cryptdevice=/de
 vim /etc/default/grub
 ```
 
-#### Mount ESP partition
-
-```
-# mkdir /boot/EFI
-# mount /dev/nvme0n1p1 /boot/EFI
-```
-
 #### Install grub for x86_64 efi architecture
 
 (you should be able to change the bootloader-id flag to whatever you want, it is not important).
 If you have problems with arch installation not showing up in the boot menu try adding the --removable flag to the command below (see this [link](https://wiki.archlinux.org/index.php/GRUB#Default/fallback_boot_path))
 
 ```
-# grub-install --target=x86_64-efi  --bootloader-id=grub_uefi --recheck
+# grub-install --target=x86_64-efi --efi-directory=/efi  --bootloader-id=grub_uefi --recheck
 ```
 
 #### Not sure what this does to be honest (something with locales i guess)...
