@@ -39,7 +39,7 @@ Some key features/components of this install:
 #### Edit /etc/pacman.d/mirrorlist on the Arch computer and paste the faster servers
 
 ```
-vim /etc/pacmand.d/mirrorlist
+# nvim /etc/pacmand.d/mirrorlist
 ```
 
 #### Update package indexes:
@@ -64,8 +64,8 @@ vim /etc/pacmand.d/mirrorlist
 #### Activate swap partition
 
 ```
-mkswap /dev/nvme0n1p3
-swapon /dev/nvme0n1p3
+# mkswap /dev/nvme0n1p3
+# swapon /dev/nvme0n1p3
 ```
 
 #### Set up encryption
@@ -116,10 +116,23 @@ swapon /dev/nvme0n1p3
 # mount /dev/nvme0n1p1 /mnt/efi
 ```
 
-#### Install arch
+#### Install base package and linux kernel/firmware (you can skip the `linux-lts` packages if you don't want the LTS-kernel)
 
 ```
-# pacstrap -i /mnt base linux linux-firmware
+# pacstrap -i /mnt base \
+  linux \ 
+  linux-firmware \ 
+  linux-headers \
+  linux-lts \
+  linux-lts-headers \
+  base-devel \
+  grub \
+  efibootmgr \
+  dosfstools \ 
+  openssh\ 
+  os-prober \
+  lvm2 \
+  neovim
 ```
 
 #### Generate fstab file
@@ -134,18 +147,12 @@ swapon /dev/nvme0n1p3
 # arch-chroot /mnt
 ```
 
-#### Install base packages + vim
-
-```
-# pacman -S base-devel grub efibootmgr dosfstools openssh os-prober linux-headers linux-lts linux-lts-headers lvm2 vim
-```
-
 #### Configure initial ramdisk
 
 Edit /etc/mkinitcpio.conf and add encrypt lvm2 in between block and filesystems
 
 ```
-vim /etc/mkinitcpio.conf
+# nvim /etc/mkinitcpio.conf
 ```
 
 #### Create initial ramdisk
@@ -158,7 +165,7 @@ vim /etc/mkinitcpio.conf
 #### Set and generate locale
 
 ```
-# vim /etc/locale.gen (uncomment en_US.UTF-8 if you want us UTF-8 locale)
+# nvim /etc/locale.gen (uncomment en_US.UTF-8 if you want us UTF-8 locale)
 # locale-gen
 ```
 
@@ -174,7 +181,7 @@ add cryptdevice=<PARTUUID>:volgroup0 to the GRUB_CMDLINE_LINUX_DEFAULT line.
 If using standard device naming, the option will look like this: cryptdevice=/dev/nvme0n1p4:volgroup0
 
 ```
-vim /etc/default/grub
+# nvim /etc/default/grub
 ```
 
 #### Install grub for x86_64 efi architecture
@@ -204,4 +211,11 @@ If you have problems with arch installation not showing up in the boot menu try 
 $ exit
 # umount -a
 # reboot
+```
+
+### Post-installation
+#### Clean up
+Remove no longer needed packes
+```
+sudo pacman -Rs dosfstools
 ```
