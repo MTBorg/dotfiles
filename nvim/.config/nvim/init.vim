@@ -87,6 +87,8 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'sheerun/vim-polyglot'
 	Plug 'mattn/emmet-vim'
 	Plug 'ryanoasis/vim-devicons'
+	Plug 'LucHermitte/local_vimrc'
+	Plug 'LucHermitte/lh-vim-lib'
 call plug#end()
 
 " Resource config when saved
