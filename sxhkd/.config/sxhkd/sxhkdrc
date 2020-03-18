@@ -103,52 +103,52 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 ####################################
 
-################## i3 keybindings
-
-# focusing
-super + {h,j,k,l}
-  i3-msg focus {left, down, up, right} || i3-msg focus output {left, down, up, right}
-
-# moving
-super + shift + {h,j,k,l}
-  i3-msg move {left, down, up, right}
-
-# kill window
-super + shift + q
-	i3-msg kill window
-
-# switch workspace
-super + {0,1-9}
-	i3-msg workspace {10,1-9}
-
-# move window to workspace
-super + shift + {0,1-9}
-	i3-msg move container to workspace {10,1-9}
-
-# reload and restart
-super + shift + {c,r}
-	i3-msg {reload, restart}
-
-# enter fullscreen mode for the focused container
-super + f
-	i3-msg fullscreen toggle
-
-super + {s,w,e}
-	i3-msg layout {stacking, tabbed, toggle split}
-
-# exit i3
-super + shift + e
-	i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'
-
-# toggle tiling / floating
-super + shift + space
-	i3-msg floating toggle
-
-# change focus between tiling / floating windows
-super + space
-	i3-msg focus mode_toggle
-
-##################
+################### i3 keybindings
+#
+## focusing
+#super + {h,j,k,l}
+#  i3-msg focus {left, down, up, right} || i3-msg focus output {left, down, up, right}
+#
+## moving
+#super + shift + {h,j,k,l}
+#  i3-msg move {left, down, up, right}
+#
+## kill window
+#super + shift + q
+#	i3-msg kill window
+#
+## switch workspace
+#super + {0,1-9}
+#	i3-msg workspace {10,1-9}
+#
+## move window to workspace
+#super + shift + {0,1-9}
+#	i3-msg move container to workspace {10,1-9}
+#
+## reload and restart
+#super + shift + {c,r}
+#	i3-msg {reload, restart}
+#
+## enter fullscreen mode for the focused container
+#super + f
+#	i3-msg fullscreen toggle
+#
+#super + {s,w,e}
+#	i3-msg layout {stacking, tabbed, toggle split}
+#
+## exit i3
+#super + shift + e
+#	i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'
+#
+## toggle tiling / floating
+#super + shift + space
+#	i3-msg floating toggle
+#
+## change focus between tiling / floating windows
+#super + space
+#	i3-msg focus mode_toggle
+#
+###################
 
 # Terminal
 super + Return
