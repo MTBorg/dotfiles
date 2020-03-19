@@ -18,7 +18,7 @@ setxkbmap se #Set keyboardlayout
 	pkill -USR1 compton ||
 	compton --config ~/.config/compton/compton.conf &
 
-volnoti
-xss-lock -- i3lock --fuzzy -o
+volnoti &
+xss-lock -- i3lock --fuzzy -o &
 ~/.config/polybar/launch.sh
 ~/.fehbg
