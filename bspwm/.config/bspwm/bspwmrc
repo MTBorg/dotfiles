@@ -21,4 +21,4 @@ setxkbmap se #Set keyboardlayout
 volnoti &
 xss-lock -- i3lock --fuzzy -o &
 ~/.config/polybar/launch.sh
-~/.fehbg
+wal -R
