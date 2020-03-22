@@ -1,3 +1,6 @@
+# Import colorscheme from 'wal' asynchronously
+(cat ~/.cache/wal/sequences &)
+
 source ~/dotfiles/aliases/.aliases.sh
 
 # If you come from bash you might have to change your $PATH.
