@@ -2,5 +2,28 @@
   "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "json", "javascriptreact", "typescript.tsx", "python", "markdown", "rust"],
   "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact", "typescript.tsx"],
 	"python.formatting.provider": "black",
-	"python.formatting.blackArgs": ["--line-length", "80"]
+	"python.formatting.blackArgs": ["--line-length", "80"],
+	"languageserver": {
+		"ccls": {
+			"command": "ccls",
+			"filetypes": [
+					"c",
+					"cpp",
+					"objc",
+					"objcpp"
+			],
+			"rootPatterns": [
+					".ccls",
+					"compile_commands.json",
+					".vim/",
+					".git/",
+					".hg/"
+			],
+			"initializationOptions": {
+					"cache": {
+							"directory": "/tmp/ccls"
+					}
+			}
+		}
+	}
 }
