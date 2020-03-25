@@ -1,5 +1,15 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "json", "javascriptreact", "typescript.tsx", "python", "markdown", "rust"],
+  "coc.preferences.formatOnSaveFiletypes": [
+		"javascript", 
+		"typescript",
+		"typescriptreact",
+		"json",
+		"javascriptreact",
+		"typescript.tsx",
+		"python",
+		"markdown",
+		"rust"
+	],
   "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact", "typescript.tsx"],
 	"python.formatting.provider": "black",
 	"python.formatting.blackArgs": ["--line-length", "80"],
