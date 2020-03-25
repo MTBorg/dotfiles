@@ -6,7 +6,8 @@ export TERMINAL=alacritty
 
 export GPG_TTY=$(tty)
 
-[ -f $HOME/dev.env ] && source $HOME/dev.env
+DEV_FILE=$XDG_CONFIG_HOME/.dev.env
+[ -f $DEV_FILE ] && source $DEV_FILE
 
 # Use vim as editor when running command fc
 export FCEDIT=nvim
