@@ -43,3 +43,4 @@ vim/.vim/.viminf*
 vim/.vim/plugged
 .netrwhist
 *fishd.**
+*zcompdump*
