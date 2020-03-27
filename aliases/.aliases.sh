@@ -28,3 +28,4 @@ fi
 if [ -f "/etc/arch-release" ]; then
 	alias p="pacman"
 fi
+alias tmux='tmux -f "$XDG_CONFIG_HOME/tmux/.tmux.conf"'
