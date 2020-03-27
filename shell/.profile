@@ -6,6 +6,8 @@ export TERMINAL=alacritty
 
 export GPG_TTY=$(tty)
 
+export _Z_DATA=$XDG_DATA_HOME/z
+
 DEV_FILE=$XDG_CONFIG_HOME/.dev.env
 [ -f $DEV_FILE ] && source $DEV_FILE
 
