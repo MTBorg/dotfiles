@@ -29,3 +29,4 @@ if [ -f "/etc/arch-release" ]; then
 	alias p="pacman"
 fi
 alias tmux='tmux -f "$XDG_CONFIG_HOME/tmux/.tmux.conf"'
+alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
