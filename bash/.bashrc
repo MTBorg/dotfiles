@@ -1,4 +1,4 @@
-source ~/dotfiles/aliases/.aliases.sh
+source $XDG_CONFIG_HOME/aliases/.aliases.sh
 
 # Check window size after each command
 shopt -s checkwinsize

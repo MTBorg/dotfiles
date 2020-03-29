@@ -1,7 +1,7 @@
 # Import colorscheme from 'wal' asynchronously
 (cat ~/.cache/wal/sequences &)
 
-source ~/dotfiles/aliases/.aliases.sh
+source $XDG_CONFIG_HOME/aliases/.aliases.sh
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
