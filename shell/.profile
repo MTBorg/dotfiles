@@ -6,9 +6,17 @@ export TERMINAL=alacritty
 
 export GPG_TTY=$(tty)
 
+# Tell programs to use XDG directories
 export _Z_DATA=$XDG_DATA_HOME/z
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export CARGO_HOME=$XDG_DATA_HOME/cargo
+export MYSQL_HISTFILE=$XDG_DATA_HOME/mysql_history
+export PSQL_HISTORY=$XDG_CACHE_HOME/pg/psql_history
+export IPYTHONDIR=$XDG_CONFIG_HOME/ipython
+export JUPYTER_CONFIG_DIR=$XDG_CONFIG_HOME/jupyter
+export LESSHISTFILE=- #Don't use a history file
+export PYLINTHOME=$XDG_CACHE_HOME/pylint
+export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
 
 DEV_FILE=$XDG_CONFIG_HOME/.dev.env
 [ -f $DEV_FILE ] && source $DEV_FILE
@@ -30,7 +38,7 @@ fi
 
 # Source pyenv
 if [[ "type pyenv" ]];then
-	export PYENV_ROOT="$HOME/.pyenv"
+	export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 	export PATH="$PYENV_ROOT/bin:$PATH"
 fi
 if command -v pyenv 1>/dev/null 2>&1; then
