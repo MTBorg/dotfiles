@@ -89,6 +89,7 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'LucHermitte/local_vimrc'
 	Plug 'LucHermitte/lh-vim-lib'
+	Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 " Resource config when saved
