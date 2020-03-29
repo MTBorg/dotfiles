@@ -16,9 +16,9 @@ setxkbmap se #Set keyboardlayout
 
 [ $(pidof compton) ] &&
 	pkill -USR1 compton ||
-	compton --config ~/.config/compton/compton.conf &
+	compton --config $XDG_CONFIG_HOME/compton/compton.conf &
 
 volnoti &
 xss-lock -- i3lock --fuzzy -o &
-~/.config/polybar/launch.sh
+$XDG_CONFIG_HOME/polybar/launch.sh
 wal -R
