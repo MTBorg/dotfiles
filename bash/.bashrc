@@ -11,7 +11,7 @@ set -o vi
 
 
 # Place in history file in cache folder
-export HISTFILE=$HOME/.cache/.bash_history
+export HISTFILE=$XDG_CACHE_HOME/.bash_history
 
 # Color the command prompt
 export PS1="\e[0;32m[\u@\h \W]$ \e[m"
@@ -33,7 +33,7 @@ export LC_ALL=en_US.UTF-8
 export RANGER_LOAD_DEFAULT_RC FALSE
 
 # Place z's data file in cache folder
-export _Z_DATA=$HOME/.cache/.z
+export _Z_DATA=$XDG_CACHE_HOME/.z
 
 # Source z
 Z_PATH=~/dotfiles/z/z.sh
