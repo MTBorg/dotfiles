@@ -1,8 +1,6 @@
 # Import colorscheme from 'wal' asynchronously
 (cat ~/.cache/wal/sequences &)
 
-source $XDG_CONFIG_HOME/aliases/.aliases.sh
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -129,3 +127,5 @@ bindkey -M menuselect '^h' vi-backward-char
 bindkey -M menuselect '^k' vi-up-line-or-history
 bindkey -M menuselect '^l' vi-forward-char
 bindkey -M menuselect '^j' vi-down-line-or-history
+
+source $XDG_CONFIG_HOME/aliases/.aliases.sh
