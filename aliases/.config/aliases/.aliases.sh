@@ -7,6 +7,7 @@ alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias grep="grep --color=auto"
 which bat > /dev/null && alias cat="bat" # Use bat if installed
+which lsd > /dev/null && alias ls="lsd" # Use ls if installed
 
 
 # Systemctl
