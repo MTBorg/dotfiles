@@ -6,9 +6,8 @@ alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias g="git"
 alias grep="grep --color=auto"
-if ! [ -x bat ]; then # Use bat if installed
-	alias cat="bat"
-fi
+
+which bat > /dev/null && alias cat="bat" # Use bat if installed
 alias sysstart="systemctl start"
 alias sysstop="systemctl stop"
 alias sysrestart="systemctl restart"
