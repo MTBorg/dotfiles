@@ -129,3 +129,8 @@ bindkey -M menuselect '^l' vi-forward-char
 bindkey -M menuselect '^j' vi-down-line-or-history
 
 source $XDG_CONFIG_HOME/aliases/.aliases.sh
+
+# Source scripts
+for script in ~/dotfiles/scripts/*.sh; do
+	source $script
+done
