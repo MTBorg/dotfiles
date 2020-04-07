@@ -37,6 +37,7 @@
 !cava
 !bspwm
 !scripts
+!nftables
 
 # These should always be ignored
 vim/.vim/view/
