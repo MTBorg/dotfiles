@@ -90,6 +90,7 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'LucHermitte/local_vimrc'
 	Plug 'LucHermitte/lh-vim-lib'
 	Plug 'jiangmiao/auto-pairs'
+	Plug 'dylanaraps/wal.vim'
 call plug#end()
 
 " Resource config when saved
@@ -100,4 +101,10 @@ augroup END
 
 autocmd BufEnter *.tsx set filetype=typescript.vim
 
-colorscheme gotham
+" Static colorscheme
+" colorscheme gotham
+
+" Pywal colorscheme
+colorscheme wal
+set notermguicolors
+set background=light
