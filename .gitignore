@@ -38,6 +38,7 @@
 !bspwm
 !scripts
 !nftables
+!grub
 
 # These should always be ignored
 vim/.vim/view/
