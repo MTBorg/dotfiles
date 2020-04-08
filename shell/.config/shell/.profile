@@ -17,6 +17,11 @@ export JUPYTER_CONFIG_DIR=$XDG_CONFIG_HOME/jupyter
 export LESSHISTFILE=- #Don't use a history file
 export PYLINTHOME=$XDG_CACHE_HOME/pylint
 export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export STACK_ROOT=$XDG_DATA_HOME/stack
+export XAUTHORITY=$XDG_RUNTIME_DIR/Xauthority
+export NODE_REPL_HISTORY=$XDG_DATA_HOME/node_repl_history
+export PULSE_COOKIE=$XDG_CONFIG_HOME/pulse/pulse-cookie
 
 DEV_FILE=$XDG_CONFIG_HOME/.dev.env
 [ -f $DEV_FILE ] && source $DEV_FILE
