@@ -11,8 +11,12 @@ bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 
 setxkbmap se #Set keyboardlayout
 
+
 # Startup programs
-[ $(pid sxhkd) ] && pkill -USR1 sxhkd || sxhkd &
+SXHKD_CONFIGS=~/.config/sxhkd/bspwm.sxhkdrc #Alter this to switch wm
+SXHKD_SHARED=~/.config/sxhkd/sxhkdrc #This contains non wm-dependent keybinds
+[ $(pidof sxhkd | awk '{print $1}') ] && pkill -USR1 sxhkd \
+  || sxhkd -c $SXHKD_CONFIGS $SXHKD_SHARED &
 
 [ $(pidof compton) ] &&
 	pkill -USR1 compton ||
