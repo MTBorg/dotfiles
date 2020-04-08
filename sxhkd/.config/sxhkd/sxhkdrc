@@ -152,7 +152,7 @@ super + Return
 
 # rofi
 super + d
-	rofi -show run
+	rofi -show drun
 
 # Lock screen
 super + shift + f 
