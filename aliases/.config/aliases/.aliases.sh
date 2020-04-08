@@ -8,7 +8,9 @@ alias grep="grep --color=auto"
 alias grep="grep --color=auto"
 which bat > /dev/null && alias cat="bat" # Use bat if installed
 which lsd > /dev/null && alias ls="lsd" # Use ls if installed
-
+#Always ask before deleting, preserve root and delete empty directories
+alias rm="rm -id --preserve-root"
+alias rm="safe-rm -id --preserve-root" #Comment this if not using safe-rm
 
 # Systemctl
 alias sysstart="systemctl start"
