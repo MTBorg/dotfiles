@@ -1,7 +1,7 @@
 /*
 
 #Everything will be ignored but the following files/directories
-!compton
+!picom
 !firefox
 !.git
 !.gitmodules

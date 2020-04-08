@@ -44,7 +44,7 @@ client.focused		$border	    $bg_hl      $fg_hl	$border		$border
 client.unfocused    #000000     #000000     $fg     $border     #000000
 
 # Start applications
-exec compton --config ~/.config/compton/compton.conf
+exec picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id mullvad-vpn
 exec --no-startup-id volnoti
