@@ -18,9 +18,13 @@ SXHKD_SHARED=~/.config/sxhkd/sxhkdrc #This contains non wm-dependent keybinds
 [ $(pidof sxhkd | awk '{print $1}') ] && pkill -USR1 sxhkd \
   || sxhkd -c $SXHKD_CONFIGS $SXHKD_SHARED &
 
-[ $(pidof picom) ] &&
-	pkill -USR1 picom ||
-	picom --config $XDG_CONFIG_HOME/picom/picom.conf &
+# For some reason picom freezes when receiving a USR1 signal.
+# This is a temporary workaround
+killall -q picom
+picom &
+# [ $(pidof picom) ] &&
+# 	pkill -USR1 picom ||
+# 	picom &
 
 volnoti &
 xss-lock -- i3lock --fuzzy -o &
