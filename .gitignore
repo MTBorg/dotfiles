@@ -39,6 +39,7 @@
 !scripts
 !nftables
 !grub
+!arch
 
 # These should always be ignored
 vim/.vim/view/
