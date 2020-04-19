@@ -120,15 +120,15 @@ Some key features/components of this install:
 
 ```
 # pacstrap -i /mnt base \
-  linux \ 
-  linux-firmware \ 
+  linux \
+  linux-firmware \
   linux-headers \
   linux-lts \
   linux-lts-headers \
   grub \
   efibootmgr \
-  dosfstools \ 
-  openssh\ 
+  dosfstools \
+  openssh\
   os-prober \
   lvm2 \
   neovim
@@ -213,8 +213,44 @@ $ exit
 ```
 
 ### Post-installation
+
 #### Clean up
+
 Remove no longer needed packes
+
 ```
 sudo pacman -Rs dosfstools
+```
+
+### Unlock root partition at boot using initramfs
+
+This is useful if you use an encrypted boot partition and don't want to enter
+the passphrase twice on boot.
+
+Only do this if you use an encrypted boot partition.
+See https://wiki.archlinux.org/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs
+for more information.
+
+#### Generate key file and add it to LUKS
+
+```
+dd bs=512 count=4 if=/dev/random of=/crypto_keyfile.bin iflag=fullblock && \
+	chmod 600 /crypto_keyfile.bin && \
+	chmod 600 /boot/initramfs-linux* && \
+	cryptsetup luksAddKey /dev/sdX# /crypto_keyfile.bin
+```
+
+#### Include the file in mkinitcpio
+
+Run
+
+```
+sed -i -r "s/FILES=\(/&\/crypto_keyfile.bin /" /etc/mkinitcpio.conf
+```
+
+or edit `/etc/mkinitcpio.conf` manually, adding `/crypto_keyfile.bin` to the
+FILES array:
+
+```
+FILES=(/crypto_keyfile.bin)
 ```
