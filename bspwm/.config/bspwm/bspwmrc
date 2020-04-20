@@ -30,3 +30,4 @@ volnoti &
 xss-lock -- i3lock --fuzzy -o &
 $XDG_CONFIG_HOME/polybar/launch.sh
 wal -R
+unclutter &
