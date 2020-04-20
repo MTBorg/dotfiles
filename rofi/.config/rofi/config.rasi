@@ -1,4 +1,9 @@
 configuration{
 	theme: "~/.cache/wal/colors-rofi-dark.rasi";
 	show-icons: true;
+	kb-row-up: "Control+k";
+	kb-row-down: "Control+j";
+	/* These two keybinding's default values conflict with the vim-navigation bindings */
+	kb-accept-entry: "Return";
+	kb-remove-to-eol: "";
 }
