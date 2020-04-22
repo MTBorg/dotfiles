@@ -39,6 +39,7 @@
 !scripts
 !nftables
 !grub
+!spicetify
 
 # These should always be ignored
 vim/.vim/view/
