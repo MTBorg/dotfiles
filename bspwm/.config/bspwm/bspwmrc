@@ -7,7 +7,14 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+# If there is only monitor connected then assign all desktops to it, otherwise
+# split them evenly.
+if [ $(xrandr -q | grep " connected " | awk '{print $1}' | wc -l) = 1 ]; then
+	bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9 0
+else
+	bspc monitor HDMI1 -d 1 2 3 4 5  
+	bspc monitor eDP1 -d 6 7 8 9 0
+fi
 
 setxkbmap se #Set keyboardlayout
 

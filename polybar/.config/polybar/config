@@ -17,7 +17,7 @@ workspace_background = #88000000
 date_underline = #0b3d97
 
 [bar/mybar]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:HDMI1}
 width = 100%
 height = 2%
 offset-x = 0
@@ -203,9 +203,10 @@ label-monitor = %name%
 ;   label-dimmed-occupied
 ;   label-dimmed-urgent
 ;   label-dimmed-empty
-label-dimmed-foreground = ${colors.workspace_background}
-; label-dimmed-underline = ${bar/top.background}
-label-dimmed-focused-background = #f00
+label-dimmed-foreground = ${colors.foreground-alt}
+label-dimmed-focused-background = ${colors.primary}
+label-dimmed-focused-underline = ${colors.foreground-alt}
+
 
 ; Available tokens:
 ;   %name%
