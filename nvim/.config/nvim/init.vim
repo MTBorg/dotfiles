@@ -107,7 +107,7 @@ augroup vimrchook
 	autocmd bufwritepost $MYVIMRC source $MYVIMRC
 augroup END
 
-autocmd BufEnter *.tsx set filetype=typescript.vim
+autocmd BufEnter *.tsx set filetype=typescript
 
 " Static colorscheme
 " colorscheme gotham
