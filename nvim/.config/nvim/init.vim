@@ -13,6 +13,7 @@ set updatetime=200 "This makes the git gutter update faster
 set noswapfile
 set numberwidth=1
 set encoding=UTF-8
+set splitbelow splitright
 filetype plugin indent on
 syntax on
 
