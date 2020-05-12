@@ -94,6 +94,13 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'dylanaraps/wal.vim'
 call plug#end()
 
+" This is necessary to use tab in command mode key bindings
+set wildcharm=<tab>
+
+" Navigate command mode completion menu with vim bindings (ctrl-j and ctrl-k)
+cnoremap <expr> <C-k> pumvisible() ? "<S-Tab>" : "<C-k>"
+cnoremap <expr> <C-j> pumvisible() ? "<Tab>" : "<C-j>"
+
 " Resource config when saved
 augroup vimrchook
 	au!
