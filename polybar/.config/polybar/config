@@ -411,7 +411,7 @@ ramp-4 = 
 ramp-5 = 
 ramp-foreground = ${colors.foreground}
 
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input
+hwmon-path = ${env:POLYBAR_TEMP_PATH:/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input}
 
 [module/spotify]
 type = custom/script
