@@ -17,7 +17,7 @@ workspace_background = #88000000
 date_underline = #0b3d97
 
 [bar/mybar]
-monitor = ${env:MONITOR:HDMI1}
+monitor = ${env:MONITOR:eDP1}
 width = 100%
 height = 2%
 offset-x = 0
@@ -44,9 +44,9 @@ font-0 = Fira Code:size=10:antialias=true;0
 font-1 = Font Awesome 5 Free Solid:style=Regular;1
 font-2 = Font Awesome 5 Brands Regular:style=Solid;1
 
-modules-left = i3 bspwm
+modules-left = bspwm
 modules-center = 
-modules-right = system-bluetooth-bluetoothctl spotify xbacklight pulseaudio memory temperature cpu wlan eth battery date powermenu
+modules-right = system-bluetooth-bluetoothctl spotify xbacklight volume memory temperature cpu wlan eth battery date
 
 tray-position = right
 tray-padding = 2
@@ -61,20 +61,6 @@ wm-restack = bspwm
 
 cursor-click = pointer
 cursor-scroll = ns-resize
-
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/i3]
 type = internal/i3
@@ -250,16 +236,16 @@ label-empty =
 ;
 ; Available tokens:
 ;   None
-;label-monocle = 
-;label-tiled = 
-;label-fullscreen = 
-;label-floating = 
+;label-monocle =
+;label-tiled =
+;label-fullscreen =
+;label-floating =
 ;label-pseudotiled = P
-;label-locked = 
+;label-locked =
 ;label-locked-foreground = #bd2c40
-;label-sticky = 
+;label-sticky =
 ;label-sticky-foreground = #fba922
-;label-private = 
+;label-private =
 ;label-private-foreground = #bd2c40
 ;label-marked = M
 
@@ -276,7 +262,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label =  %percentage:2%%
@@ -284,7 +270,7 @@ label =  %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label =  %percentage_used%%
@@ -317,7 +303,7 @@ interface = ${env:POLYBAR_ETH_INTERFACE:eno1}
 interval = 5.0
 
 format-connected-underline = #55aa55
-format-connected-prefix = " "
+format-connected-prefix = 
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected =  %local_ip%
 
@@ -337,13 +323,13 @@ date-alt = "%d-%m-%Y"
 time = %H:%M
 time-alt = %H:%M
 
-format-prefix = 
+format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.date_underline}
 
 label = %date% %time%
 
-[module/pulseaudio]
+[module/volume]
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
@@ -363,34 +349,6 @@ bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
 bar-volume-indicator = 
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-
-[module/alsa]
-type = internal/alsa
-
-format-volume = <label-volume> <bar-volume>
-label-volume =  
-label-volume-foreground = ${root.foreground}
-
-;format-muted-prefix = 
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = 
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = true
-bar-volume-indicator = |
 bar-volume-indicator-font = 2
 bar-volume-fill = ─
 bar-volume-fill-font = 2
@@ -454,35 +412,6 @@ ramp-5 = 
 ramp-foreground = ${colors.foreground}
 
 hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input
-
-[module/powermenu]
-type = custom/menu
-
-expand-right = true
-
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
 
 [module/spotify]
 type = custom/script
