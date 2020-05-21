@@ -70,7 +70,7 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	"Coc
 	Plug 'neoclide/coc.nvim', {
 		\ 'branch': 'release', 
-		\ 'do': ':CocInstall coc-tsserver coc-python coc-json coc-eslint coc-prettier coc-css coc-html coc-snippets'
+		\ 'do': { -> #coc#util#install() }
 	\}
 
 	"Misc

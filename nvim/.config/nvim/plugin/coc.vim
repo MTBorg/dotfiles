@@ -2,6 +2,17 @@
 """"""""""""""""""""""
 let g:coc_snippet_next = '<c-l>'
 let g:coc_snippet_prev = '<c-h>'
+let g:coc_global_extensions = [
+			\ 'coc-tsserver',
+			\ 'coc-python',
+			\ 'coc-json',
+			\ 'coc-eslint',
+			\ 'coc-prettier',
+			\ 'coc-css',
+			\ 'coc-html',
+			\ 'coc-snippets',
+			\ 'coc-yaml',
+			\]
 
 " Trigger completion when pressing enter in the popup menu
 if has('patch8.1.1068')
