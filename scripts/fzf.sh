@@ -15,7 +15,7 @@ function fzed() {
 
 # Use cd with input from fzf
 function fzcd() {
-	cd $(find / -type d 2>&1 | grep -v "Permission denied" | fzf)
+	cd $(find / -type d -not -path '*/node_modules/*' 2>&1 | grep -v "Permission denied" | fzf)
 }
 
 # Use ls with input from fzf
