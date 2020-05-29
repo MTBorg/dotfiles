@@ -12,6 +12,9 @@ env:
   # available, otherwise `xterm-256color` is used.
   TERM: xterm-256color
 
+  # This fixes font issue with dual monitors
+  WINIT_X11_SCALE_FACTOR: "1.6"
+
 window:
   # Window dimensions (changes require restart)
   #
