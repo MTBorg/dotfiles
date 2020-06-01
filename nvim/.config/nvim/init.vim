@@ -73,7 +73,6 @@ call plug#begin('~/.local/share/nvim/plugged/')
 
 	"Misc
 	Plug 'janko/vim-test'
-	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'ap/vim-css-color'
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-commentary'
