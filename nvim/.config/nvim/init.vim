@@ -71,6 +71,10 @@ call plug#begin('~/.local/share/nvim/plugged/')
 		\ 'do': { -> #coc#util#install() }
 	\}
 
+	" Fzf
+	Plug 'junegunn/fzf'
+	Plug 'junegunn/fzf.vim'
+
 	"Misc
 	Plug 'janko/vim-test'
 	Plug 'ap/vim-css-color'
