@@ -37,6 +37,9 @@ let mapleader="§"
 	" Jump window
 	nnoremap <silent> <Leader>j :jumps<CR>
 
+	" Close all windows but current
+	nnoremap <silent> <Leader>o :only<CR>
+
 	" Undotree
 	nnoremap <silent> <Leader>u :UndotreeToggle<CR>
 """"""""""""""""""""""""""
