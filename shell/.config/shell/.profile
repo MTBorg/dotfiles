@@ -6,6 +6,9 @@ export TERMINAL=alacritty
 
 export GPG_TTY=$(tty)
 
+# This tells fzf to incude hidden files
+export FZF_DEFAULT_COMMAND="find -type f"
+
 # Tell programs to use XDG directories
 export _Z_DATA=$XDG_DATA_HOME/z
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
