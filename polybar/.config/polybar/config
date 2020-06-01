@@ -40,9 +40,7 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 2
 
-font-0 = Fira Code:size=10:antialias=true;0
-font-1 = Font Awesome 5 Free Solid:style=Regular;1
-font-2 = Font Awesome 5 Brands Regular:style=Solid;1
+font-0 = FiraCode Nerd Font:style=Regular:size=12:antialias=true;0
 
 modules-left = bspwm
 modules-center = 
@@ -114,7 +112,7 @@ type = internal/xbacklight
 card = intel_backlight
 
 format = <label> <bar>
-label = 
+label = 
 
 bar-width = 10
 bar-indicator = 
@@ -273,7 +271,7 @@ interval = 2
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
-label =  %percentage_used%%
+label =  %percentage_used%%
 
 [module/network]
 type = internal/network
@@ -330,7 +328,7 @@ format-volume-underline = #55aa55
 label-volume =  
 label-volume-foreground = ${root.foreground}
 
-label-muted = 
+label-muted = 
 label-muted-foreground = #666
 
 bar-volume-width = 10
@@ -359,10 +357,10 @@ full-at = 98
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
 
-format-discharging =  <ramp-capacity><label-discharging>
+format-discharging =  <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = 
+format-full-prefix =  
 format-full-prefix-foreground = ${colors.foreground}
 format-full-underline = ${self.format-charging-underline}
 
@@ -386,6 +384,8 @@ animation-discharging-framerate = 750
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
+
+base-temperature=30
 warn-temperature = 60
 
 format = <ramp> <label>
