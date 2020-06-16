@@ -419,7 +419,6 @@ format-underline = #1db954
 type = custom/script
 exec = ~/.config/polybar/polybar-scripts/system-bluetooth-bluetoothctl.sh
 tail = true
-click-left = ~/.config/polybar/polybar-scripts/system-bluetooth-bluetoothctl.sh --toggle &
 format-underline = #0000ff
 
 [settings]
