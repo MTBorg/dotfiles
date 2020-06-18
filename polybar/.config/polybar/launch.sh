@@ -9,5 +9,5 @@ while pgrep -u $UID -x polybar  > /dev/null; do sleep 1; done
 # Launch Polybar, using default config location, on all connected monitors
 for monitor in $(xrandr -q | grep " connected " | awk '{print $1}')
 do
-	MONITOR=$monitor polybar mybar &
+	MONITOR=$monitor polybar -r mybar &
 done
