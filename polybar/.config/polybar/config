@@ -1,6 +1,6 @@
 [colors]
 ; Remove the alpha channel of the background color if flimmer occurrs
-background = ${xrdb:color0:#88000000}
+background = #55000000
 background-alt = ${xrdb:color0:#444}
 foreground = ${xrdb:color7:#00ff00}
 foreground-alt = ${xrdb:color7:#555}
