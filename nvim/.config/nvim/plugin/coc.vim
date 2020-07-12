@@ -32,3 +32,6 @@ nmap <silent> gr <Plug>(coc-references)
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> gn <Plug>(coc-diagnostic-next)
 nmap <silent> gp <Plug>(coc-diagnostic-prev)
+"
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
