@@ -1,4 +1,10 @@
 {
+  "coc.preferences.rootPatterns": [
+    "_vimrc_local.vim",
+    ".git",
+    ".hg",
+    ".projections.json"
+  ],
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "typescript",
