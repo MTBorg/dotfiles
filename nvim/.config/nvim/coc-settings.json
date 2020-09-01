@@ -15,7 +15,8 @@
     "python",
     "markdown",
     "rust",
-    "haskell"
+    "haskell",
+    "go"
   ],
 
   "eslint.filetypes": [
