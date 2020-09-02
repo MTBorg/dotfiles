@@ -63,6 +63,13 @@ modules-left = bspwm
 modules-center = 
 modules-right = system-bluetooth-bluetoothctl spotify xbacklight volume memory temperature cpu wlan eth battery date
 
+[bar/desktop]
+inherit = bar/base
+
+modules-left = bspwm
+modules-center = 
+modules-right = spotify xbacklight volume memory temperature cpu eth date
+
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
