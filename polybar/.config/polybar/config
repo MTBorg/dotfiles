@@ -56,8 +56,9 @@ wm-restack = bspwm
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[bar/mybar]
+[bar/laptop]
 inherit = bar/base
+
 modules-left = bspwm
 modules-center = 
 modules-right = system-bluetooth-bluetoothctl spotify xbacklight volume memory temperature cpu wlan eth battery date
