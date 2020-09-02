@@ -302,7 +302,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 inherit = module/network
 interface = ${env:POLYBAR_ETH_INTERFACE:eno1}
 
-label-connected =  %local_ip%
+label-connected =  %local_ip%
 
 [module/date]
 type = internal/date
