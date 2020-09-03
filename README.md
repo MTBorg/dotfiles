@@ -22,6 +22,10 @@ git submodule update --init --recursive
 
 Any [nerd font](https://www.nerdfonts.com/)-patched font should work.
 
+# Vim/Neovim
+Neovim is used as the editor (there is a config for vim but it is no longer used), and plugins are managed with [vim-plug](https://github.com/junegunn/vim-plug).
+Linting, language support, formatting, e.t.c is managed by [coc](https://github.com/neoclide/coc.nvim).
+
 # Arch Linux installation
 
 This procedure is heavily based on and copied from [jsherman82's arch linux installation](https://gitlab.com/jsherman82/notes/blob/master/arch.md) with a few tweaks.
