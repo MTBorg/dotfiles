@@ -18,6 +18,10 @@ Lots of the configs also the depend on gitsubmodules so be sure to init all subm
 git submodule update --init --recursive
 ```
 
+# Fonts
+
+Any [nerd font](https://www.nerdfonts.com/)-patched font should work.
+
 # Arch Linux installation
 
 This procedure is heavily based on and copied from [jsherman82's arch linux installation](https://gitlab.com/jsherman82/notes/blob/master/arch.md) with a few tweaks.
@@ -120,15 +124,15 @@ Some key features/components of this install:
 
 ```
 # pacstrap -i /mnt base \
-  linux \ 
-  linux-firmware \ 
+  linux \
+  linux-firmware \
   linux-headers \
   linux-lts \
   linux-lts-headers \
   grub \
   efibootmgr \
-  dosfstools \ 
-  openssh\ 
+  dosfstools \
+  openssh\
   os-prober \
   lvm2 \
   neovim
@@ -213,8 +217,11 @@ $ exit
 ```
 
 ### Post-installation
+
 #### Clean up
+
 Remove no longer needed packes
+
 ```
 sudo pacman -Rs dosfstools
 ```
