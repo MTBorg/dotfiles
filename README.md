@@ -23,8 +23,38 @@ git submodule update --init --recursive
 Any [nerd font](https://www.nerdfonts.com/)-patched font should work.
 
 # Vim/Neovim
+
 Neovim is used as the editor (there is a config for vim but it is no longer used), and plugins are managed with [vim-plug](https://github.com/junegunn/vim-plug).
 Linting, language support, formatting, e.t.c is managed by [coc](https://github.com/neoclide/coc.nvim).
+
+# Colors 
+
+The colorscheme is automatically generated from the current wallpaper using [pywal](https://github.com/dylanaraps/pywal).
+
+#### Neovim
+Colors are set using [wal.vim](https://github.com/dylanaraps/wal.vim) and the following needs to go into vimrc/init.vim.
+```vim
+colorscheme wal
+set notermguicolors
+set background=light
+```
+
+`notermguicolors` and `background=light` are needed for the colors to look as intended.
+
+#### Polybar
+Polybar reads its colors from Xresources which are set by pywal.
+```dosini
+; Last field is default color
+primary = ${xrdb:color1:#FF0000}
+```
+
+#### Rofi
+
+Pywal generates colorschemes for rofi and puts them in `$XDG_CACHE_HOME` which are then sourced by rofi.
+
+#### Shell
+
+Pywal generates colorschemes for shell and puts them in `$XDG_CACHE_HOME` which are then sourced by zsh.
 
 # Arch Linux installation
 
