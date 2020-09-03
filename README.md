@@ -1,3 +1,20 @@
+# System description
+
+* Window manager:
+  * Bspwm
+* Compositor:
+  * Picom
+* Shell:
+  * Zsh
+* Editor: 
+  * Neovim/vim
+* Terminal emulator:
+  * Alacritty
+* Misc:
+  * Polybar
+  * Rofi
+
+
 # Init configs
 
 Configs are managed with [GNU stow](https://www.gnu.org/software/stow/), to init a config run from (project root)
