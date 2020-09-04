@@ -77,6 +77,8 @@ plugins=(
 	zsh-autosuggestions
 	zsh-syntax-highlighting
 	z
+	docker
+	docker-compose
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -148,3 +150,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
+
+# Auto completion
+autoload -Uz compinit
+compinit
