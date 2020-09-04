@@ -27,7 +27,7 @@ SXHKD_SHARED=~/.config/sxhkd/sxhkdrc #This contains non wm-dependent keybinds
 
 [ $(pidof picom) ] &&
 	pkill -USR1 picom ||
-	picom &
+	picom --experimental-backends &
 
 volnoti &
 xss-lock -- i3lock --fuzzy -o &
