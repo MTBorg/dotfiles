@@ -8,7 +8,7 @@ super + d
 
 # Lock screen
 super + shift + f 
-	i3lock --fuzzy -o
+	physlock
 
 #Volume up/down
 {XF86MonBrightnessUp,XF86MonBrightnessDown}

@@ -30,7 +30,7 @@ SXHKD_SHARED=~/.config/sxhkd/sxhkdrc #This contains non wm-dependent keybinds
 	picom --experimental-backends &
 
 volnoti &
-xss-lock -- i3lock --fuzzy -o &
+xss-lock -- physlock &
 $XDG_CONFIG_HOME/polybar/launch.sh
 wal -R
 unclutter &
