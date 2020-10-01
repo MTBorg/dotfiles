@@ -10,6 +10,9 @@
   * Neovim/vim
 * Terminal emulator:
   * Alacritty
+* Session/screen-lock
+  * Xsslock (for Xorg triggers)
+  * Physlock (lockscreen)
 * Misc:
   * Polybar
   * Rofi
