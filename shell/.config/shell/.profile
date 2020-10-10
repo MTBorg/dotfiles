@@ -26,8 +26,8 @@ export XAUTHORITY=$XDG_RUNTIME_DIR/Xauthority
 export NODE_REPL_HISTORY=$XDG_DATA_HOME/node_repl_history
 export PULSE_COOKIE=$XDG_CONFIG_HOME/pulse/pulse-cookie
 
-DEV_FILE=$XDG_CONFIG_HOME/.dev.env
-[ -f $DEV_FILE ] && source $DEV_FILE
+DEVICE_FILE=$XDG_CONFIG_HOME/.device.profile.env
+[ -f $DEVICE_FILE ] && source $DEVICE_FILE
 
 # Use vim as editor when running command fc
 export FCEDIT=nvim
