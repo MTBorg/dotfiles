@@ -93,6 +93,7 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'LucHermitte/lh-vim-lib'
 	Plug 'jiangmiao/auto-pairs'
 	Plug 'dylanaraps/wal.vim'
+	Plug 'styled-components/vim-styled-components'
 call plug#end()
 
 " This is necessary to use tab in command mode key bindings
