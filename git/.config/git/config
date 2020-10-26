@@ -11,3 +11,5 @@
 	rs = reset
 	rsh = reset --hard
 	rb = rebase
+[pull]
+	ff = only
