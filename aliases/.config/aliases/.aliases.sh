@@ -11,6 +11,7 @@ which lsd > /dev/null && alias ls="lsd" # Use ls if installed
 #Always ask before deleting, preserve root and delete empty directories
 alias rm="rm -Id --preserve-root"
 alias rm="safe-rm -Id --preserve-root" #Comment this if not using safe-rm
+alias less="less -FX"
 
 # Systemctl
 alias sysstart="systemctl start"
