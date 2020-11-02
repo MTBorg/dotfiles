@@ -68,7 +68,7 @@ inherit = bar/base
 
 modules-left = bspwm
 modules-center = 
-modules-right = spotify xbacklight volume memory temperature cpu eth date
+modules-right = xbacklight volume fan memory temperature cpu eth date
 
 [module/i3]
 type = internal/i3
@@ -433,6 +433,13 @@ type = custom/script
 exec = ~/.config/polybar/polybar-scripts/system-bluetooth-bluetoothctl.sh
 tail = true
 format-underline = #0000ff
+
+[module/fan]
+type = custom/script
+exec = $XDG_CONFIG_HOME/polybar/fan-speed.sh
+format =  <label>RPM
+format-underline = #0000ff
+interval = 3
 
 [settings]
 screenchange-reload = true
