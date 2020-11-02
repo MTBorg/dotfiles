@@ -1,0 +1,7 @@
+[module/system-bluetooth-bluetoothctl]
+type = custom/script
+exec = ~/.config/polybar/polybar-scripts/system-bluetooth-bluetoothctl.sh
+tail = true
+format-underline = #0000ff
+
+; vim:ft=dosini

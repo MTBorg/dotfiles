@@ -1,0 +1,8 @@
+[module/fan]
+type = custom/script
+exec = $XDG_CONFIG_HOME/polybar/fan-speed.sh
+format =  <label>RPM
+format-underline = #0000ff
+interval = 3
+
+; vim:ft=dosini

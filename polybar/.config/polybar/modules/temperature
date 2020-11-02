@@ -1,0 +1,27 @@
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+
+base-temperature=30
+warn-temperature = 60
+
+format = <ramp> <label>
+format-underline = #f50a4d
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-5 = 
+ramp-foreground = ${colors.foreground}
+
+hwmon-path = ${env:POLYBAR_TEMP_PATH:/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input}
+
+; vim:ft=dosini

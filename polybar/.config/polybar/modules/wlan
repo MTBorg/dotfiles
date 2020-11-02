@@ -1,0 +1,15 @@
+[module/wlan]
+inherit = module/network
+interface = ${env:POLYBAR_WLAN_INTERFACE:wlo1}
+
+format-connected = <ramp-signal><label-connected>
+label-connected =  %essid%
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground-alt}
+
+; vim:ft=dosini
