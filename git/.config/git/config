@@ -13,3 +13,5 @@
 	rb = rebase
 [pull]
 	ff = only
+[core]
+	pager = less -FX
