@@ -38,6 +38,11 @@ Lots of the configs also the depend on gitsubmodules so be sure to init all subm
 git submodule update --init --recursive
 ```
 
+# Bspwm
+
+Device specific configuration (such as monitor layout) for bspwm can be placed
+in `$XDG_CONFIG_HOME/.device.bspwm.sh` which will be sourced by the `bspwmrc`.
+
 # Fonts
 
 Any [nerd font](https://www.nerdfonts.com/)-patched font should work.
