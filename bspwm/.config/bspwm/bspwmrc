@@ -24,6 +24,14 @@ SXHKD_SHARED=~/.config/sxhkd/sxhkdrc #This contains non wm-dependent keybinds
 	pkill -USR1 picom ||
 	picom --experimental-backends &
 
+# Move all steam games to a specifed workspace
+workspace=9
+steamlib=~/.local/share/Steam    # path to your steamlibrary
+mygames=$(ls $steamlib/steamapps/appmanifest_*.acf | sed 's/[^0-9]*//g')    # this sed command removes everything but the digits
+for game in $mygames; do
+    bspc rule -a steam_app_$game desktop=^$workspace state=fullscreen
+done
+
 volnoti &
 xss-lock -- physlock &
 $XDG_CONFIG_HOME/polybar/launch.sh
