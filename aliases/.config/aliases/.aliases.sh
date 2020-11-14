@@ -2,7 +2,7 @@
 alias sudo="sudo " # This allows the use of sudo before aliases
 alias s="sudo "
 alias h="history"
-alias ll="ls -al --color=auto"
+alias ll="ls -alh --color=auto"
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias grep="grep --color=auto"
