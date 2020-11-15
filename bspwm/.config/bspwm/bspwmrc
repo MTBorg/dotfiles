@@ -32,6 +32,9 @@ for game in $mygames; do
     bspc rule -a steam_app_$game desktop=^$workspace state=fullscreen
 done
 
+# # Rules
+bspc rule --add Steam desktop=8
+
 volnoti &
 xss-lock -- physlock &
 $XDG_CONFIG_HOME/polybar/launch.sh
