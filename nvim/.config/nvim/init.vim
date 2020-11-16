@@ -45,9 +45,6 @@ let mapleader="§"
 """"""""""""""""""""""""""
 
 call plug#begin('~/.local/share/nvim/plugged/')
-	"Color scheme
-	Plug 'whatyouhide/vim-gotham' 
-
 	"NERDTree
 	Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle' }
 	Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -76,9 +73,14 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'junegunn/fzf'
 	Plug 'junegunn/fzf.vim'
 
+	"Styling
+	Plug 'ap/vim-css-color'
+	Plug 'whatyouhide/vim-gotham' 
+	Plug 'dylanaraps/wal.vim'
+	Plug 'ryanoasis/vim-devicons'
+
 	"Misc
 	Plug 'janko/vim-test'
-	Plug 'ap/vim-css-color'
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-surround'
@@ -89,11 +91,9 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'mileszs/ack.vim'
 	Plug 'sheerun/vim-polyglot'
 	Plug 'mattn/emmet-vim'
-	Plug 'ryanoasis/vim-devicons'
 	Plug 'LucHermitte/local_vimrc'
 	Plug 'LucHermitte/lh-vim-lib'
 	Plug 'jiangmiao/auto-pairs'
-	Plug 'dylanaraps/wal.vim'
 	Plug 'styled-components/vim-styled-components'
 call plug#end()
 
