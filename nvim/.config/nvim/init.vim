@@ -68,7 +68,7 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	"Coc
 	Plug 'neoclide/coc.nvim', {
 		\ 'branch': 'release', 
-		\ 'do': { -> #coc#util#install() }
+		\ 'do': { -> coc#util#install() }
 	\}
 
 	" Fzf
