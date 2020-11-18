@@ -81,6 +81,8 @@ plugins=(
 	docker-compose
 )
 
+export HISTFILE=$XDG_DATA_HOME/zsh/history
+
 source $ZSH/oh-my-zsh.sh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=5"
