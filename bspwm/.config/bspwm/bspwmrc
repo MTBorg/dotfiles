@@ -34,7 +34,7 @@ for game in $mygames; do
 done
 
 # # Rules
-bspc rule --add Steam desktop=8
+bspc rule --add Steam desktop=8 state=tiled
 
 volnoti &
 xss-lock -- physlock &
