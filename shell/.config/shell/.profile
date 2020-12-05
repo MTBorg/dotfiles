@@ -25,6 +25,9 @@ export STACK_ROOT=$XDG_DATA_HOME/stack
 export XAUTHORITY=$XDG_RUNTIME_DIR/Xauthority
 export NODE_REPL_HISTORY=$XDG_DATA_HOME/node_repl_history
 export PULSE_COOKIE=$XDG_CONFIG_HOME/pulse/pulse-cookie
+export CUDA_CACHE_PATH=$XDG_CACHE_HOME/nv
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 
 DEVICE_FILE=$XDG_CONFIG_HOME/.device.profile.env
 [ -f $DEVICE_FILE ] && source $DEVICE_FILE
