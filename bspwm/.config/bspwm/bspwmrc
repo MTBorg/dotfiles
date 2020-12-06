@@ -40,5 +40,5 @@ volnoti &
 xss-lock -- physlock &
 $XDG_CONFIG_HOME/polybar/launch.sh
 wal -R
-unclutter &
+pgrep unclutter || unclutter &
 pgrep bspwmswallow || exec -a bspwmswallow $XDG_CONFIG_HOME/bspwm/bspwmswallow.sh &
