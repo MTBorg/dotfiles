@@ -43,6 +43,12 @@ git submodule update --init --recursive
 Device specific configuration (such as monitor layout) for bspwm can be placed
 in `$XDG_CONFIG_HOME/.device.bspwm.sh` which will be sourced by the `bspwmrc`.
 
+DWM-like [swallowing](https://dwm.suckless.org/patches/swallow/) is supported by
+using [bspswallow](https://github.com/JopStro/bspswallow).
+Window classes for programs and terminals to swallow are placed in
+`$XDG_CONFIG_HOME/bspwm/swallow` and `$XDG_CONFIG_HOME/bspwm/terminals`
+respectively.
+
 # Fonts
 
 Any [nerd font](https://www.nerdfonts.com/)-patched font should work.
