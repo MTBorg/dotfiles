@@ -20,10 +20,15 @@ SXHKD_CONFIGS=~/.config/sxhkd/bspwm.sxhkdrc #Alter this to switch wm
 SXHKD_SHARED=~/.config/sxhkd/sxhkdrc #This contains non wm-dependent keybinds
 [ $(pidof sxhkd | awk '{print $1}') ] && pkill -USR1 sxhkd \
   || sxhkd -c $SXHKD_CONFIGS $SXHKD_SHARED &
-
 [ $(pidof picom) ] &&
 	pkill -USR1 picom ||
 	picom --experimental-backends &
+volnoti &
+xss-lock -- physlock &
+$XDG_CONFIG_HOME/polybar/launch.sh
+wal -R
+pgrep unclutter || unclutter &
+pgrep bspwmswallow || exec -a bspwmswallow $XDG_CONFIG_HOME/bspwm/bspwmswallow.sh &
 
 # Move all steam games to a specifed workspace
 workspace=9
@@ -33,12 +38,5 @@ for game in $mygames; do
     bspc rule -a steam_app_$game desktop=^$workspace state=fullscreen
 done
 
-# # Rules
+# Rules
 bspc rule --add Steam desktop=8 state=tiled
-
-volnoti &
-xss-lock -- physlock &
-$XDG_CONFIG_HOME/polybar/launch.sh
-wal -R
-pgrep unclutter || unclutter &
-pgrep bspwmswallow || exec -a bspwmswallow $XDG_CONFIG_HOME/bspwm/bspwmswallow.sh &
