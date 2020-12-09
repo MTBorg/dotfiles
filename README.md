@@ -1,22 +1,21 @@
 # System description
 
-* Window manager:
-  * Bspwm
-* Compositor:
-  * Picom
-* Shell:
-  * Zsh
-* Editor: 
-  * Neovim/vim
-* Terminal emulator:
-  * Alacritty
-* Session/screen-lock
-  * Xsslock (for Xorg triggers)
-  * Physlock (lockscreen)
-* Misc:
-  * Polybar
-  * Rofi
-
+- Window manager:
+  - Bspwm
+- Compositor:
+  - Picom
+- Shell:
+  - Zsh
+- Editor:
+  - Neovim/vim
+- Terminal emulator:
+  - Alacritty
+- Session/screen-lock
+  - Xsslock (for Xorg triggers)
+  - Physlock (lockscreen)
+- Misc:
+  - Polybar
+  - Rofi
 
 # Init configs
 
@@ -58,12 +57,14 @@ Any [nerd font](https://www.nerdfonts.com/)-patched font should work.
 Neovim is used as the editor (there is a config for vim but it is no longer used), and plugins are managed with [vim-plug](https://github.com/junegunn/vim-plug).
 Linting, language support, formatting, e.t.c is managed by [coc](https://github.com/neoclide/coc.nvim).
 
-# Colors 
+# Colors
 
 The colorscheme is automatically generated from the current wallpaper using [pywal](https://github.com/dylanaraps/pywal).
 
 #### Neovim
+
 Colors are set using [wal.vim](https://github.com/dylanaraps/wal.vim) and the following needs to go into vimrc/init.vim.
+
 ```vim
 colorscheme wal
 set notermguicolors
@@ -73,7 +74,9 @@ set background=light
 `notermguicolors` and `background=light` are needed for the colors to look as intended.
 
 #### Polybar
+
 Polybar reads its colors from Xresources which are set by pywal.
+
 ```dosini
 ; Last field is default color
 primary = ${xrdb:color1:#FF0000}
