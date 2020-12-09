@@ -16,6 +16,8 @@
 - Misc:
   - Polybar
   - Rofi
+  - lsd (ls with colors and icons)
+  - diff-so-fancy (nicer git diffs)
 
 # Init configs
 
