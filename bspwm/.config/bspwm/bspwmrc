@@ -41,3 +41,4 @@ done
 # Rules
 bspc rule --add Steam desktop=8 state=tiled
 bspc rule --add discord desktop=7 state=tiled
+bspc rule --add Zathura state=tiled
