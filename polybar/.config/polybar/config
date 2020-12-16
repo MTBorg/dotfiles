@@ -1,22 +1,5 @@
 [modules]
-; TODO: Change this to include-directory when it is released in polybar
-; 3.5.0. See https://github.com/polybar/polybar/wiki/Configuration#file-inclusion
-include-file=$XDG_CONFIG_HOME/polybar/modules/cpu
-include-file=$XDG_CONFIG_HOME/polybar/modules/memory
-include-file=$XDG_CONFIG_HOME/polybar/modules/i3
-include-file=$XDG_CONFIG_HOME/polybar/modules/bspwm
-include-file=$XDG_CONFIG_HOME/polybar/modules/xbacklight
-include-file=$XDG_CONFIG_HOME/polybar/modules/backlight_acpi
-include-file=$XDG_CONFIG_HOME/polybar/modules/network
-include-file=$XDG_CONFIG_HOME/polybar/modules/wlan
-include-file=$XDG_CONFIG_HOME/polybar/modules/eth
-include-file=$XDG_CONFIG_HOME/polybar/modules/date
-include-file=$XDG_CONFIG_HOME/polybar/modules/volume
-include-file=$XDG_CONFIG_HOME/polybar/modules/battery
-include-file=$XDG_CONFIG_HOME/polybar/modules/temperature
-include-file=$XDG_CONFIG_HOME/polybar/modules/spotify
-include-file=$XDG_CONFIG_HOME/polybar/modules/bluetooth
-include-file=$XDG_CONFIG_HOME/polybar/modules/fan
+include-directory=$XDG_CONFIG_HOME/polybar/modules
 
 [colors]
 ; Remove the alpha channel of the background color if flimmer occurrs
