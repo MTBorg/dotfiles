@@ -59,6 +59,11 @@ Any [nerd font](https://www.nerdfonts.com/)-patched font should work.
 Neovim is used as the editor (there is a config for vim but it is no longer used), and plugins are managed with [vim-plug](https://github.com/junegunn/vim-plug).
 Linting, language support, formatting, e.t.c is managed by [coc](https://github.com/neoclide/coc.nvim).
 
+# Xorg
+
+Default applications can be set for MIME-types using `xdg-open` in the file
+`$XDG_CONFIG_HOME/Xorg/.xdefaults`, which will be sourced after starting Xorg.
+
 # Colors
 
 The colorscheme is automatically generated from the current wallpaper using [pywal](https://github.com/dylanaraps/pywal).
