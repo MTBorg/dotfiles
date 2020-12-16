@@ -1,5 +1,7 @@
 # System description
 
+- Window system:
+  - Xorg
 - Window manager:
   - Bspwm
 - Compositor:
@@ -18,6 +20,8 @@
   - Rofi
   - lsd (ls with colors and icons)
   - diff-so-fancy (nicer git diffs)
+  - zathura (document/pdf-viewer)
+  - feh (image viewer/xroot-setter)
 
 # Init configs
 
