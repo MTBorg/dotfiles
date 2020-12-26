@@ -25,6 +25,10 @@ bluetooth_print() {
 
                 printf '\n'
             done
+
+            if [ $counter -eq 0 ]; then
+                echo 
+            fi
         else
             echo "#2"
         fi
