@@ -17,7 +17,8 @@ set splitbelow splitright
 filetype plugin indent on
 syntax on
 
-let mapleader="§"
+nnoremap <SPACE> nop
+let mapleader=" "
 
 " Keybindings
 """"""""""""""""""""""""""
