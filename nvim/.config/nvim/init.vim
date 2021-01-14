@@ -28,7 +28,7 @@ let mapleader="§"
 	nnoremap <silent> <Leader>e :NERDTreeToggle<CR>
 
 	" WhichKey
-	nnoremap <silent> <Leader>? :WhichKey '§'<CR>
+	nnoremap <silent> <Leader>? :WhichKey '<Leader>'<CR>
 
 	" Bind popup navigation to ctrl-j and ctrl-k
 	inoremap <expr> <C-j> ((pumvisible())?("\<C-n>"):("j"))
