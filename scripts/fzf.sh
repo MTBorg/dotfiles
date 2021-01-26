@@ -28,9 +28,3 @@ function fzcat() {
 	find -L -type f 2>&1 | grep -v "Permission denied" | fzf | \
 		xargs --no-run-if-empty cat
 }
-
-# Use bat with input from fzf
-function fzbat() {
-	find -L -type f 2>&1 | grep -v "Permission denied" | fzf | \
-		xargs --no-run-if-empty bat
-}
