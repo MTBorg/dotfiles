@@ -1,0 +1,2 @@
+#!/bin/sh
+cd $(find / -type d -not -path '*/node_modules/*' 2>&1 | grep -v "Permission denied" | fzf)

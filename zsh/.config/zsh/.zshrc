@@ -107,11 +107,6 @@ bindkey -M menuselect '^j' vi-down-line-or-history
 
 source $XDG_CONFIG_HOME/aliases/.aliases.sh
 
-# Source scripts
-for script in ~/dotfiles/scripts/*.sh; do
-	source $script
-done
-
 bindkey -v #Enable vi mode
 bindkey -v '^?' backward-delete-char #Enable backspace in insert mode
 bindkey -v '^f' vi-forward-char #Use ctrl-f for auto-completion in insert mode

@@ -38,6 +38,8 @@ export FCEDIT=nvim
 # Use vim as standard editor
 export EDITOR=nvim
 
+export PATH=$PATH:~/.local/bin/scripts
+
 # Start ssh-agent (i have no idea how this works)
 # Taken from https://wiki.archlinux.org/index.php/SSH_keys#SSH_agents
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then

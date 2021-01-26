@@ -43,8 +43,11 @@ Lots of the configs also the depend on gitsubmodules so be sure to init all subm
 git submodule update --init --recursive
 ```
 
-# Shell 
+# Shell
+
 While zsh is mainly the shell used, other shells (e.g. bash) should work. Cross-shell exports, commands, etc. can be set in `$XDG_CONFIG_HOME/shell/.profile` which will be sourced by each shell's respective `.profile`-file (e.g. `.zprofile` or `.bash_profile`).
+
+Scripts are added to `$PATH` (in `.profile`) rather than sourced.
 
 # Bspwm
 
@@ -67,17 +70,20 @@ Neovim is used as the editor (there is a config for vim but it is no longer used
 Linting, language support, formatting, e.t.c is managed by [coc](https://github.com/neoclide/coc.nvim).
 
 # Xorg
+
 The xorg-server is started using by `$XDG_CONFIG_HOME/shell/.profile` using `startx`.
 
 Default applications can be set for MIME-types using `xdg-open` in the file
 `$XDG_CONFIG_HOME/Xorg/.xdefaults`, which will be sourced after starting Xorg.
 
 Some necessary util-packages for xorg and some scripts to function are:
+
 - `xorg-xinit`
 - `xorg-xrandr`
 - `xdg-utils`
 
 # Polybar
+
 The launch script for polybar requires the `POLYBAR_BAR` environment variable to be set. This variable can be used to indicate what bar to use with polybar, e.g. `desktop` or `laptop`.
 
 # Colors

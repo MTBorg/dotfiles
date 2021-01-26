@@ -1,0 +1,2 @@
+#!/bin/sh
+find -L $XDG_CONFIG_HOME -type f | fzf | xargs --no-run-if-empty $EDITOR
