@@ -4,7 +4,7 @@ super + Return
 
 # rofi
 super + d
-	rofi -show drun
+	rofi -modi combi -combi-modi drun,run -show combi
 
 # Lock screen
 super + shift + f 
