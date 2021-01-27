@@ -1,5 +1,9 @@
 #!/bin/sh
 # Search the arch-wiki-docs using fuzzy searching
-find /usr/share/doc/arch-wiki/html/en/ -name "*.html"  | \
+# Add back name and extension, and open article in firefox
+# Strip path and extension for representation and easier search
+DOC_DIR=/usr/share/doc/arch-wiki/html/en
+find $DOC_DIR -name "*.html"  | \
+	xargs -I _ basename _ .html | \
 	rofi -dmenu -i -p "Select article" | \
-	xargs -r firefox
+	xargs -I _ -r firefox $DOC_DIR/_.html 
