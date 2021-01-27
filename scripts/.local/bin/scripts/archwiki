@@ -1,0 +1,5 @@
+#!/bin/sh
+# Search the arch-wiki-docs using fuzzy searching
+find /usr/share/doc/arch-wiki/html/en/ -name "*.html"  | \
+	rofi -dmenu -i -p "Select article" | \
+	xargs -r firefox

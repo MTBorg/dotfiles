@@ -1,4 +1,0 @@
-#!/bin/sh
-# Select a picture to use with wal using fzf
-ls ~/Pictures/wallpapers | \
-fzf --bind "enter:execute(wal -i ~/Pictures/wallpapers/{})"

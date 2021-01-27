@@ -1,0 +1,6 @@
+#!/bin/sh
+# Select a picture to use with wal using fzf
+# TODO: Make rofi not exit on selection
+ls ~/Pictures/wallpapers | \
+	rofi -dmenu -i -p "Select wallpaper" | \
+	xargs -I _ wal -i ~/Pictures/wallpapers/_

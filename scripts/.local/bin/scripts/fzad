@@ -1,3 +1,0 @@
-#!/bin/sh
-# Search the arch-wiki-docs using fzf
-find /usr/share/doc/arch-wiki/html/en/ -name "*.html"  | fzf | xargs -r firefox
