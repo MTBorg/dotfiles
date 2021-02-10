@@ -8,14 +8,25 @@ WORK_DIR=$BUILD_DIR/work
 sudo rm -rf $PROFILE_PATH $BUILD_DIR $WORK_DIR
 
 cp -r /usr/share/archiso/configs/baseline/ $PROFILE_PATH && \
-	cp install.sh $PROFILE_PATH/airootfs && \
+	mkdir -p $PROFILE_PATH/airootfs/root && \
+	cp install.sh $PROFILE_PATH/airootfs/root
 
 # Copy autologin.conf to airootfs.
 # autologin.conf makes the ISO automatically login as root
 mkdir -p $PROFILE_PATH/airootfs/etc/systemd/system/getty@tty1.service.d && \
 	cp autologin.conf $PROFILE_PATH/airootfs/etc/systemd/system/getty@tty1.service.d/
 
-echo parted >> $PROFILE_PATH/packages.x86_64
+#Set keyboard layout
+echo KEYMAP=sv-latin1 >> $PROFILE_PATH/airootfs/etc/vconsole.conf
+
+packages=(
+	dosfstools \
+	parted \
+	lvm2
+)
+for package in "${packages[@]}" ; do
+	echo $package >> $PROFILE_PATH/packages.x86_64
+done
 
 # Build the ISO
 mkdir -p $WORK_DIR && \
