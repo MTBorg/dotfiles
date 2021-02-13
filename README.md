@@ -15,6 +15,8 @@
 - Session/screen-lock
   - Xsslock (for Xorg triggers)
   - Physlock (lockscreen)
+- AUR-helper
+  - Paru
 - Misc:
   - Polybar
   - Rofi
