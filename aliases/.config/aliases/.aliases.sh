@@ -1,6 +1,6 @@
 # Base/base-devel
-alias sudo="sudo " # This allows the use of sudo before aliases
-alias s="sudo "
+alias sudo="doas " # This allows the use of sudo/doas before aliases
+alias s="doas "
 alias h="history"
 alias ll="ls -alh --color=auto"
 alias ls="ls --color=auto"
