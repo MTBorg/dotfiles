@@ -19,15 +19,15 @@ setxkbmap se #Set keyboardlayout
 SXHKD_CONFIGS=~/.config/sxhkd/bspwm.sxhkdrc #Alter this to switch wm
 SXHKD_SHARED=~/.config/sxhkd/sxhkdrc #This contains non wm-dependent keybinds
 [ $(pidof sxhkd | awk '{print $1}') ] && pkill -USR1 sxhkd \
-  || sxhkd -c $SXHKD_CONFIGS $SXHKD_SHARED &
+  || exec sxhkd -c $SXHKD_CONFIGS $SXHKD_SHARED &
 [ $(pidof picom) ] &&
 	pkill -USR1 picom ||
-	picom --experimental-backends &
-volnoti &
-xss-lock -- physlock &
+	exec picom --experimental-backends &
+exec volnoti &
+exec xss-lock -- physlock &
 $XDG_CONFIG_HOME/polybar/launch.sh
 wal -R
-pgrep unclutter || unclutter &
+pgrep unclutter || exec unclutter &
 pgrep bspwmswallow || exec -a bspwmswallow $XDG_CONFIG_HOME/bspwm/bspwmswallow.sh &
 
 # Move all steam games to a specifed workspace
