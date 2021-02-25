@@ -79,6 +79,14 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'dylanaraps/wal.vim'
 	Plug 'ryanoasis/vim-devicons'
 
+	" Language packs
+	" Use rust.vim directly, rather than from polyglot.
+	" polyglot_disabled should be defined here as it has to be set before
+	" polyglot is loaded.
+	let g:polyglot_disabled=['rust'] 
+	Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+	Plug 'sheerun/vim-polyglot'
+
 	"Misc
 	Plug 'janko/vim-test'
 	Plug 'tpope/vim-repeat'
@@ -89,7 +97,6 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 	Plug 'mbbill/undotree'
 	Plug 'mileszs/ack.vim'
-	Plug 'sheerun/vim-polyglot'
 	Plug 'mattn/emmet-vim'
 	Plug 'LucHermitte/local_vimrc'
 	Plug 'LucHermitte/lh-vim-lib'
