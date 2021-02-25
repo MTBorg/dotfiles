@@ -15,7 +15,8 @@ let g:coc_global_extensions = [
 			\ 'coc-vimlsp',
 			\ 'coc-go',
 			\ 'coc-sh',
-			\ 'coc-docker'
+			\ 'coc-docker',
+			\ 'coc-rls'
 			\]
 
 " Trigger completion when pressing enter in the popup menu
