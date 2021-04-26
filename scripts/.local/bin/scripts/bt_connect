@@ -1,0 +1,12 @@
+#!/bin/sh
+OUTPUT=$(bluetoothctl devices | \
+	rofi -dmenu -i -p "Select device" | \
+	awk '{print $2}' | \
+	xargs -r bluetoothctl connect) 
+# Pass output to rofi for user feedback after removing color codes and only if
+# it's not empty (as to avoid an displaying empty dialog if no device was 
+# selected)
+echo $OUTPUT > /home/martin/test.log
+[ -n "$OUTPUT" ] && echo "$OUTPUT" | \
+	sed 's/\x1B\[[0-9;]*[JKmsu]//g; s/\r/\n/g' | \
+	xargs -0 -I _ rofi -e "_"
