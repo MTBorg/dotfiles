@@ -6,6 +6,7 @@ nmap <Leader>dbcp <Plug>VimspectorToggleConditionalBreakpoint
 nmap <Leader>dj <Plug>VimspectorStepOver
 nmap <Leader>dl <Plug>VimspectorStepInto
 nmap <Leader>dk <Plug>VimspectorStepOut
+nmap <Leader>di <Plug>VimspectorBalloonEval
 
 let g:vimspector_sign_priority = {
   \    'vimspectorBP':         999,
