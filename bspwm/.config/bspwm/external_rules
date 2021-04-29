@@ -14,3 +14,16 @@ if [ "$class" = Steam ] ; then
 	# other windows float and be centered
 	[ "$WM_NAME" != Steam ] && echo "state=floating center=on"
 fi
+
+# Spotify does not set its WM_CLASS property in time for regular or
+# external_rules to work. This is a workaround for that issue (see
+# https://github.com/baskerville/bspwm/issues/291 for more info). 
+# Uses the window id to get the value of _NET_WM_PID which is then passed to ps
+# to get the actual command used to start the application (should be spotify
+# for spotify).
+command=$(
+	xprop -id $wid -notype -f _NET_WM_PID 32c '=$0' _NET_WM_PID | \
+	cut -d '=' -f2 | \
+	xargs -I _ ps -p _ -o comm=
+)
+[ $command = spotify ] && echo "desktop=0"
