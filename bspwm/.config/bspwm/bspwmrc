@@ -42,3 +42,5 @@ done
 bspc rule --add Steam desktop=8 state=tiled
 bspc rule --add discord desktop=7 state=tiled
 bspc rule --add Zathura state=tiled
+
+bspc config external_rules_command $XDG_CONFIG_HOME/bspwm/external_rules
