@@ -64,7 +64,8 @@ respectively.
 
 # Fonts
 
-Any [nerd font](https://www.nerdfonts.com/)-patched font should work.
+Any [nerd font](https://www.nerdfonts.com/)- and [powerline](https://github.com/powerline/fonts)-patched font should work.
+Make sure that this command: (or similar ones depending on shell-prompt etc) `echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"` don't print garabage.
 
 # Vim/Neovim
 
