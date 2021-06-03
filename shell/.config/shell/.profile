@@ -43,6 +43,9 @@ export MANPAGER="nvim -c 'set ft=man' -"
 
 export PATH=$PATH:~/.local/bin/scripts
 
+# This is needed for android studio
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 # Start ssh-agent (i have no idea how this works)
 # Taken from https://wiki.archlinux.org/index.php/SSH_keys#SSH_agents
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
@@ -65,3 +68,4 @@ fi
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then	
 	exec startx $XDG_CONFIG_HOME/Xorg/.xinitrc
 fi
+
