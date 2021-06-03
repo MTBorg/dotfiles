@@ -119,6 +119,7 @@ augroup END
 
 autocmd BufEnter *.ts set filetype=typescript
 autocmd BufEnter *.tsx set filetype=typescriptreact
+autocmd BufEnter *.pa set filetype=conf
 
 function! ConflictsHighlight() abort
     syn region conflictStart start=/^<<<<<<< .*$/ end=/^\ze\(=======$\||||||||\)/
