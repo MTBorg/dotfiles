@@ -55,17 +55,12 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
     eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")" > /dev/null
 fi
 
-# Source pyenv
-if [[ "type pyenv" ]];then
-	export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
-	export PATH="$PYENV_ROOT/bin:$PATH"
-fi
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
 # Start xorg
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then	
 	exec startx $XDG_CONFIG_HOME/Xorg/.xinitrc
 fi
 
+# source pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
