@@ -4,7 +4,7 @@ let g:coc_snippet_next = '<c-l>'
 let g:coc_snippet_prev = '<c-h>'
 let g:coc_global_extensions = [
 			\ 'coc-tsserver',
-			\ 'coc-python',
+			\ 'coc-pyright',
 			\ 'coc-json',
 			\ 'coc-eslint',
 			\ 'coc-prettier',
