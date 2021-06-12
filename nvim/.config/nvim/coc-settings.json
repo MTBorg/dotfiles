@@ -27,9 +27,6 @@
     "typescript.tsx"
   ],
 
-  "python.formatting.provider": "black",
-  "python.formatting.blackArgs": ["--line-length", "80"],
-
   "languageserver": {
     "ccls": {
       "command": "ccls",
