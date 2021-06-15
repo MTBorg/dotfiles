@@ -11,6 +11,8 @@
 	rs = reset
 	rsh = reset --hard
 	rb = rebase
+	upstream = rev-parse --abbrev-ref --symbolic-full-name @{u}
+	upreset = !git upstream && git reset --hard $(git upstream)
 [pull]
 	ff = only
 [core]
