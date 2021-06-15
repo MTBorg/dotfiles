@@ -15,3 +15,5 @@
 	ff = only
 [core]
 	pager = less -FX
+[fetch]
+	prune = true
