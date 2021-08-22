@@ -89,6 +89,24 @@ Some necessary util-packages for xorg and some scripts to function are:
 
 The launch script for polybar requires the `POLYBAR_BAR` environment variable to be set. This variable can be used to indicate what bar to use with polybar, e.g. `desktop` or `laptop`.
 
+Workspace icons for bspwm are set via environment variables `POLYBAR_WS_X_ICON`
+where `X` is a number between 0 and 9 (for missing environment variables
+default value is no icon).
+The values should be the same as when [configuring polybar directly](https://github.com/polybar/polybar/wiki/Module:-bspwm#additional-formatting). For example here's a template of setting these variables:
+
+```shell
+export POLYBAR_WS_1_ICON="1;"
+export POLYBAR_WS_2_ICON="2;"
+export POLYBAR_WS_3_ICON="3;"
+export POLYBAR_WS_4_ICON="4;"
+export POLYBAR_WS_5_ICON="5;"
+export POLYBAR_WS_6_ICON="6;"
+export POLYBAR_WS_7_ICON="7;ﭮ"
+export POLYBAR_WS_8_ICON="8;"
+export POLYBAR_WS_9_ICON="9;"
+export POLYBAR_WS_0_ICON="0;"
+```
+
 # Colors
 
 The colorscheme is automatically generated from the current wallpaper using [pywal](https://github.com/dylanaraps/pywal).
