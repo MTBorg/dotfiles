@@ -16,4 +16,6 @@
   "editor.minimap.enabled": false,
   "workbench.colorTheme": "Monokai",
   "editor.cursorBlinking": "phase",
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
 }
