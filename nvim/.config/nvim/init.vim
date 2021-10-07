@@ -14,6 +14,8 @@ set noswapfile
 set numberwidth=1
 set encoding=UTF-8
 set splitbelow splitright
+set foldlevel=0
+set foldmethod=indent
 filetype plugin indent on
 syntax on
 
