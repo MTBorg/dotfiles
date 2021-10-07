@@ -1,0 +1,19 @@
+{
+  "react-native.packager.port": 19000,
+  "vim.smartRelativeLine": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.format.enable": true,
+  "editor.minimap.enabled": false,
+  "workbench.colorTheme": "Monokai",
+  "editor.cursorBlinking": "phase",
+}
