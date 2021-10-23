@@ -97,6 +97,7 @@
     },
     {
         "key": "space e",
-        "command": "workbench.action.toggleSidebarVisibility"
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "editorFocus && vim.mode != 'Insert'"
     }
 ]
