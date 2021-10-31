@@ -56,7 +56,7 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
 fi
 
 # Start xorg
-if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then	
+if command -v systemctl && systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then	
 	exec startx $XDG_CONFIG_HOME/Xorg/.xinitrc
 fi
 
