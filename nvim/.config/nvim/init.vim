@@ -16,6 +16,7 @@ set encoding=UTF-8
 set splitbelow splitright
 set foldlevel=0
 set foldmethod=indent
+set noshowmode "Don't show mode as this is shown by the lightline plugin
 filetype plugin indent on
 syntax on
 
@@ -57,9 +58,6 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'airblade/vim-gitgutter'
 	Plug 'rhysd/git-messenger.vim'
 
-	"Airline
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
 
 	"Tmux
 	Plug 'edkolev/tmuxline.vim'
@@ -106,6 +104,7 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'styled-components/vim-styled-components'
 	Plug 'wellle/context.vim'
 	Plug 'puremourning/vimspector'
+	Plug 'itchyny/lightline.vim'
 call plug#end()
 
 " This is necessary to use tab in command mode key bindings
