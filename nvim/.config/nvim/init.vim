@@ -56,8 +56,6 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	"Git
 	Plug 'tpope/vim-fugitive'
 	Plug 'airblade/vim-gitgutter'
-	Plug 'rhysd/git-messenger.vim'
-
 
 	"Tmux
 	Plug 'edkolev/tmuxline.vim'
