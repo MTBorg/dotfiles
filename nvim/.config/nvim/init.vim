@@ -139,6 +139,13 @@ augroup ConflictColors
     autocmd BufEnter * call ConflictsHighlight()
 augroup END
 
+function Upgrade() 
+	:PlugUpgrade
+	:PlugUpdate
+	:CocUpdate
+endfunction
+command Upgrade :call Upgrade()
+
 " Static colorscheme
 " colorscheme gotham
 
