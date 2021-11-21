@@ -39,7 +39,8 @@ export FCEDIT=nvim
 export EDITOR=nvim
 
 # Use neovim as pager for man
-export MANPAGER="nvim -c 'set ft=man' -"
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
 
 export PATH=$PATH:~/.local/bin/scripts
 
