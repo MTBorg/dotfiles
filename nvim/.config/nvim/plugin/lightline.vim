@@ -12,8 +12,13 @@ let g:lightline = {
 		\ ],
 	\ },
   \ 'component_function': {
-  \   'gitbranch': 'FugitiveHead'
+  \   'gitbranch': 'FugitiveHead',
+  \   'filename': 'FullPath'
   \ },
 \ }
+
+function! FullPath() 
+	return expand('%')
+endfunction
 
 call lightline#coc#register()
