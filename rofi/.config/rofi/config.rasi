@@ -1,5 +1,4 @@
 configuration{
-	theme: "~/.cache/wal/colors-rofi-dark.rasi";
 	show-icons: true;
 	kb-row-up: "Control+k";
 	kb-row-down: "Control+j";
@@ -7,3 +6,5 @@ configuration{
 	kb-accept-entry: "Return";
 	kb-remove-to-eol: "";
 }
+
+@theme "~/.cache/wal/colors-rofi-dark.rasi"
