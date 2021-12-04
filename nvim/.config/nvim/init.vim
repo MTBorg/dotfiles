@@ -102,7 +102,9 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'styled-components/vim-styled-components'
 	Plug 'wellle/context.vim'
 	Plug 'puremourning/vimspector'
+
 	Plug 'itchyny/lightline.vim'
+	Plug 'josa42/vim-lightline-coc'
 call plug#end()
 
 " This is necessary to use tab in command mode key bindings
