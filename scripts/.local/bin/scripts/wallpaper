@@ -3,4 +3,4 @@
 # TODO: Make rofi not exit on selection
 ls ~/Pictures/wallpapers | \
 	rofi -dmenu -i -p "Select wallpaper" | \
-	xargs -I _ wal -i ~/Pictures/wallpapers/_
+	xargs -I _ wal -a 92 -i ~/Pictures/wallpapers/_
