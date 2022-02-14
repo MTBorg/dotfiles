@@ -103,6 +103,10 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'wellle/context.vim'
 	Plug 'puremourning/vimspector'
 
+	" Harpooon
+	Plug 'nvim-lua/plenary.nvim' 
+	Plug 'ThePrimeagen/harpoon'
+
 	Plug 'itchyny/lightline.vim'
 	Plug 'josa42/vim-lightline-coc'
 call plug#end()
