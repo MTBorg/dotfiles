@@ -66,6 +66,7 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'neoclide/coc.nvim', {
 		\ 'branch': 'release'
 	\}
+	Plug 'antoinemadec/coc-fzf'
 
 	" Fzf
 	Plug 'junegunn/fzf'
