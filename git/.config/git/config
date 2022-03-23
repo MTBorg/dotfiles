@@ -14,6 +14,7 @@
 	upstream = rev-parse --abbrev-ref --symbolic-full-name @{u}
 	upreset = !git upstream && git reset --hard $(git upstream)
 	cp = cherry-pick
+	wt = worktree
 [pull]
 	ff = only
 [core]
