@@ -103,6 +103,7 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'styled-components/vim-styled-components'
 	Plug 'wellle/context.vim'
 	Plug 'puremourning/vimspector'
+	Plug 'danilamihailov/beacon.nvim'
 
 	" Harpooon
 	Plug 'nvim-lua/plenary.nvim' 
