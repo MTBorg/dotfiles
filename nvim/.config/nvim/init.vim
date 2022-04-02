@@ -46,6 +46,73 @@ let mapleader=" "
 
 	" Undotree
 	nnoremap <silent> <Leader>u :UndotreeToggle<CR>
+
+	" fzf
+	nnoremap <silent> <C-p> :GFiles<CR>
+
+	" vim-test
+	nmap <silent> t<C-n> :TestNearest<CR>
+	nmap <silent> t<C-f> :TestFile<CR>
+	nmap <silent> t<C-s> :TestSuite<CR>
+	nmap <silent> t<C-l> :TestLast<CR>
+	nmap <silent> t<C-g> :TestVisit<CR>
+
+	" harpoon
+	nnoremap <Leader>1 :lua require("harpoon.ui").nav_file(1)<CR>
+	nnoremap <Leader>2 :lua require("harpoon.ui").nav_file(2)<CR>
+	nnoremap <Leader>3 :lua require("harpoon.ui").nav_file(3)<CR>
+	nnoremap <Leader>4 :lua require("harpoon.ui").nav_file(4)<CR>
+	nnoremap <Leader>nn :lua require("harpoon.ui").toggle_quick_menu()<CR>
+	nnoremap <Leader>na :lua require("harpoon.mark").add_file()<CR>
+
+	" vim-fugitive
+	nnoremap <silent> <Leader>gd :Gdiffsplit<CR>
+	nnoremap <silent> <Leader>gs :Gstatus<CR>
+	nnoremap <silent> <Leader>gh :diffget //2<CR>
+	nnoremap <silent> <Leader>gl :diffget //3<CR>
+	nnoremap <silent> <Leader>gb :Gblame<CR>
+
+	" vim-tmux-runner
+	nmap <leader>tc :VtrSendCommandToRunner<Space>
+	nmap <leader>to :VtrOpenRunner
+	nmap <leader>tk :VtrKillRunner
+	nmap <leader>tf :VtrFocusRunner
+	nmap <leader>tl :VtrSendLinesToRunner
+	vmap <leader>tl :VtrSendLinesToRunner
+
+	" vim-spector
+	nmap <Leader>dd :call vimspector#Launch()<CR>
+	nmap <Leader>de :call vimspector#Reset()<CR>
+	nmap <Leader>dgc :call vimspector#RunToCursor()<CR>
+	nmap <Leader>dc <Plug>VimspectorContinue
+	nmap <Leader>dbp <Plug>VimspectorToggleBreakpoint
+	nmap <Leader>dbcp <Plug>VimspectorToggleConditionalBreakpoint
+	nmap <Leader>dj <Plug>VimspectorStepOver
+	nmap <Leader>dl <Plug>VimspectorStepInto
+	nmap <Leader>dk <Plug>VimspectorStepOut
+	nmap <Leader>di <Plug>VimspectorBalloonEval
+
+	" coc
+	" Trigger completion when pressing enter in the popup menu
+	if has('patch8.1.1068')
+		" Use `complete_info` if your (Neo)Vim version supports it.
+		inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+	else
+		imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+	endif
+	nmap <silent> gd <Plug>(coc-definition)
+	nmap <silent> gy <Plug>(coc-type-definition)
+	nmap <silent> gi <Plug>(coc-implementation)
+	nmap <silent> gr <Plug>(coc-references)
+	nmap <silent> gf <Plug>(coc-rename)
+	" Use `gn` and `gp` to navigate diagnostics
+	" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+	nmap <silent> gn <Plug>(coc-diagnostic-next)
+	nmap <silent> gp <Plug>(coc-diagnostic-prev)
+	" Use <c-space> to trigger completion.
+	inoremap <silent><expr> <c-space> coc#refresh()
+	" Use K to show documentation in preview window.
+	nnoremap <silent> K :call <SID>show_documentation()<CR>
 """"""""""""""""""""""""""
 
 call plug#begin('~/.local/share/nvim/plugged/')
