@@ -162,7 +162,6 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'honza/vim-snippets'
 	Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 	Plug 'mbbill/undotree'
-	Plug 'mileszs/ack.vim'
 	Plug 'mattn/emmet-vim'
 	Plug 'LucHermitte/local_vimrc'
 	Plug 'LucHermitte/lh-vim-lib'
