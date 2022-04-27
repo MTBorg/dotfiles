@@ -80,6 +80,7 @@ plugins=(
 	docker
 	docker-compose
 	fzf
+	fzf-tab
 )
 
 export HISTFILE=$XDG_DATA_HOME/zsh/history
