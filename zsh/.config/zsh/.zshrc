@@ -79,6 +79,7 @@ plugins=(
 	z
 	docker
 	docker-compose
+	fzf
 )
 
 export HISTFILE=$XDG_DATA_HOME/zsh/history
