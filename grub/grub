@@ -55,3 +55,6 @@ GRUB_SAVEDEFAULT="true"
 
 # Display all boot options in the top menu (instead of under advanced options)
 GRUB_DISABLE_SUBMENU=y
+
+# Run os-prober to detect other os's
+GRUB_DISABLE_OS_PROBER=false
