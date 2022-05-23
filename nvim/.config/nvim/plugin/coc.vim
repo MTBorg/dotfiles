@@ -18,11 +18,3 @@ let g:coc_global_extensions = [
 			\ 'coc-docker',
 			\ 'coc-rls'
 			\]
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
