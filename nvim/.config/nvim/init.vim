@@ -17,6 +17,7 @@ set splitbelow splitright
 set foldlevel=0
 set foldmethod=indent
 set noshowmode "Don't show mode as this is shown by the lightline plugin
+set conceallevel=0
 filetype plugin indent on
 syntax on
 
