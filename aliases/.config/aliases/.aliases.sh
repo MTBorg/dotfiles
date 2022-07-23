@@ -39,3 +39,4 @@ alias tmux='tmux -f "$XDG_CONFIG_HOME/tmux/.tmux.conf"'
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 alias open="xdg-open"
 alias o="xdg-open"
+alias rw="redwood"
