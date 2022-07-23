@@ -15,11 +15,11 @@ set numberwidth=1
 set encoding=UTF-8
 set splitbelow splitright
 set foldlevel=0
-set foldmethod=indent
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 set noshowmode "Don't show mode as this is shown by the lightline plugin
 set conceallevel=0
 filetype plugin indent on
-syntax on
 
 nnoremap <SPACE> nop
 let mapleader=" "
@@ -147,12 +147,7 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'ryanoasis/vim-devicons'
 
 	" Language packs
-	" Use rust.vim directly, rather than from polyglot.
-	" polyglot_disabled should be defined here as it has to be set before
-	" polyglot is loaded.
-	let g:polyglot_disabled=['rust'] 
-	Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-	Plug 'sheerun/vim-polyglot'
+	Plug 'baskerville/vim-sxhkdrc'
 
 	"Misc
 	Plug 'janko/vim-test'
@@ -170,6 +165,7 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'wellle/context.vim'
 	Plug 'puremourning/vimspector'
 	Plug 'danilamihailov/beacon.nvim'
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 	" Harpooon
 	Plug 'nvim-lua/plenary.nvim' 
@@ -233,3 +229,47 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+	ensure_installed = {
+		"bash",
+		"c",
+		"cmake",
+		"cpp",
+		"css",
+		"dockerfile",
+		"go",
+		"gomod",
+		"graphql",
+		"hcl",
+		"help",
+		"html",
+		"http",
+		"javascript",
+		"json",
+		"json5",
+		"make",
+		"markdown",
+		"proto",
+		"python",
+		"rasi",
+		"rust",
+		"toml",
+		"typescript",
+		"vim",
+		"yaml",
+	},
+	auto_install = true,
+  highlight = {
+    enable = true,
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+		additional_vim_regex_highlighting = false,
+  },
+}
+EOF
