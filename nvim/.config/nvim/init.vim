@@ -154,10 +154,10 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'LucHermitte/local_vimrc'
 	Plug 'LucHermitte/lh-vim-lib'
 	Plug 'jiangmiao/auto-pairs'
-	Plug 'wellle/context.vim'
 	Plug 'puremourning/vimspector'
 	Plug 'danilamihailov/beacon.nvim'
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+	Plug 'nvim-treesitter/nvim-treesitter-context'
 
 	" Harpooon
 	Plug 'nvim-lua/plenary.nvim' 
