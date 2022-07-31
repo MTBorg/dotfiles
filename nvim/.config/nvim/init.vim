@@ -214,6 +214,7 @@ command Upgrade :call Upgrade()
 colorscheme wal
 set notermguicolors
 set background=light
+hi Pmenu ctermbg=0 "Use XResources background as popup menu color
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
