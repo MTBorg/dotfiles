@@ -35,10 +35,6 @@ let mapleader=" "
 	" WhichKey
 	nnoremap <silent> <Leader>? :WhichKey '<Leader>'<CR>
 
-	" Bind popup navigation to ctrl-j and ctrl-k
-	inoremap <expr> <C-j> ((pumvisible())?("\<C-n>"):("j"))
-	inoremap <expr> <C-k> ((pumvisible())?("\<C-p>"):("k"))
-
 	" Jump window
 	nnoremap <silent> <Leader>j :jumps<CR>
 
@@ -94,13 +90,10 @@ let mapleader=" "
 	nmap <Leader>di <Plug>VimspectorBalloonEval
 
 	" coc
-	" Trigger completion when pressing enter in the popup menu
-	if has('patch8.1.1068')
-		" Use `complete_info` if your (Neo)Vim version supports it.
-		inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-	else
-		imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-	endif
+	" Bind popup navigation to ctrl-j and ctrl-k
+	inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "j"
+	inoremap <silent><expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "k"
+	inoremap <expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "<CR>"
 	nmap <silent> gd <Plug>(coc-definition)
 	nmap <silent> gy <Plug>(coc-type-definition)
 	nmap <silent> gi <Plug>(coc-implementation)
