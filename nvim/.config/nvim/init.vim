@@ -213,7 +213,6 @@ command Upgrade :call Upgrade()
 " Pywal colorscheme
 colorscheme wal
 set notermguicolors
-set background=light
 hi Pmenu ctermbg=0 "Use XResources background as popup menu color
 
 function! s:show_documentation()
