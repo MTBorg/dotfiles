@@ -203,6 +203,7 @@ function Upgrade()
 	:PlugUpgrade
 	:PlugUpdate
 	:CocUpdate
+	:TSUpdate
 endfunction
 command Upgrade :call Upgrade()
 
