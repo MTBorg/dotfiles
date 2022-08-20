@@ -40,3 +40,4 @@ alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 alias open="xdg-open"
 alias o="xdg-open"
 alias rw="redwood"
+alias kctl="kubectl"
