@@ -30,6 +30,10 @@
     "typescript.tsx"
   ],
 
+  "go.goplsOptions": {
+    "usePlaceholders": true
+  },
+
   "languageserver": {
     "ccls": {
       "command": "ccls",
