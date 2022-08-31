@@ -17,6 +17,16 @@
         "program": "${fileDirname}",
         "dlvToolPath": "/usr/bin/dlv"
       }
+    },
+    "Test (select)": {
+      "adapter": "vscode-go",
+      "configuration": {
+        "dlvToolPath": "/usr/bin/dlv",
+        "request": "launch",
+        "mode": "test",
+        "program": "${fileDirname}",
+        "args": ["-test.v", "-test.run", "${Test}"]
+      }
     }
   }
 }
