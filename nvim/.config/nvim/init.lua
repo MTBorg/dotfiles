@@ -54,6 +54,12 @@ vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	Plug('junegunn/fzf')
 	Plug('junegunn/fzf.vim')
 
+	-- nvim-dap
+	Plug('mfussenegger/nvim-dap')
+	Plug('leoluz/nvim-dap-go')
+	Plug('rcarriga/nvim-dap-ui')
+	Plug('theHamsta/nvim-dap-virtual-text')
+
 	-- Styling
 	Plug('ap/vim-css-color')
 	Plug('whatyouhide/vim-gotham')
@@ -76,7 +82,6 @@ vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	Plug('LucHermitte/local_vimrc')
 	Plug('LucHermitte/lh-vim-lib')
 	Plug('jiangmiao/auto-pairs')
-	Plug('puremourning/vimspector')
 	Plug('danilamihailov/beacon.nvim')
 	Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'})
 	Plug('nvim-treesitter/nvim-treesitter-context')
@@ -321,40 +326,39 @@ end)();
 	vim.keymap.set("v", "<Leader>tl", vim.cmd.VtrSendLinesToRunner, {})
 end)();
 
--- vimspector
-(function()
-	local function disableFolds()
-		vim.fn.win_gotoid(vim.g.vimspector_session_windows.variables)
-		vim.api.nvim_buf_set_var("foldenable", false)
-		vim.fn.win_gotoid(vim.g.vimspector_session_windows.watches)
-		vim.api.nvim_buf_set_var("foldenable", false)
-		vim.fn.win_gotoid(vim.g.vimspector_session_windows.stack_trace)
-		vim.api.nvim_buf_set_var("foldenable", false)
-	end
-
-	vim.api.nvim_create_augroup("MyVimspectorUICustomistaion", {clear = true})
-	vim.api.nvim_create_autocmd("User", {
-		pattern = "VimspectorUICreated",
-		callback = disableFolds,
+-- vim-dap
+(function ()
+	require("dapui").setup()
+	require("nvim-dap-virtual-text").setup({
+		highlight_changed_variables = true
 	})
 
-	vim.api.nvim_set_var("vimspector_sign_priority", {
-		'vimspectorBP',
-		'vimspectorBPCond',
-		'vimspectorBPDisabled',
-		'vimspectorPC',
-	})
+	local dap, dapui = require('dap'), require('dapui')
 
-	vim.keymap.set("n", "<Leader>dd", vim.fn["vimspector#Launch"], {})
-	vim.keymap.set("n", "<Leader>de", vim.fn["vimspector#Reset"], {})
-	vim.keymap.set("n", "<Leader>dgc", vim.fn["vimspector#RunToCursor"], {})
-	vim.keymap.set("n", "<Leader>dc", "<Plug>VimspectorContinue", {})
-	vim.keymap.set("n", "<Leader>dbp", "<Plug>VimspectorToggleBreakpoint", {})
-	vim.keymap.set("n", "<Leader>dbcp", "<Plug>VimspectorToggleConditionalBreakpoint", {})
-	vim.keymap.set("n", "<Leader>dj", "<Plug>VimspectorStepOver", {})
-	vim.keymap.set("n", "<Leader>dl", "<Plug>VimspectorStepInto", {})
-	vim.keymap.set("n", "<Leader>dk", "<Plug>VimspectorStepOut", {})
-	vim.keymap.set("n", "<Leader>di", "<Plug>VimspectorBalloonEval", {})
+	dap.listeners.after.event_initialized["dapui_config"] = function() dapui.open() end
+	dap.listeners.before.event_terminated["dapui_config"] = function() dapui.close() end
+	dap.listeners.before.event_exited["dapui_config"] = function() dapui.close() end
+
+	vim.keymap.set("n", "<Leader>dc", function () dap.continue() end, {silent = true})
+	vim.keymap.set("n", "<Leader>dj", function () dap.step_over() end, {silent = true})
+	vim.keymap.set("n", "<Leader>dl", function () dap.step_into() end, {silent = true})
+	vim.keymap.set("n", "<Leader>dk", function () dap.step_out() end, {silent = true})
+	vim.keymap.set("n", "<Leader>dgc", function () dap.run_to_cursor() end, {silent = true})
+	vim.keymap.set("n", "<Leader>dbp", function () dap.toggle_breakpoint() end, {silent = true})
+	vim.keymap.set("n", "<Leader>dr", function () dap.repl.open() end, {silent = true})
+	vim.keymap.set("n", "<Leader>di", function () dapui.eval() end, {silent = true})
+	vim.keymap.set("v", "<Leader>di", function () dapui.eval() end, {silent = true})
+	vim.keymap.set("n", "<Leader>de", function () dap.terminate() end, {silent = true})
+
+	vim.api.nvim_set_hl(0, "DapBreakpoint", { ctermfg=52 })
+	vim.api.nvim_set_hl(0, "DapStopped", { ctermfg=22, ctermbg=7 })
+	vim.fn.sign_define('DapBreakpoint', {text='', texthl='DapBreakpoint'})
+	vim.fn.sign_define('DapStopped', {text='', texthl='DapStopped', linehl='DapStopped', numhl='DapStopped'})
+
+	require("dap-go").setup({
+	 on_attach = function()
+	 end
+	})
 end)();
 
 -- lightline
@@ -420,4 +424,4 @@ end)();
 -- localvimrc
 (function ()
 	vim.fn["lh#local_vimrc#filter_list"]("asklist", "v:val != $HOME")
-end)()
+end)();
