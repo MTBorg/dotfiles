@@ -16,5 +16,5 @@ let g:coc_global_extensions = [
 			\ 'coc-go',
 			\ 'coc-sh',
 			\ 'coc-docker',
-			\ 'coc-rls'
+			\ 'coc-rust-analyzer'
 			\]
