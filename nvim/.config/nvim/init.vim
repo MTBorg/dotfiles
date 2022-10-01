@@ -138,6 +138,7 @@ call plug#begin('~/.local/share/nvim/plugged/')
 	Plug 'whatyouhide/vim-gotham' 
 	Plug 'dylanaraps/wal.vim'
 	Plug 'ryanoasis/vim-devicons'
+	Plug 'olimorris/onedarkpro.nvim'
 
 	" Language packs
 	Plug 'baskerville/vim-sxhkdrc'
