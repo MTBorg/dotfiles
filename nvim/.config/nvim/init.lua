@@ -430,3 +430,9 @@ end)();
 (function ()
 	vim.keymap.set("n", "<Leader>c", vim.cmd.Command)
 end)();
+
+-- beacon
+(function ()
+	vim.g.beacon_size=100
+	vim.g.beacon_minimal_jump=1
+end)();
