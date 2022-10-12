@@ -425,3 +425,8 @@ end)();
 (function ()
 	vim.fn["lh#local_vimrc#filter_list"]("asklist", "v:val != $HOME")
 end)();
+
+-- fzf
+(function ()
+	vim.keymap.set("n", "<Leader>c", vim.cmd.Command)
+end)();
