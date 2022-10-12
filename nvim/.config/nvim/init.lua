@@ -127,10 +127,10 @@ vim.o.termguicolors = false
 vim.api.nvim_set_hl(0, "Pmenu", {ctermbg = 0}) -- "Use XResources background as popup menu color
 
 function Upgrade()
-	vim.cmd("PlugUpgrade")
-	vim.cmd("PlugUpdate")
-	vim.cmd("CocUpdate")
-	vim.cmd("TSUpdate")
+	vim.cmd.PlugUpgrade()
+	vim.cmd.PlugUpdate()
+	vim.cmd.CocUpdate()
+	vim.cmd.TSUpdate()
 end
 vim.api.nvim_create_user_command("Upgrade", Upgrade, {})
 
@@ -339,16 +339,16 @@ end)();
 	dap.listeners.before.event_terminated["dapui_config"] = function() dapui.close() end
 	dap.listeners.before.event_exited["dapui_config"] = function() dapui.close() end
 
-	vim.keymap.set("n", "<Leader>dc", function () dap.continue() end, {silent = true})
-	vim.keymap.set("n", "<Leader>dj", function () dap.step_over() end, {silent = true})
-	vim.keymap.set("n", "<Leader>dl", function () dap.step_into() end, {silent = true})
-	vim.keymap.set("n", "<Leader>dk", function () dap.step_out() end, {silent = true})
-	vim.keymap.set("n", "<Leader>dgc", function () dap.run_to_cursor() end, {silent = true})
-	vim.keymap.set("n", "<Leader>dbp", function () dap.toggle_breakpoint() end, {silent = true})
-	vim.keymap.set("n", "<Leader>dr", function () dap.repl.open() end, {silent = true})
-	vim.keymap.set("n", "<Leader>di", function () dapui.eval() end, {silent = true})
-	vim.keymap.set("v", "<Leader>di", function () dapui.eval() end, {silent = true})
-	vim.keymap.set("n", "<Leader>de", function () dap.terminate() end, {silent = true})
+	vim.keymap.set("n", "<Leader>dc", dap.continue, {silent = true})
+	vim.keymap.set("n", "<Leader>dj", dap.step_over, {silent = true})
+	vim.keymap.set("n", "<Leader>dl", dap.step_into, {silent = true})
+	vim.keymap.set("n", "<Leader>dk", dap.step_out, {silent = true})
+	vim.keymap.set("n", "<Leader>dgc", dap.run_to_cursor, {silent = true})
+	vim.keymap.set("n", "<Leader>dbp", dap.toggle_breakpoint, {silent = true})
+	vim.keymap.set("n", "<Leader>dr", dap.repl.open, {silent = true})
+	vim.keymap.set("n", "<Leader>di", dapui.eval, {silent = true})
+	vim.keymap.set("v", "<Leader>di", dapui.eval, {silent = true})
+	vim.keymap.set("n", "<Leader>de", dap.terminate, {silent = true})
 
 	vim.api.nvim_set_hl(0, "DapBreakpoint", { ctermfg=52 })
 	vim.api.nvim_set_hl(0, "DapStopped", { ctermfg=22, ctermbg=7 })
