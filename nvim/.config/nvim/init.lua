@@ -355,6 +355,8 @@ end)();
 	vim.fn.sign_define('DapBreakpoint', {text='', texthl='DapBreakpoint'})
 	vim.fn.sign_define('DapStopped', {text='', texthl='DapStopped', linehl='DapStopped', numhl='DapStopped'})
 
+	vim.api.nvim_create_user_command("DAPClearBreakpoints", function () dap.clear_breakpoints() end, {})
+
 	require("dap-go").setup({
 	 on_attach = function()
 	 end
