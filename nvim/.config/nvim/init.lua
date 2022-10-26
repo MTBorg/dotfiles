@@ -61,7 +61,6 @@ vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	Plug('theHamsta/nvim-dap-virtual-text')
 
 	-- Styling
-	Plug('ap/vim-css-color')
 	Plug('whatyouhide/vim-gotham')
 	Plug('dylanaraps/wal.vim')
 	Plug('ryanoasis/vim-devicons')
