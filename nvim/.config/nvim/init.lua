@@ -66,6 +66,7 @@ vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	Plug('dylanaraps/wal.vim')
 	Plug('ryanoasis/vim-devicons')
 	Plug('olimorris/onedarkpro.nvim')
+	Plug('TaDaa/vimade')
 
 	-- Language packs
 	Plug('baskerville/vim-sxhkdrc')
