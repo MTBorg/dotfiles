@@ -85,6 +85,7 @@ vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	Plug('danilamihailov/beacon.nvim')
 	Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'})
 	Plug('nvim-treesitter/nvim-treesitter-context')
+	Plug('folke/zen-mode.nvim')
 
 	-- Harpooon
 	Plug('nvim-lua/plenary.nvim')
@@ -437,4 +438,8 @@ end)();
 (function ()
 	vim.g.beacon_size=100
 	vim.g.beacon_minimal_jump=1
+end)();
+
+(function ()
+	require("zen-mode").setup()
 end)();
