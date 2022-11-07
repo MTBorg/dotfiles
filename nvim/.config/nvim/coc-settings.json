@@ -19,9 +19,6 @@
     "go"
   ],
 
-  "diagnostic.virtualText": true,
-  "diagnostic.virtualTextCurrentLineOnly": false,
-
   "eslint.validate": [
     "javascript",
     "typescript",

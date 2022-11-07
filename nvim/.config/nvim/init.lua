@@ -86,6 +86,7 @@ vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'})
 	Plug('nvim-treesitter/nvim-treesitter-context')
 	Plug('folke/zen-mode.nvim')
+	Plug('https://git.sr.ht/~whynothugo/lsp_lines.nvim')
 
 	-- Harpooon
 	Plug('nvim-lua/plenary.nvim')
@@ -451,4 +452,8 @@ end)();
 
 (function ()
 	require("zen-mode").setup()
+end)();
+
+(function ()
+	require("lsp_lines").setup()
 end)();
