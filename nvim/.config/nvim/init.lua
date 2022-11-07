@@ -21,8 +21,8 @@ vim.o.numberwidth = 1
 vim.o.encoding = "UTF-8"
 vim.o.splitright = true
 vim.o.foldlevel=0
-vim.o.foldmethod="expr"
-vim.o.foldexpr="nvim_treesitter#foldexpr()"
+vim.wo.foldmethod="expr"
+vim.wo.foldexpr="nvim_treesitter#foldexpr()"
 vim.o.showmode = false -- "Don't show mode as this is shown by the lightline plugin
 vim.o.conceallevel = 0
 -- This is necessary to use tab in command mode key bindings
