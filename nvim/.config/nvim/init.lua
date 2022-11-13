@@ -76,7 +76,6 @@ vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	Plug('tpope/vim-surround')
 	Plug('Yggdroot/indentline')
 	Plug('honza/vim-snippets')
-	Plug('liuchengxu/vim-which-key', { on = {'WhichKey', 'WhichKey!'} })
 	Plug('mbbill/undotree')
 	Plug('LucHermitte/local_vimrc')
 	Plug('LucHermitte/lh-vim-lib')
@@ -112,8 +111,6 @@ vim.keymap.set("c", "<C-j>", function () if pumVisible() then return "<Tab>" end
 vim.keymap.set("c", "<C-k>", function () if pumVisible() then return "<S-Tab>" end end, { expr = true})
 
 vim.keymap.set("n", "src", function () vim.cmd.source("~/.config/nvim/init.lua") end, { noremap = true})
--- WhichKey seems to be broken after migrating to LUA. TODO: Remove since not used anyway
-vim.keymap.set("n", "<Leader>?", ":WhichKey '<Leader>'<CR>", {silent = true})
 vim.keymap.set("n", "<Leader>j", vim.cmd.jumps, {silent = true})
 vim.keymap.set("n", "<Leader>o", vim.cmd.only, {silent = true, desc = "Close all windows but current"})
 vim.keymap.set("n", "<Leader>u", vim.cmd.UndotreeToggle, {silent = true, desc = "UndoTree"})
