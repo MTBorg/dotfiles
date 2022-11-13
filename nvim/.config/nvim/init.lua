@@ -1,8 +1,8 @@
 vim.keymap.set("n", "<SPACE>", "", {noremap = true})
 vim.g.mapleader = " "
-
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 vim.o.syntax = "off"
-
 vim.o.compatible = false
 vim.o.showmatch = true
 vim.o.hlsearch  = true
@@ -32,8 +32,7 @@ vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	local Plug = vim.fn["plug#"]
 
 	-- NERDTree
-	Plug('scrooloose/nerdtree', { on = "NERDTreeToggle" })
-	Plug('Xuyuanp/nerdtree-git-plugin')
+	Plug('nvim-tree/nvim-tree.lua')
 
 	-- Git
 	Plug('tpope/vim-fugitive')
@@ -260,32 +259,23 @@ end)();
 		})
 end)();
 
--- NERDTree
+-- nvim-tree
 (function ()
-	-- Exit vim if nerdtree is the only window open
-	-- TODO: Does this even work?
-	vim.api.nvim_create_autocmd("BufEnter", {
-		pattern = "*",
-		command = 'if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif'
-	})
+	require("nvim-tree").setup(
+		{
+			view = {
+				relativenumber = true,
+				adaptive_size = true
+			},
+			actions = {
+				open_file = {
+					quit_on_open = true
+				}
+			}
+		}
+	)
 
-	vim.api.nvim_create_autocmd("StdinReadPre", {
-		pattern = "*",
-		callback = function ()
-			vim.s.std_in=1
-		end
-	})
-	vim.api.nvim_create_autocmd("VimEnter", {
-		pattern = "*",
-		command = 'if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe "NERDTree" argv()[0] | wincmd p | ene | exe "cd ".argv()[0] | endif'
-	})
-
-	vim.keymap.set("n", "<Leader>e", vim.cmd.NERDTreeToggle, {silent = true, noremap = true})
-	vim.api.nvim_set_var("NERDTreeShowHidden",1)
-	vim.api.nvim_set_var("NERDTreeAutoCenter",0)
-	vim.api.nvim_set_var("NERDTreeSortHiddenFirst",0)
-	vim.api.nvim_set_var("NERDTreeQuitOnOpen",1)
-	vim.api.nvim_set_var("NERDTreeShowLineNumbers",1)
+	vim.keymap.set("n", "<Leader>e", vim.cmd.NvimTreeToggle, {silent = true, noremap = true})
 end)();
 
 -- vim-test
