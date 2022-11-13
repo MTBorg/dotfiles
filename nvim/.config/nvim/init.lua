@@ -63,9 +63,9 @@ vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	-- Styling
 	Plug('whatyouhide/vim-gotham')
 	Plug('dylanaraps/wal.vim')
-	Plug('ryanoasis/vim-devicons')
 	Plug('olimorris/onedarkpro.nvim')
 	Plug('TaDaa/vimade')
+	Plug('nvim-tree/nvim-web-devicons')
 
 	-- Language packs
 	Plug('baskerville/vim-sxhkdrc')
