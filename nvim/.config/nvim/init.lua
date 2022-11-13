@@ -368,6 +368,27 @@ end)();
 
 	vim.api.nvim_create_user_command("DAPClearBreakpoints", function () dap.clear_breakpoints() end, {})
 
+	dap.adapters.lldb = {
+		type = 'executable',
+		command = '/usr/bin/lldb-vscode',
+		name = 'lldb'
+	}
+
+	dap.configurations.rust = {
+		{
+			name = 'Launch',
+			type = 'lldb',
+			request = 'launch',
+			program = function()
+				local components = vim.split(vim.fn.getcwd(), "/")
+				return vim.fn.getcwd() .. "/target/debug/" .. components[#components]
+			end,
+			cwd = '${workspaceFolder}',
+			stopOnEntry = false,
+			args = {},
+		},
+	}
+
 	require("dap-go").setup({
 	 on_attach = function()
 	 end
