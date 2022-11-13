@@ -389,6 +389,15 @@ end)();
 		},
 	}
 
+	vim.api.nvim_create_user_command("DapScope", function ()
+    local widgets = require "dap.ui.widgets";
+    widgets.centered_float(widgets.scopes)
+	end, {})
+
+	vim.api.nvim_create_user_command("DapHover", function ()
+    require "dap.ui.widgets".hover()
+	end, {})
+
 	require("dap-go").setup({
 	 on_attach = function()
 	 end
