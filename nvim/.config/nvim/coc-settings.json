@@ -1,24 +1,31 @@
 {
-  "coc.preferences.rootPatterns": [
+  "workspace.rootPatterns": [
     "_vimrc_local.vim",
     ".git",
     ".hg",
     ".projections.json"
   ],
-  "coc.preferences.formatOnSaveFiletypes": [
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "json",
-    "javascriptreact",
-    "typescript.tsx",
-    "python",
-    "markdown",
-    "rust",
-    "haskell",
-    "go"
-  ],
-
+  "[go]": {
+    "coc.preferences.formatOnSave": true
+  },
+  "[javascript][typescript][javascriptreact][typescriptreach][typescript.tsx]": {
+    "coc.preferences.formatOnSave": true
+  },
+  "[json]": {
+    "coc.preferences.formatOnSave": true
+  },
+  "[python]": {
+    "coc.preferences.formatOnSave": true
+  },
+  "[markdown]": {
+    "coc.preferences.formatOnSave": true
+  },
+  "[rust]": {
+    "coc.preferences.formatOnSave": true
+  },
+  "[haskell]": {
+    "coc.preferences.formatOnSave": true
+  },
   "eslint.validate": [
     "javascript",
     "typescript",
