@@ -3,7 +3,8 @@
     "_vimrc_local.vim",
     ".git",
     ".hg",
-    ".projections.json"
+    ".projections.json",
+    "go.mod"
   ],
   "[go]": {
     "coc.preferences.formatOnSave": true
