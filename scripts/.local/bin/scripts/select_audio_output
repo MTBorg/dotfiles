@@ -1,0 +1,5 @@
+#!/bin/sh
+pactl list short sinks | 
+	rofi -dmenu -i -p "Select sink" | \
+	awk '{print $1}' | 
+	xargs -r pactl set-default-sink
