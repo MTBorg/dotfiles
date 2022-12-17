@@ -256,6 +256,8 @@ end)();
 		-- TODO: Can't figure out how to use <CR> here with vim.keymap.set. Figure it out.
 		vim.keymap.set("i", "<CR>", "coc#pum#visible() ? coc#pum#confirm() : '<CR>'", {silent = true, expr = true, noremap = true})
 
+		vim.api.nvim_create_user_command("CocSymbols", function () vim.cmd("CocList symbols") end, {})
+
 		vim.api.nvim_create_autocmd("User", {
 			pattern = "CocOpenFloat",
 			command = "setl nofen",
