@@ -116,6 +116,12 @@ vim.keymap.set("n", "<Leader>o", vim.cmd.only, {silent = true, desc = "Close all
 vim.keymap.set("n", "<Leader>u", vim.cmd.UndotreeToggle, {silent = true, desc = "UndoTree"})
 vim.keymap.set("n", "<C-p>", vim.cmd.GFiles, {silent = true, desc = "FZF"})
 
+-- center view on jumps/searches
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "N", "Nzz")
+
 -- Static colorscheme
 -- colorscheme gotham
 
