@@ -255,8 +255,8 @@ end)();
 		vim.keymap.set("i", "<c-space>", vim.fn["coc#refresh"], {silent = true})
 		vim.keymap.set("n", "K", ShowDocumentation, {noremap = true, silent = true})
 		-- Bind popup navigation to ctrl-j and ctrl-k
-		vim.keymap.set("i", "<C-j>", function() if pumVisible() then vim.fn["coc#pum#next"](1) end end, {silent = true})
-		vim.keymap.set("i", "<C-k>", function() if pumVisible() then vim.fn["coc#pum#prev"](1) end end, {silent = true})
+		vim.keymap.set("i", "<C-j>", function() if pumVisible() then return vim.fn["coc#pum#next"](1) end end, {expr = true})
+		vim.keymap.set("i", "<C-k>", function() if pumVisible() then return vim.fn["coc#pum#prev"](1) end end, {expr = true})
 		-- TODO: Can't figure out how to use <CR> here with vim.keymap.set. Figure it out.
 		vim.keymap.set("i", "<CR>", "coc#pum#visible() ? coc#pum#confirm() : '<CR>'", {silent = true, expr = true, noremap = true})
 
