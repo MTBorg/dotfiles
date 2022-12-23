@@ -252,7 +252,7 @@ end)();
 		-- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 		vim.keymap.set("n", "gn", "<Plug>(coc-diagnostic-next)", {silent = true})
 		vim.keymap.set("n", "gp", "<Plug>(coc-diagnostic-prev)", {silent = true})
-		vim.keymap.set("i", "<c-space>", vim.fn["coc#refresh"], {silent = true})
+		vim.keymap.set("i", "<C-space>", vim.fn["coc#refresh"], {silent = true, noremap = true, expr = true})
 		vim.keymap.set("n", "K", ShowDocumentation, {noremap = true, silent = true})
 		-- Bind popup navigation to ctrl-j and ctrl-k
 		vim.keymap.set("i", "<C-j>", function() if pumVisible() then return vim.fn["coc#pum#next"](1) end end, {expr = true})
