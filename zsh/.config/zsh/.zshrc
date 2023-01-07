@@ -153,3 +153,5 @@ bindkey '^e' edit-command-line
 # Auto completion
 autoload -Uz compinit
 compinit
+
+export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
