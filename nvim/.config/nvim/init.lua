@@ -214,10 +214,10 @@ vim.api.nvim_create_autocmd("bufwritepost", {
 		incremental_selection = {
 			enable = true,
 			keymaps = {
-				init_selection = "gnn",
-				node_incremental = "grn",
-				scope_incremental = "grc",
-				node_decremental = "grm",
+				init_selection = "<C-n>",
+				node_incremental = "<C-n>",
+				node_decremental = "<C-m>",
+				scope_incremental = "<C-b>",
 			},
 		},
 	}
