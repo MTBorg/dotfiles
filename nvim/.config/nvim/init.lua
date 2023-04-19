@@ -399,10 +399,19 @@ end)();
     require "dap.ui.widgets".hover()
 	end, {})
 
-	require("dap-go").setup({
-	 on_attach = function()
-	 end
-	})
+	require('dap-go').setup {
+		delve = {
+			port = "38697"
+		},
+		dap_configurations = {
+			{
+				type = "go",
+				name = "Attach remote",
+				mode = "remote",
+				request = "attach",
+			}
+		}
+	}
 end)();
 
 -- lightline
