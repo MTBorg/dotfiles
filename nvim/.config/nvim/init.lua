@@ -83,6 +83,7 @@ vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	Plug('danilamihailov/beacon.nvim')
 	Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'})
 	Plug('nvim-treesitter/nvim-treesitter-context')
+	Plug('nvim-treesitter/nvim-treesitter-textobjects')
 	Plug('folke/zen-mode.nvim')
 	Plug('https://git.sr.ht/~whynothugo/lsp_lines.nvim')
 
@@ -220,6 +221,16 @@ vim.api.nvim_create_autocmd("bufwritepost", {
 				scope_incremental = "<C-b>",
 			},
 		},
+		textobjects = {
+			select = {
+				enable = true,
+				lookahead = true,
+				keymaps = {
+					["af"] = "@function.outer",
+					["if"] = "@function.inner",
+				},
+			}
+		}
 	}
 end)();
 
