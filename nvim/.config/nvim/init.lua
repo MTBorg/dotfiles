@@ -88,6 +88,7 @@ vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	Plug('danilamihailov/beacon.nvim')
 	Plug('folke/zen-mode.nvim')
 	Plug('https://git.sr.ht/~whynothugo/lsp_lines.nvim')
+	Plug('ThePrimeagen/refactoring.nvim')
 
 	-- Harpooon
 	Plug('nvim-lua/plenary.nvim')
@@ -509,4 +510,14 @@ end)();
 
 (function ()
 	require("lsp_lines").setup()
+end)();
+
+-- refactoring
+(function ()
+	require("refactoring").setup({})
+
+	vim.api.nvim_set_keymap("v", "<leader>re", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]], {noremap = true, silent = true, expr = false})
+	vim.api.nvim_set_keymap("v", "<leader>rf", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]], {noremap = true, silent = true, expr = false})
+	vim.api.nvim_set_keymap("v", "<leader>rv", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]], {noremap = true, silent = true, expr = false})
+	vim.api.nvim_set_keymap("v", "<leader>ri", [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], {noremap = true, silent = true, expr = false})
 end)();
