@@ -69,6 +69,11 @@ vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	-- Language packs
 	Plug('baskerville/vim-sxhkdrc')
 
+	-- Treesitter
+	Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'})
+	Plug('nvim-treesitter/nvim-treesitter-context')
+	Plug('nvim-treesitter/nvim-treesitter-textobjects')
+
 	-- Misc
 	Plug('janko/vim-test')
 	Plug('tpope/vim-repeat')
@@ -81,9 +86,6 @@ vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	Plug('LucHermitte/lh-vim-lib')
 	Plug('jiangmiao/auto-pairs')
 	Plug('danilamihailov/beacon.nvim')
-	Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'})
-	Plug('nvim-treesitter/nvim-treesitter-context')
-	Plug('nvim-treesitter/nvim-treesitter-textobjects')
 	Plug('folke/zen-mode.nvim')
 	Plug('https://git.sr.ht/~whynothugo/lsp_lines.nvim')
 
