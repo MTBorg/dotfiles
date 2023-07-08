@@ -27,6 +27,7 @@ vim.o.showmode = false -- "Don't show mode as this is shown by the lightline plu
 vim.o.conceallevel = 0
 -- This is necessary to use tab in command mode key bindings
 vim.o.wildcharm = ('\t'):byte()
+vim.o.signcolumn = "auto:1-9"
 
 vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	local Plug = vim.fn["plug#"]
