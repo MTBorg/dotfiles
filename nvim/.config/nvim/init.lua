@@ -403,6 +403,24 @@ end)();
 			stopOnEntry = false,
 			args = {},
 		},
+		{
+			name = 'Launch (manual)',
+			type = 'lldb',
+			request = 'launch',
+			program = function()
+				return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/target/', 'file')
+			end,
+			cwd = '${workspaceFolder}',
+			stopOnEntry = false,
+			args = function()
+				local input = vim.fn.input("args: ")
+				local args = {}
+				for word in string.gmatch(input, "%w+") do
+					table.insert(args, word)
+				end
+				return args
+			end,
+		}
 	}
 
 	vim.api.nvim_create_user_command("DapScope", function ()
