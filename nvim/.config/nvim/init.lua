@@ -64,7 +64,7 @@ vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	Plug('whatyouhide/vim-gotham')
 	Plug('dylanaraps/wal.vim')
 	Plug('olimorris/onedarkpro.nvim')
-	Plug('TaDaa/vimade')
+	Plug('levouh/tint.nvim')
 	Plug('nvim-tree/nvim-web-devicons')
 
 	-- Language packs
@@ -539,4 +539,12 @@ end)();
 	vim.api.nvim_set_keymap("v", "<leader>rf", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]], {noremap = true, silent = true, expr = false})
 	vim.api.nvim_set_keymap("v", "<leader>rv", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]], {noremap = true, silent = true, expr = false})
 	vim.api.nvim_set_keymap("v", "<leader>ri", [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], {noremap = true, silent = true, expr = false})
+end)();
+
+-- tint
+(function ()
+	require("tint").setup({
+		tint = -20,  -- Darken colors, use a positive value to brighten
+		saturation = 0,  -- Saturation to preserve
+	})
 end)();
