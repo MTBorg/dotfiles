@@ -24,6 +24,11 @@ alias sysstatus="systemctl status"
 alias sysenable="systemctl enable"
 alias sysdisable="systemctl disable"
 
+# tmux
+alias t="tmux"
+alias tkill="tmux kill-session -t"
+alias tattach="tmux attach-session -t"
+
 # Docker
 alias d="docker"
 alias dc="docker-compose"
