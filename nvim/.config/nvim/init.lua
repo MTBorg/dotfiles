@@ -80,7 +80,7 @@ vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	Plug('tpope/vim-repeat')
 	Plug('tpope/vim-commentary')
 	Plug('tpope/vim-surround')
-	Plug('Yggdroot/indentline')
+	Plug('lukas-reineke/indent-blankline.nvim')
 	Plug('honza/vim-snippets')
 	Plug('mbbill/undotree')
 	Plug('LucHermitte/local_vimrc')
@@ -457,12 +457,6 @@ end)();
 	}
 end)();
 
--- indentline
-(function ()
-	-- The plugin messes up quotes in these filetypes
-	vim.g.indentLine_fileTypeExclude = { "markdown", "json" }
-end)();
-
 -- localvimrc
 (function ()
 	vim.fn["lh#local_vimrc#filter_list"]("asklist", "v:val != $HOME")
@@ -514,5 +508,13 @@ end)();
 		sections = {
 			lualine_x = {}
 		}
+	})
+end)();
+
+-- indent-blankline
+(function ()
+	require("indent_blankline").setup({
+		show_current_context = true,
+    show_current_context_start = true,
 	})
 end)();
