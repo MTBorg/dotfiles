@@ -95,8 +95,7 @@ vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	Plug('nvim-lua/plenary.nvim')
 	Plug('ThePrimeagen/harpoon')
 
-	Plug('itchyny/lightline.vim')
-	Plug('josa42/vim-lightline-coc')
+	Plug('nvim-lualine/lualine.nvim')
 vim.fn["plug#end"]()
 
 local function pumVisible() return vim.fn["coc#pum#visible"]() end
@@ -447,49 +446,6 @@ end)();
 	}
 end)();
 
--- lightline
-(function ()
-	-- TODO: Figure out how to write these functions purely in lua
-	vim.api.nvim_exec(
-	[[
-		function! LightLineFullPath() 
-			return expand('%')
-		endfunction
-	]]
-	, false)
-	vim.api.nvim_exec(
-	[[
-		function! LightLineReadonly()
-			return &readonly ? '' : ''
-		endfunction
-	]]
-	, false)
-
-	vim.g.lightline = {
-		colorscheme = 'wal',
-		separator = { left = '', right =  ''},
-		active = {
-			left = {
-					{'gitbranch', 'readonly', 'filename', 'modified'},
-					{'coc_info', 'coc_hints', 'coc_errors', 'coc_warnings', 'coc_ok'},
-					{'coc_status'}
-			},
-			right = {
-				{
-					'lineinfo'
-				}
-			}
-		},
-		component_function = {
-			readonly = "LightLineReadonly",
-			filename = "LightLineFullPath",
-			gitbranch = "FugitiveHead"
-		}
-	}
-
-	vim.fn["lightline#coc#register"]()
-end)();
-
 -- tmuxline
 (function ()
 	vim.g.tmuxline_preset = {
@@ -546,5 +502,17 @@ end)();
 	require("tint").setup({
 		tint = -20,  -- Darken colors, use a positive value to brighten
 		saturation = 0,  -- Saturation to preserve
+	})
+end)();
+
+-- lualine
+(function ()
+	require('lualine').setup({
+		options = {
+			theme = 'tokyonight'
+		},
+		sections = {
+			lualine_x = {}
+		}
 	})
 end)();
