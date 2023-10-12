@@ -51,6 +51,12 @@ While zsh is mainly the shell used, other shells (e.g. bash) should work. Cross-
 
 Scripts are added to `$PATH` (in `.profile`) rather than sourced.
 
+To make sure zsh-command is history is retained, create the history file:
+
+```shell
+mkdir $XDG_DATA_HOME/zsh/ && touch $XDG_DATA_HOME/zsh/history
+```
+
 # Bspwm
 
 Device specific configuration (such as monitor layout) for bspwm can be placed
