@@ -466,6 +466,7 @@ end)();
 -- fzf
 (function ()
 	vim.keymap.set("n", "<Leader>c", vim.cmd.Command)
+	vim.keymap.set("n", "<Leader>b", vim.cmd.Buffers)
 end)();
 
 -- beacon
