@@ -90,6 +90,7 @@ vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	Plug('folke/zen-mode.nvim')
 	Plug('https://git.sr.ht/~whynothugo/lsp_lines.nvim')
 	Plug('ThePrimeagen/refactoring.nvim')
+	Plug('github/copilot.vim')
 
 	-- Harpooon
 	Plug('nvim-lua/plenary.nvim')
