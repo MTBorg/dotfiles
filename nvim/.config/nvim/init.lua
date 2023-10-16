@@ -66,6 +66,7 @@ vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	Plug('olimorris/onedarkpro.nvim')
 	Plug('levouh/tint.nvim')
 	Plug('nvim-tree/nvim-web-devicons')
+	Plug('folke/tokyonight.nvim')
 
 	-- Language packs
 	Plug('baskerville/vim-sxhkdrc')
