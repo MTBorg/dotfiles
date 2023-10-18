@@ -309,10 +309,6 @@ end)();
 (function()
 	vim.api.nvim_set_var("test#strategy", "neovim")
 	vim.api.nvim_set_var("test#neovim#start_normal", 1)
-	if vim.fn.has("nvim") then
-		vim.keymap.set("t", "<C-o>", "<C-\\><C-n>", {})
-	end
-
 
 	vim.keymap.set("n", "t<C-n>", vim.cmd.TestNearest, {silent = true})
 	vim.keymap.set("n", "t<C-f>", vim.cmd.TestFile,  {silent = true})
