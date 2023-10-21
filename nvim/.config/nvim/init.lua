@@ -28,6 +28,15 @@ vim.o.conceallevel = 0
 -- This is necessary to use tab in command mode key bindings
 vim.o.wildcharm = ('\t'):byte()
 vim.o.signcolumn = "auto:1-9"
+vim.api.nvim_create_autocmd('TextYankPost', {
+  group = vim.api.nvim_create_augroup('highlight_yank', {}),
+  desc = 'Hightlight selection on yank',
+  pattern = '*',
+  callback = function()
+    vim.highlight.on_yank { higroup = 'IncSearch', timeout = 300 }
+  end,
+})
+
 
 vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	local Plug = vim.fn["plug#"]
