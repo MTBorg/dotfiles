@@ -156,5 +156,7 @@ compinit
 
 export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 
+export REDWOOD_IGNORED_DIRS="node_modules,target,.git,.cargo,.rustup,go"
+
 export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
 eval "$(starship init zsh)"
