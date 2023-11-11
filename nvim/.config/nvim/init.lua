@@ -529,6 +529,12 @@ end)();
 	})
 end)();
 
+-- copilot
+(function ()
+	vim.keymap.set("i", "<PageUp>", "<Plug>(copilot-next)", {silent = true, noremap = true})
+	vim.keymap.set("i", "<PageDown>", "<Plug>(copilot-previous)", {silent = true, noremap = true})
+end)();
+
 -- source device specific config if it exists
 local configHome = os.getenv('XDG_CONFIG_HOME') or vim.fn.expand('$HOME/.config')
 local deviceConfig = configHome .. '/nvim/device.init.lua'
