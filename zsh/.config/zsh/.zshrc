@@ -160,3 +160,6 @@ export REDWOOD_IGNORED_DIRS="node_modules,target,.git,.cargo,.rustup,go"
 
 export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
 eval "$(starship init zsh)"
+
+local deviceFile="$XDG_CONFIG_HOME/zsh/.device.zshrc"
+[[ -f $deviceFile ]] && source $deviceFile

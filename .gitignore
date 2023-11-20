@@ -6,3 +6,5 @@ vim/.vim/plugged
 *fishd.**
 *zcompdump*
 zsh/.config/zsh/.zsh_sessions
+
+.device.zshrc
