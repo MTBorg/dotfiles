@@ -528,3 +528,8 @@ end)();
     show_current_context_start = true,
 	})
 end)();
+
+-- source device specific config if it exists
+local configHome = os.getenv('XDG_CONFIG_HOME') or vim.fn.expand('$HOME/.config')
+local deviceConfig = configHome .. '/nvim/device.init.lua'
+if vim.fn.filereadable(deviceConfig) ~= 0 then dofile(deviceConfig) end
