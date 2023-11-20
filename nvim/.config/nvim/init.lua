@@ -170,6 +170,7 @@ end
 vim.api.nvim_create_autocmd("BufEnter", {pattern = "*.ts", command = "set filetype=typescript" })
 vim.api.nvim_create_autocmd("BufEnter", {pattern = "*.tsx", command = "set filetype=typescriptreact" })
 vim.api.nvim_create_autocmd("BufEnter", {pattern = "*.pa", command = "set filetype=conf" })
+vim.api.nvim_create_autocmd("BufEnter", {pattern = "*.zshrc", command = "set filetype=zsh" })
 
 local conflictColors = vim.api.nvim_create_augroup("ConflictColors", { clear = true })
 vim.api.nvim_create_autocmd("BufEnter", {
