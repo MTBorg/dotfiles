@@ -308,6 +308,10 @@ end)();
 				open_file = {
 					quit_on_open = true
 				}
+			},
+			filters = {
+				dotfiles = false,
+				git_ignored = false
 			}
 		}
 	)
