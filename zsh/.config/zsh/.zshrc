@@ -163,3 +163,6 @@ eval "$(starship init zsh)"
 
 local deviceFile="$XDG_CONFIG_HOME/zsh/.device.zshrc"
 [[ -f $deviceFile ]] && source $deviceFile
+
+# kubernetes autocompletion
+source <(kubectl completion zsh)
