@@ -101,6 +101,7 @@ vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	Plug('https://git.sr.ht/~whynothugo/lsp_lines.nvim')
 	Plug('ThePrimeagen/refactoring.nvim')
 	Plug('github/copilot.vim')
+	Plug('stevearc/oil.nvim')
 
 	-- Harpooon
 	Plug('nvim-lua/plenary.nvim')
@@ -537,6 +538,11 @@ end)();
 (function ()
 	vim.keymap.set("i", "<PageUp>", "<Plug>(copilot-next)", {silent = true, noremap = true})
 	vim.keymap.set("i", "<PageDown>", "<Plug>(copilot-previous)", {silent = true, noremap = true})
+end)();
+
+-- oil.nvim
+(function ()
+	require("oil").setup()
 end)();
 
 -- source device specific config if it exists
