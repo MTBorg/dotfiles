@@ -15,6 +15,7 @@
 	upreset = !git upstream && git reset --hard $(git upstream)
 	cp = cherry-pick
 	wt = worktree
+	f = fetch
 	initbareremote= config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
 [pull]
 	ff = only
