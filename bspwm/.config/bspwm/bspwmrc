@@ -22,7 +22,7 @@ SXHKD_SHARED=~/.config/sxhkd/sxhkdrc #This contains non wm-dependent keybinds
   || exec sxhkd -c $SXHKD_CONFIGS $SXHKD_SHARED &
 [ $(pidof picom) ] &&
 	pkill -USR1 picom ||
-	exec picom --experimental-backends &
+	exec picom &
 exec volnoti &
 exec xss-lock -- physlock &
 $XDG_CONFIG_HOME/polybar/launch.sh
