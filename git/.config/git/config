@@ -22,3 +22,5 @@
 	pager = less -FX
 [fetch]
 	prune = true
+[init]
+	defaultBranch = main
