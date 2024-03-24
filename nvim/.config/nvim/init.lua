@@ -102,6 +102,7 @@ vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	Plug('ThePrimeagen/refactoring.nvim')
 	Plug('github/copilot.vim')
 	Plug('stevearc/oil.nvim')
+	Plug('nvim-neotest/nvim-nio')
 
 	-- Harpooon
 	Plug('nvim-lua/plenary.nvim')
