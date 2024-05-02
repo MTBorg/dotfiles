@@ -214,6 +214,7 @@ vim.api.nvim_create_autocmd("bufwritepost", {
 			"python",
 			"rasi",
 			"rust",
+			"sql",
 			"toml",
 			"typescript",
 			"vim",
