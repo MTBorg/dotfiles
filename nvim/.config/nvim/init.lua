@@ -84,6 +84,7 @@ vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
 	Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'})
 	Plug('nvim-treesitter/nvim-treesitter-context')
 	Plug('nvim-treesitter/nvim-treesitter-textobjects')
+	Plug('Wansmer/treesj')
 
 	-- Misc
 	Plug('janko/vim-test')
@@ -547,11 +548,17 @@ end)();
 	require("oil").setup()
 end)();
 
+-- treesj
+(function ()
+	require("treesj").setup()
+end)();
+
 -- vim-commentary
 (function ()
 	vim.api.nvim_create_autocmd("FileType", {pattern = "terraform", command = "setlocal commentstring=//%s" })
 	vim.api.nvim_create_autocmd("FileType", {pattern = "proto", command = "setlocal commentstring=//%s" })
 end)();
+
 
 -- source device specific config if it exists
 local configHome = os.getenv('XDG_CONFIG_HOME') or vim.fn.expand('$HOME/.config')
