@@ -37,80 +37,85 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-vim.fn["plug#begin"]("~/.local/share/nvim/plugged/")
-	local Plug = vim.fn["plug#"]
-
-	-- NERDTree
-	Plug('nvim-tree/nvim-tree.lua')
-
-	-- Git
-	Plug('tpope/vim-fugitive')
-	Plug('airblade/vim-gitgutter')
+require("lazy").setup({
+	'nvim-tree/nvim-tree.lua',
+	'tpope/vim-fugitive',
+	'airblade/vim-gitgutter',
 
 	-- Tmux
-	Plug('edkolev/tmuxline.vim')
-	Plug('christoomey/vim-tmux-runner')
-	Plug('christoomey/vim-tmux-navigator')
+	'edkolev/tmuxline.vim',
+	'christoomey/vim-tmux-runner',
+	'christoomey/vim-tmux-navigator',
 
 	-- Coc
-	Plug ('neoclide/coc.nvim', {
-		 branch = 'release'
-	})
-	Plug('antoinemadec/coc-fzf')
+	{'neoclide/coc.nvim', branch = "release", build = "yarn install --frozen-lockfile"},
+	'antoinemadec/coc-fzf',
 
 	-- Fzf
-	Plug('junegunn/fzf')
-	Plug('junegunn/fzf.vim')
+	'junegunn/fzf',
+	'junegunn/fzf.vim',
 
 	-- nvim-dap
-	Plug('mfussenegger/nvim-dap')
-	Plug('leoluz/nvim-dap-go')
-	Plug('rcarriga/nvim-dap-ui')
-	Plug('theHamsta/nvim-dap-virtual-text')
+	'mfussenegger/nvim-dap',
+	'leoluz/nvim-dap-go',
+	'rcarriga/nvim-dap-ui',
+	'theHamsta/nvim-dap-virtual-text',
 
 	-- Styling
-	Plug('whatyouhide/vim-gotham')
-	Plug('dylanaraps/wal.vim')
-	Plug('olimorris/onedarkpro.nvim')
-	Plug('levouh/tint.nvim')
-	Plug('nvim-tree/nvim-web-devicons')
-	Plug('folke/tokyonight.nvim')
+	'whatyouhide/vim-gotham',
+	'dylanaraps/wal.vim',
+	'olimorris/onedarkpro.nvim',
+	'levouh/tint.nvim',
+	'nvim-tree/nvim-web-devicons',
+	'folke/tokyonight.nvim',
 
 	-- Language packs
-	Plug('baskerville/vim-sxhkdrc')
+	'baskerville/vim-sxhkdrc',
 
 	-- Treesitter
-	Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'})
-	Plug('nvim-treesitter/nvim-treesitter-context')
-	Plug('nvim-treesitter/nvim-treesitter-textobjects')
-	Plug('Wansmer/treesj')
+	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+	'nvim-treesitter/nvim-treesitter-context',
+	'nvim-treesitter/nvim-treesitter-textobjects',
+	'Wansmer/treesj',
 
 	-- Misc
-	Plug('janko/vim-test')
-	Plug('tpope/vim-repeat')
-	Plug('tpope/vim-commentary')
-	Plug('tpope/vim-surround')
-	Plug('lukas-reineke/indent-blankline.nvim', {['tag'] = "v2.20.8"})
-	Plug('honza/vim-snippets')
-	Plug('mbbill/undotree')
-	Plug('LucHermitte/local_vimrc')
-	Plug('LucHermitte/lh-vim-lib')
-	Plug('jiangmiao/auto-pairs')
-	Plug('danilamihailov/beacon.nvim')
-	Plug('folke/zen-mode.nvim')
-	Plug('https://git.sr.ht/~whynothugo/lsp_lines.nvim')
-	Plug('ThePrimeagen/refactoring.nvim')
-	Plug('github/copilot.vim')
-	Plug('stevearc/oil.nvim')
-	Plug('nvim-neotest/nvim-nio')
+	'janko/vim-test',
+	'tpope/vim-repeat',
+	'tpope/vim-commentary',
+	'tpope/vim-surround',
+	'lukas-reineke/indent-blankline.nvim', 
+	'honza/vim-snippets',
+	'mbbill/undotree',
+	'LucHermitte/local_vimrc',
+	'LucHermitte/lh-vim-lib',
+	'jiangmiao/auto-pairs',
+	'danilamihailov/beacon.nvim',
+	'folke/zen-mode.nvim',
+	'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+	'ThePrimeagen/refactoring.nvim',
+	'github/copilot.vim',
+	'stevearc/oil.nvim',
+	'nvim-neotest/nvim-nio',
 
 	-- Harpooon
-	Plug('nvim-lua/plenary.nvim')
-	Plug('ThePrimeagen/harpoon')
+	'nvim-lua/plenary.nvim',
+	'ThePrimeagen/harpoon',
 
-	Plug('nvim-lualine/lualine.nvim')
-vim.fn["plug#end"]()
+	'nvim-lualine/lualine.nvim',
+})
 
 local function pumVisible() return vim.fn["coc#pum#visible"]() end
 
@@ -531,10 +536,7 @@ end)();
 
 -- indent-blankline
 (function ()
-	require("indent_blankline").setup({
-		show_current_context = true,
-    show_current_context_start = true,
-	})
+	require("ibl").setup()
 end)();
 
 -- copilot
