@@ -4,6 +4,7 @@ command_timeout = 100
 symbol = "  "
 
 [buf]
+disabled = true
 symbol = " "
 
 [c]
