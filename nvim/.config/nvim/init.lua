@@ -546,6 +546,12 @@ end)();
 	require("oil").setup()
 end)();
 
+-- vim-commentary
+(function ()
+	vim.api.nvim_create_autocmd("FileType", {pattern = "terraform", command = "setlocal commentstring=//%s" })
+	vim.api.nvim_create_autocmd("FileType", {pattern = "proto", command = "setlocal commentstring=//%s" })
+end)();
+
 -- source device specific config if it exists
 local configHome = os.getenv('XDG_CONFIG_HOME') or vim.fn.expand('$HOME/.config')
 local deviceConfig = configHome .. '/nvim/device.init.lua'
