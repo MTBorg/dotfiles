@@ -99,7 +99,6 @@ require("lazy").setup({
 	'lukas-reineke/indent-blankline.nvim', 
 	'honza/vim-snippets',
 	'mbbill/undotree',
-	'LucHermitte/local_vimrc',
 	'LucHermitte/lh-vim-lib',
 	'jiangmiao/auto-pairs',
 	'danilamihailov/beacon.nvim',
@@ -477,11 +476,6 @@ end)();
       z    = '#H',
 			options= { ["status-justify"] = 'left'}
 	}
-end)();
-
--- localvimrc
-(function ()
-	vim.fn["lh#local_vimrc#filter_list"]("asklist", "v:val != $HOME")
 end)();
 
 -- fzf
