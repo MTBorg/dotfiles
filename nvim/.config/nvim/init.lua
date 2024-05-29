@@ -109,6 +109,13 @@ require("lazy").setup({
 	'stevearc/oil.nvim',
 	'nvim-neotest/nvim-nio',
 
+	-- telescope
+	{
+		'nvim-telescope/telescope.nvim', tag = '0.1.6',
+		dependencies = { 'nvim-lua/plenary.nvim' },
+	},
+	'fannheyward/telescope-coc.nvim',
+
 	-- Harpooon
 	'nvim-lua/plenary.nvim',
 	'ThePrimeagen/harpoon',
@@ -136,7 +143,7 @@ vim.keymap.set("n", "src", function () vim.cmd.source("~/.config/nvim/init.lua")
 vim.keymap.set("n", "<Leader>j", vim.cmd.jumps, {silent = true})
 vim.keymap.set("n", "<Leader>o", vim.cmd.only, {silent = true, desc = "Close all windows but current"})
 vim.keymap.set("n", "<Leader>u", vim.cmd.UndotreeToggle, {silent = true, desc = "UndoTree"})
-vim.keymap.set("n", "<C-p>", vim.cmd.GFiles, {silent = true, desc = "FZF"})
+-- vim.keymap.set("n", "<C-p>", vim.cmd.GFiles, {silent = true, desc = "FZF"})
 
 -- center view on jumps/searches
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -276,7 +283,8 @@ end)();
 			'coc-sh',
 			'coc-docker',
 			'coc-rust-analyzer',
-			'coc-lua'
+			'coc-vetur'
+			-- 'coc-lua'
 		})
 		vim.keymap.set("n", "gd", "<Plug>(coc-definition)", {silent = true})
 		vim.keymap.set("n", "gy", "<Plug>(coc-type-definition)", {silent = true})
@@ -480,8 +488,8 @@ end)();
 
 -- fzf
 (function ()
-	vim.keymap.set("n", "<Leader>c", vim.cmd.Command)
-	vim.keymap.set("n", "<Leader>b", vim.cmd.Buffers)
+	-- vim.keymap.set("n", "<Leader>c", vim.cmd.Command)
+	-- vim.keymap.set("n", "<Leader>b", vim.cmd.Buffers)
 end)();
 
 -- beacon
@@ -553,6 +561,37 @@ end)();
 (function ()
 	vim.api.nvim_create_autocmd("FileType", {pattern = "terraform", command = "setlocal commentstring=//%s" })
 	vim.api.nvim_create_autocmd("FileType", {pattern = "proto", command = "setlocal commentstring=//%s" })
+end)();
+
+-- telescope
+(function()
+	require("telescope").setup({
+		pickers = {
+			find_files = {
+				hidden = true
+			}
+		},
+		extensions = {
+			coc = {
+				theme = 'ivy',
+				prefer_locations = true, -- always use Telescope locations to preview definitions/declarations/implementations etc
+				push_cursor_on_edit = true, -- save the cursor position to jump back in the future
+				timeout = 3000, -- timeout for coc commands
+			}
+		},
+	})
+	require('telescope').load_extension('coc')
+
+	local builtin = require('telescope.builtin')
+	-- local extensions = require('telescope').extensions
+	vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+	vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+	vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+	vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+	vim.keymap.set('n', '<leader>fc', builtin.commands, {})
+	vim.keymap.set('n', '<leader>fs', require('telescope').extensions.coc.workspace_symbols)
+	vim.keymap.set('n', '<leader>fr', require('telescope').extensions.coc.references)
+
 end)();
 
 
