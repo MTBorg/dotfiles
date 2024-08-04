@@ -38,6 +38,11 @@ if [ -f "/etc/arch-release" ]; then
 	alias p="pacman"
 fi
 
+# Github
+alias ghprs="gh pr list --web" # Open PRs in browser
+alias ghpr="gh pr view --web" # Open pr for current branch in browser
+alias ghopen="gh browse"
+
 # Others
 alias g="git"
 alias tmux='tmux -f "$XDG_CONFIG_HOME/tmux/.tmux.conf"'
