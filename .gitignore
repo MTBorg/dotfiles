@@ -10,3 +10,4 @@ zsh/.config/zsh/.zsh_sessions
 # device specific configs
 .device.zshrc
 device.init.lua
+config.device.fish
