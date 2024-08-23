@@ -31,7 +31,7 @@ alias tattach="tmux attach-session -t"
 
 # Docker
 alias d="docker"
-alias dc="docker-compose"
+alias dc="docker compose"
 
 # Arch Linux specific aliases
 if [ -f "/etc/arch-release" ]; then
