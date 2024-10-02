@@ -602,6 +602,7 @@ end)();
 	vim.keymap.set('n', '<leader>fm', builtin.marks, {})
 	vim.keymap.set('n', '<leader>fs', require('telescope').extensions.coc.workspace_symbols)
 	vim.keymap.set('n', '<leader>fr', require('telescope').extensions.coc.references)
+	vim.keymap.set('n', '<leader>fw', require('telescope').extensions.coc.workspace_diagnostics)
 
 end)();
 
