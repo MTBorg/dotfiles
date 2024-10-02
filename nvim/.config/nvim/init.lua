@@ -574,6 +574,13 @@ end)();
 				hidden = true
 			}
 		},
+		defaults = {
+			file_ignore_patterns = {
+				"gen/.+%.go$",
+				".*/pkg/go/mod/.*",
+				".git/.*"
+			}
+		},
 		extensions = {
 			coc = {
 				theme = 'ivy',
