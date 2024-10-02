@@ -41,6 +41,7 @@ symbol = " "
 stashed = ''
 
 [golang]
+disabled = true
 symbol = " "
 detect_extensions = []
 
