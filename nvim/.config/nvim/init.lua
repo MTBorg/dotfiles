@@ -599,6 +599,7 @@ end)();
 	vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 	vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 	vim.keymap.set('n', '<leader>fc', builtin.commands, {})
+	vim.keymap.set('n', '<leader>fm', builtin.marks, {})
 	vim.keymap.set('n', '<leader>fs', require('telescope').extensions.coc.workspace_symbols)
 	vim.keymap.set('n', '<leader>fr', require('telescope').extensions.coc.references)
 
