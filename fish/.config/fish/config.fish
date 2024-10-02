@@ -48,6 +48,9 @@ abbr --add sysstatus "systemctl status"
 abbr --add sysenable "systemctl enable"
 abbr --add sysdisable "systemctl disable"
 
+abbr --add gomt "go mod tidy"
+abbr --add gotestall "go clean -testcache && go test -v ./..."
+
 alias ghprs "gh pr list --web" # Open PRs in browser
 alias ghpr "gh pr view --web" # Open pr for current branch in browser
 alias ghopen "gh browse"
