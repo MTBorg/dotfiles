@@ -27,6 +27,9 @@
   "[haskell]": {
     "coc.preferences.formatOnSave": true
   },
+  "[vue]": {
+    "coc.preferences.formatOnSave": true
+  },
   "eslint.validate": [
     "javascript",
     "typescript",

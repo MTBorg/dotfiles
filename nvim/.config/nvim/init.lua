@@ -286,7 +286,7 @@ end)();
 			'coc-sh',
 			'coc-docker',
 			'coc-rust-analyzer',
-			'coc-vetur'
+			'@yaegassy/coc-volar'
 			-- 'coc-lua'
 		})
 		vim.keymap.set("n", "gd", "<Plug>(coc-definition)", {silent = true})
