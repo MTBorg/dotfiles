@@ -1,9 +1,3 @@
-#enable_experimental_conpty_backend = false
-import = ["/home/martin/.config/alacritty/colorschemes.toml"]
-live_config_reload = true
-# "window.dynamic_title" = true
-# "window.option_as_alt" = "OnlyLeft"
-working_directory = "None"
 
 [bell]
 animation = "EaseOutExpo"
@@ -599,3 +593,11 @@ lines = 0
 [window.padding]
 x = 0
 y = 0
+
+[general]
+live_config_reload = true
+# "window.dynamic_title" = true
+# "window.option_as_alt" = "OnlyLeft"
+working_directory = "None"
+#enable_experimental_conpty_backend = false
+import = ["/home/martin/.config/alacritty/colorschemes.toml"]
