@@ -460,12 +460,6 @@ end)();
 	}
 end)();
 
--- fzf
-(function()
-	-- vim.keymap.set("n", "<Leader>c", vim.cmd.Command)
-	-- vim.keymap.set("n", "<Leader>b", vim.cmd.Buffers)
-end)();
-
 -- beacon
 (function()
 	vim.g.beacon_size = 100
