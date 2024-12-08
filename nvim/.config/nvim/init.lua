@@ -1,52 +1,55 @@
-vim.keymap.set("n", "<SPACE>", "", {noremap = true})
-vim.g.mapleader = " "
-vim.g.loaded_netrw = 1
+vim.keymap.set("n", "<SPACE>", "", { noremap = true })
+vim.g.mapleader          = " "
+vim.g.loaded_netrw       = 1
 vim.g.loaded_netrwPlugin = 1
-vim.o.syntax = "off"
-vim.o.compatible = false
-vim.o.showmatch = true
-vim.o.hlsearch  = true
-vim.o.tabstop = 2
-vim.o.softtabstop = 2
-vim.o.expandtab = false
-vim.o.shiftwidth = 2
-vim.o.autoindent = true
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.cc = "80"
-vim.o.termguicolors = true -- "Enable true colors
-vim.o.updatetime = 200 -- "This makes the git gutter update faster
-vim.o.swapfile = false
-vim.o.numberwidth = 1
-vim.o.encoding = "UTF-8"
-vim.o.splitright = true
-vim.o.foldlevel=0
-vim.wo.foldmethod="expr"
-vim.wo.foldexpr="nvim_treesitter#foldexpr()"
-vim.o.showmode = false -- "Don't show mode as this is shown by the lightline plugin
-vim.o.conceallevel = 0
+vim.o.syntax             = "off"
+vim.o.compatible         = false
+vim.o.showmatch          = true
+vim.o.hlsearch           = true
+vim.o.tabstop            = 2
+vim.o.softtabstop        = 2
+vim.o.expandtab          = false
+vim.o.shiftwidth         = 2
+vim.o.autoindent         = true
+vim.o.number             = true
+vim.o.relativenumber     = true
+vim.o.cc                 = "80"
+vim.o.termguicolors      = true -- "Enable true colors
+vim.o.updatetime         = 200  -- "This makes the git gutter update faster
+vim.o.swapfile           = false
+vim.o.numberwidth        = 1
+vim.o.encoding           = "UTF-8"
+vim.o.splitright         = true
+vim.o.foldlevel          = 0
+vim.wo.foldmethod        = "expr"
+vim.wo.foldexpr          = "nvim_treesitter#foldexpr()"
+vim.o.showmode           = false -- "Don't show mode as this is shown by the lightline plugin
+vim.o.conceallevel       = 0
 -- This is necessary to use tab in command mode key bindings
-vim.o.wildcharm = ('\t'):byte()
-vim.o.signcolumn = "auto:1-9"
+vim.o.wildcharm          = ('\t'):byte()
+vim.o.signcolumn         = "auto:1-9"
 vim.api.nvim_create_autocmd('TextYankPost', {
-  group = vim.api.nvim_create_augroup('highlight_yank', {}),
-  desc = 'Hightlight selection on yank',
-  pattern = '*',
-  callback = function()
-    vim.highlight.on_yank { higroup = 'IncSearch', timeout = 300 }
-  end,
+	group = vim.api.nvim_create_augroup('highlight_yank', {}),
+	desc = 'Hightlight selection on yank',
+	pattern = '*',
+	callback = function()
+		vim.highlight.on_yank { higroup = 'IncSearch', timeout = 300 }
+	end,
+})
+vim.diagnostic.config({
+	virtual_text = false
 })
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -59,10 +62,6 @@ require("lazy").setup({
 	'edkolev/tmuxline.vim',
 	'christoomey/vim-tmux-runner',
 	'christoomey/vim-tmux-navigator',
-
-	-- Coc
-	{'neoclide/coc.nvim', branch = "release", build = "yarn install --frozen-lockfile"},
-	'antoinemadec/coc-fzf',
 
 	-- Fzf
 	'junegunn/fzf',
@@ -86,18 +85,54 @@ require("lazy").setup({
 	'baskerville/vim-sxhkdrc',
 
 	-- Treesitter
-	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	'nvim-treesitter/nvim-treesitter-context',
 	'nvim-treesitter/nvim-treesitter-textobjects',
 	'Wansmer/treesj',
+
+	-- LSP
+	'neovim/nvim-lspconfig',
+	-- TODO: Figure out a way to not have to install a separate package manager
+	-- for this, or just switch to mason.
+	"williamboman/mason.nvim",
+	"williamboman/mason-lspconfig.nvim",
+	{
+		"folke/lazydev.nvim",
+		ft = "lua", -- only load on lua files
+		opts = {
+			library = {
+				-- See the configuration section for more details
+				-- Load luvit types when the `vim.uv` word is found
+				{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+			},
+		},
+	},
+	'nvim-telescope/telescope-ui-select.nvim',
+	'hrsh7th/cmp-nvim-lsp',
+	'hrsh7th/cmp-buffer',
+	'hrsh7th/cmp-path',
+	'hrsh7th/nvim-cmp',
+	'hrsh7th/cmp-nvim-lsp',
+	{
+		"Fildo7525/pretty_hover",
+		event = "LspAttach",
+		opts = {}
+	},
+
+	-- Snippets
+	'saadparwaiz1/cmp_luasnip',
+	'L3MON4D3/LuaSnip',
+
+	-- for customizing vim.ui.input
+	'stevearc/dressing.nvim',
 
 	-- Misc
 	'janko/vim-test',
 	'tpope/vim-repeat',
 	'tpope/vim-commentary',
 	'tpope/vim-surround',
-	'lukas-reineke/indent-blankline.nvim', 
-	'honza/vim-snippets',
+	'lukas-reineke/indent-blankline.nvim',
+	'honza/vim-snippets', -- TODO: Delete if deprecated by new snippet plugins
 	'mbbill/undotree',
 	'LucHermitte/lh-vim-lib',
 	'jiangmiao/auto-pairs',
@@ -111,10 +146,10 @@ require("lazy").setup({
 
 	-- telescope
 	{
-		'nvim-telescope/telescope.nvim', tag = '0.1.6',
+		'nvim-telescope/telescope.nvim',
+		tag = '0.1.6',
 		dependencies = { 'nvim-lua/plenary.nvim' },
 	},
-	'fannheyward/telescope-coc.nvim',
 
 	-- Harpooon
 	'nvim-lua/plenary.nvim',
@@ -122,8 +157,6 @@ require("lazy").setup({
 
 	'nvim-lualine/lualine.nvim',
 })
-
-local function pumVisible() return vim.fn["coc#pum#visible"]() end
 
 function ShowDocumentation()
 	local filetype = vim.bo.filetype
@@ -134,15 +167,10 @@ function ShowDocumentation()
 	end
 end
 
-
--- Navigate command mode completion menu with vim bindings (ctrl-j and ctrl-k)
-vim.keymap.set("c", "<C-j>", function () if pumVisible() then return "<Tab>" end end, { expr = true})
-vim.keymap.set("c", "<C-k>", function () if pumVisible() then return "<S-Tab>" end end, { expr = true})
-
-vim.keymap.set("n", "src", function () vim.cmd.source("~/.config/nvim/init.lua") end, { noremap = true})
-vim.keymap.set("n", "<Leader>j", vim.cmd.jumps, {silent = true})
-vim.keymap.set("n", "<Leader>o", vim.cmd.only, {silent = true, desc = "Close all windows but current"})
-vim.keymap.set("n", "<Leader>u", vim.cmd.UndotreeToggle, {silent = true, desc = "UndoTree"})
+vim.keymap.set("n", "src", function() vim.cmd.source("~/.config/nvim/init.lua") end, { noremap = true })
+vim.keymap.set("n", "<Leader>j", vim.cmd.jumps, { silent = true })
+vim.keymap.set("n", "<Leader>o", vim.cmd.only, { silent = true, desc = "Close all windows but current" })
+vim.keymap.set("n", "<Leader>u", vim.cmd.UndotreeToggle, { silent = true, desc = "UndoTree" })
 -- vim.keymap.set("n", "<C-p>", vim.cmd.GFiles, {silent = true, desc = "FZF"})
 
 -- center view on jumps/searches
@@ -169,42 +197,42 @@ vim.api.nvim_set_hl(0, "Pmenu", {ctermbg = 0}) -- "Use XResources background as 
 function Upgrade()
 	vim.cmd.PlugUpgrade()
 	vim.cmd.PlugUpdate()
-	vim.cmd.CocUpdate()
 	vim.cmd.TSUpdate()
 end
+
 vim.api.nvim_create_user_command("Upgrade", Upgrade, {})
 
 function ConflictsHighlight()
-    vim.cmd("syn region conflictStart start=/^<<<<<<< .*$/ end=/^\\ze\\(=======$\\||||||||\\)/")
-    vim.cmd("syn region conflictMiddle start=/^||||||| .*$/ end=/^\\ze=======$/")
-    vim.cmd("syn region conflictEnd start=/^\\(=======$\\||||||| |\\)/ end=/^>>>>>>> .*$/")
+	vim.cmd("syn region conflictStart start=/^<<<<<<< .*$/ end=/^\\ze\\(=======$\\||||||||\\)/")
+	vim.cmd("syn region conflictMiddle start=/^||||||| .*$/ end=/^\\ze=======$/")
+	vim.cmd("syn region conflictEnd start=/^\\(=======$\\||||||| |\\)/ end=/^>>>>>>> .*$/")
 
-		vim.api.nvim_set_hl(0, "conflictStart", {ctermbg = "red", ctermfg="black"})
-		vim.api.nvim_set_hl(0, "conflictMiddle", {ctermbg = "blue", ctermfg="black"})
-		vim.api.nvim_set_hl(0, "conflictEnd", {ctermbg = "green", ctermfg="black"})
+	vim.api.nvim_set_hl(0, "conflictStart", { ctermbg = "red", ctermfg = "black" })
+	vim.api.nvim_set_hl(0, "conflictMiddle", { ctermbg = "blue", ctermfg = "black" })
+	vim.api.nvim_set_hl(0, "conflictEnd", { ctermbg = "green", ctermfg = "black" })
 end
 
-vim.api.nvim_create_autocmd("BufEnter", {pattern = "*.ts", command = "set filetype=typescript" })
-vim.api.nvim_create_autocmd("BufEnter", {pattern = "*.tsx", command = "set filetype=typescriptreact" })
-vim.api.nvim_create_autocmd("BufEnter", {pattern = "*.pa", command = "set filetype=conf" })
-vim.api.nvim_create_autocmd("BufEnter", {pattern = "*.zshrc", command = "set filetype=zsh" })
+vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.ts", command = "set filetype=typescript" })
+vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.tsx", command = "set filetype=typescriptreact" })
+vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.pa", command = "set filetype=conf" })
+vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.zshrc", command = "set filetype=zsh" })
 
 local conflictColors = vim.api.nvim_create_augroup("ConflictColors", { clear = true })
 vim.api.nvim_create_autocmd("BufEnter", {
-		callback = ConflictsHighlight,
-		group = conflictColors,
+	callback = ConflictsHighlight,
+	group = conflictColors,
 })
 
 local vimrchook = vim.api.nvim_create_augroup("vimrchook", { clear = true })
 vim.api.nvim_create_autocmd("bufwritepost", {
-		command = "source $MYVIMRC",
-		group = vimrchook,
-		pattern = "$MYVIMRC"
+	command = "source $MYVIMRC",
+	group = vimrchook,
+	pattern = "$MYVIMRC"
 });
 
 -- Treesitter
-(function ()
-	require'nvim-treesitter.configs'.setup {
+(function()
+	require 'nvim-treesitter.configs'.setup {
 		ensure_installed = {
 			"bash",
 			"c",
@@ -267,56 +295,8 @@ vim.api.nvim_create_autocmd("bufwritepost", {
 	}
 end)();
 
--- Coc
-(function ()
-		vim.api.nvim_set_var("coc_snippet_next", "<C-l>")
-		vim.api.nvim_set_var("coc_snippet_prev", "<C-h>")
-		vim.api.nvim_set_var("coc_global_extensions", {
-			'coc-tsserver',
-			'coc-pyright',
-			'coc-json',
-			'coc-eslint',
-			'coc-prettier',
-			'coc-css',
-			'coc-html',
-			'coc-snippets',
-			'coc-yaml',
-			'coc-vimlsp',
-			'coc-go',
-			'coc-sh',
-			'coc-docker',
-			'coc-rust-analyzer',
-			'@yaegassy/coc-volar'
-			-- 'coc-lua'
-		})
-		vim.keymap.set("n", "gd", "<Plug>(coc-definition)", {silent = true})
-		vim.keymap.set("n", "gy", "<Plug>(coc-type-definition)", {silent = true})
-		vim.keymap.set("n", "gi", "<Plug>(coc-implementation)", {silent = true})
-		vim.keymap.set("n", "gr", "<Plug>(coc-references)", {silent = true})
-		vim.keymap.set("n", "gf", "<Plug>(coc-rename)", {silent = true})
-		vim.keymap.set("n", "gr", "<Plug>(coc-references)", {silent = true})
-		-- Use `gn` and `gp` to navigate diagnostics
-		-- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-		vim.keymap.set("n", "gn", "<Plug>(coc-diagnostic-next)", {silent = true})
-		vim.keymap.set("n", "gp", "<Plug>(coc-diagnostic-prev)", {silent = true})
-		vim.keymap.set("i", "<C-q>", vim.fn["coc#refresh"], {silent = true, noremap = true, expr = true})
-		vim.keymap.set("n", "K", ShowDocumentation, {noremap = true, silent = true})
-		-- Bind popup navigation to ctrl-j and ctrl-k
-		vim.keymap.set("i", "<C-j>", function() if pumVisible() then return vim.fn["coc#pum#next"](1) end end, {expr = true})
-		vim.keymap.set("i", "<C-k>", function() if pumVisible() then return vim.fn["coc#pum#prev"](1) end end, {expr = true})
-		-- TODO: Can't figure out how to use <CR> here with vim.keymap.set. Figure it out.
-		vim.keymap.set("i", "<CR>", "coc#pum#visible() ? coc#pum#confirm() : '<CR>'", {silent = true, expr = true, noremap = true})
-
-		vim.api.nvim_create_user_command("CocSymbols", function () vim.cmd("CocList symbols") end, {})
-
-		vim.api.nvim_create_autocmd("User", {
-			pattern = "CocOpenFloat",
-			command = "setl nofen",
-		})
-end)();
-
 -- nvim-tree
-(function ()
+(function()
 	require("nvim-tree").setup(
 		{
 			view = {
@@ -335,7 +315,7 @@ end)();
 		}
 	)
 
-	vim.keymap.set("n", "<Leader>e", vim.cmd.NvimTreeToggle, {silent = true, noremap = true})
+	vim.keymap.set("n", "<Leader>e", vim.cmd.NvimTreeToggle, { silent = true, noremap = true })
 end)();
 
 -- vim-test
@@ -343,11 +323,11 @@ end)();
 	vim.api.nvim_set_var("test#strategy", "neovim")
 	vim.api.nvim_set_var("test#neovim#start_normal", 1)
 
-	vim.keymap.set("n", "t<C-n>", vim.cmd.TestNearest, {silent = true})
-	vim.keymap.set("n", "t<C-f>", vim.cmd.TestFile,  {silent = true})
-	vim.keymap.set("n", "t<C-s>", vim.cmd.TestSuite, {silent = true})
-	vim.keymap.set("n", "t<C-l>", vim.cmd.TestLast,  {silent = true})
-	vim.keymap.set("n", "t<C-g>", vim.cmd.TestVisit, {silent = true})
+	vim.keymap.set("n", "t<C-n>", vim.cmd.TestNearest, { silent = true })
+	vim.keymap.set("n", "t<C-f>", vim.cmd.TestFile, { silent = true })
+	vim.keymap.set("n", "t<C-s>", vim.cmd.TestSuite, { silent = true })
+	vim.keymap.set("n", "t<C-l>", vim.cmd.TestLast, { silent = true })
+	vim.keymap.set("n", "t<C-g>", vim.cmd.TestVisit, { silent = true })
 end)();
 
 -- harpoon
@@ -355,23 +335,23 @@ end)();
 	local harpoon_ui = require('harpoon.ui')
 	local harpoon_mark = require('harpoon.mark')
 	local function harpoon_nav_file(index)
-		return function () harpoon_ui.nav_file(index) end
+		return function() harpoon_ui.nav_file(index) end
 	end
-	vim.keymap.set("n", "<Leader>1", harpoon_nav_file(1), {silent = true})
-	vim.keymap.set("n", "<Leader>2", harpoon_nav_file(2), {silent = true})
-	vim.keymap.set("n", "<Leader>3", harpoon_nav_file(3), {silent = true})
-	vim.keymap.set("n", "<Leader>4", harpoon_nav_file(4), {silent = true})
-	vim.keymap.set("n", "<Leader>nn", harpoon_ui.toggle_quick_menu, {silent = true})
+	vim.keymap.set("n", "<Leader>1", harpoon_nav_file(1), { silent = true })
+	vim.keymap.set("n", "<Leader>2", harpoon_nav_file(2), { silent = true })
+	vim.keymap.set("n", "<Leader>3", harpoon_nav_file(3), { silent = true })
+	vim.keymap.set("n", "<Leader>4", harpoon_nav_file(4), { silent = true })
+	vim.keymap.set("n", "<Leader>nn", harpoon_ui.toggle_quick_menu, { silent = true })
 	vim.keymap.set("n", "<Leader>na", harpoon_mark.add_file)
 end)();
 
 -- vim-fugitive
 (function()
-	vim.keymap.set("n", "<Leader>gd", vim.cmd.Gdiffsplit, {silent = true})
-	vim.keymap.set("n", "<Leader>gs", vim.cmd.Gstatus, {silent = true})
-	vim.keymap.set("n", "<Leader>gh", vim.cmd.diffget, {silent = true})
-	vim.keymap.set("n", "<Leader>gl", vim.cmd.diffhet, {silent = true})
-	vim.keymap.set("n", "<Leader>gb", vim.cmd.Gblame, {silent = true})
+	vim.keymap.set("n", "<Leader>gd", vim.cmd.Gdiffsplit, { silent = true })
+	vim.keymap.set("n", "<Leader>gs", vim.cmd.Gstatus, { silent = true })
+	vim.keymap.set("n", "<Leader>gh", vim.cmd.diffget, { silent = true })
+	vim.keymap.set("n", "<Leader>gl", vim.cmd.diffhet, { silent = true })
+	vim.keymap.set("n", "<Leader>gb", vim.cmd.Gblame, { silent = true })
 end)();
 
 -- vim-tmux-runner
@@ -385,7 +365,7 @@ end)();
 end)();
 
 -- vim-dap
-(function ()
+(function()
 	require("dapui").setup()
 	require("nvim-dap-virtual-text").setup({
 		highlight_changed_variables = true
@@ -397,23 +377,23 @@ end)();
 	dap.listeners.before.event_terminated["dapui_config"] = function() dapui.close() end
 	dap.listeners.before.event_exited["dapui_config"] = function() dapui.close() end
 
-	vim.keymap.set("n", "<Leader>dc", dap.continue, {silent = true})
-	vim.keymap.set("n", "<Leader>dj", dap.step_over, {silent = true})
-	vim.keymap.set("n", "<Leader>dl", dap.step_into, {silent = true})
-	vim.keymap.set("n", "<Leader>dk", dap.step_out, {silent = true})
-	vim.keymap.set("n", "<Leader>dgc", dap.run_to_cursor, {silent = true})
-	vim.keymap.set("n", "<Leader>dbp", dap.toggle_breakpoint, {silent = true})
-	vim.keymap.set("n", "<Leader>dr", dap.repl.open, {silent = true})
-	vim.keymap.set("n", "<Leader>di", dapui.eval, {silent = true})
-	vim.keymap.set("v", "<Leader>di", dapui.eval, {silent = true})
-	vim.keymap.set("n", "<Leader>de", dap.terminate, {silent = true})
+	vim.keymap.set("n", "<Leader>dc", dap.continue, { silent = true })
+	vim.keymap.set("n", "<Leader>dj", dap.step_over, { silent = true })
+	vim.keymap.set("n", "<Leader>dl", dap.step_into, { silent = true })
+	vim.keymap.set("n", "<Leader>dk", dap.step_out, { silent = true })
+	vim.keymap.set("n", "<Leader>dgc", dap.run_to_cursor, { silent = true })
+	vim.keymap.set("n", "<Leader>dbp", dap.toggle_breakpoint, { silent = true })
+	vim.keymap.set("n", "<Leader>dr", dap.repl.open, { silent = true })
+	vim.keymap.set("n", "<Leader>di", dapui.eval, { silent = true })
+	vim.keymap.set("v", "<Leader>di", dapui.eval, { silent = true })
+	vim.keymap.set("n", "<Leader>de", dap.terminate, { silent = true })
 
-	vim.api.nvim_set_hl(0, "DapBreakpoint", { ctermfg=52 })
-	vim.api.nvim_set_hl(0, "DapStopped", { ctermfg=22, ctermbg=7 })
-	vim.fn.sign_define('DapBreakpoint', {text='', texthl='DapBreakpoint'})
-	vim.fn.sign_define('DapStopped', {text='', texthl='DapStopped', linehl='DapStopped', numhl='DapStopped'})
+	vim.api.nvim_set_hl(0, "DapBreakpoint", { ctermfg = 52 })
+	vim.api.nvim_set_hl(0, "DapStopped", { ctermfg = 22, ctermbg = 7 })
+	vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'DapBreakpoint' })
+	vim.fn.sign_define('DapStopped', { text = '', texthl = 'DapStopped', linehl = 'DapStopped', numhl = 'DapStopped' })
 
-	vim.api.nvim_create_user_command("DAPClearBreakpoints", function () dap.clear_breakpoints() end, {})
+	vim.api.nvim_create_user_command("DAPClearBreakpoints", function() dap.clear_breakpoints() end, {})
 
 	dap.adapters.lldb = {
 		type = 'executable',
@@ -454,13 +434,13 @@ end)();
 		}
 	}
 
-	vim.api.nvim_create_user_command("DapScope", function ()
-    local widgets = require "dap.ui.widgets";
-    widgets.centered_float(widgets.scopes)
+	vim.api.nvim_create_user_command("DapScope", function()
+		local widgets = require "dap.ui.widgets";
+		widgets.centered_float(widgets.scopes)
 	end, {})
 
-	vim.api.nvim_create_user_command("DapHover", function ()
-    require "dap.ui.widgets".hover()
+	vim.api.nvim_create_user_command("DapHover", function()
+		require "dap.ui.widgets".hover()
 	end, {})
 
 	require('dap-go').setup {
@@ -479,56 +459,61 @@ end)();
 end)();
 
 -- tmuxline
-(function ()
+(function()
 	vim.g.tmuxline_preset = {
-      a    = '#S',
-      win  = '#I #W',
-      cwin = '#I #W',
-      z    = '#H',
-			options= { ["status-justify"] = 'left'}
+		a       = '#S',
+		win     = '#I #W',
+		cwin    = '#I #W',
+		z       = '#H',
+		options = { ["status-justify"] = 'left' }
 	}
 end)();
 
 -- fzf
-(function ()
+(function()
 	-- vim.keymap.set("n", "<Leader>c", vim.cmd.Command)
 	-- vim.keymap.set("n", "<Leader>b", vim.cmd.Buffers)
 end)();
 
 -- beacon
-(function ()
-	vim.g.beacon_size=100
-	vim.g.beacon_minimal_jump=1
+(function()
+	vim.g.beacon_size = 100
+	vim.g.beacon_minimal_jump = 1
 end)();
 
-(function ()
+(function()
 	require("zen-mode").setup()
 end)();
 
-(function ()
+(function()
 	require("lsp_lines").setup()
 end)();
 
 -- refactoring
-(function ()
+(function()
 	require("refactoring").setup({})
 
-	vim.api.nvim_set_keymap("v", "<leader>re", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]], {noremap = true, silent = true, expr = false})
-	vim.api.nvim_set_keymap("v", "<leader>rf", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]], {noremap = true, silent = true, expr = false})
-	vim.api.nvim_set_keymap("v", "<leader>rv", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]], {noremap = true, silent = true, expr = false})
-	vim.api.nvim_set_keymap("v", "<leader>ri", [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], {noremap = true, silent = true, expr = false})
+	vim.api.nvim_set_keymap("v", "<leader>re", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]],
+		{ noremap = true, silent = true, expr = false })
+	vim.api.nvim_set_keymap("v", "<leader>rf",
+		[[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]],
+		{ noremap = true, silent = true, expr = false })
+	vim.api.nvim_set_keymap("v", "<leader>rv", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]],
+		{ noremap = true, silent = true, expr = false })
+	vim.api.nvim_set_keymap("v", "<leader>ri", [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
+		{ noremap = true, silent = true, expr = false })
 end)();
 
 -- tint
-(function ()
+(function()
 	require("tint").setup({
-		tint = -20,  -- Darken colors, use a positive value to brighten
-		saturation = 0,  -- Saturation to preserve
+		tint = -20,   -- Darken colors, use a positive value to brighten
+		saturation = 0, -- Saturation to preserve
 	})
 end)();
 
 -- lualine
-(function ()
+(function()
 	require('lualine').setup({
 		options = {
 			theme = 'tokyonight'
@@ -540,30 +525,30 @@ end)();
 end)();
 
 -- indent-blankline
-(function ()
+(function()
 	require("ibl").setup()
 end)();
 
 -- copilot
-(function ()
-	vim.keymap.set("i", "<PageUp>", "<Plug>(copilot-next)", {silent = true, noremap = true})
-	vim.keymap.set("i", "<PageDown>", "<Plug>(copilot-previous)", {silent = true, noremap = true})
+(function()
+	vim.keymap.set("i", "<PageUp>", "<Plug>(copilot-next)", { silent = true, noremap = true })
+	vim.keymap.set("i", "<PageDown>", "<Plug>(copilot-previous)", { silent = true, noremap = true })
 end)();
 
 -- oil.nvim
-(function ()
+(function()
 	require("oil").setup()
 end)();
 
 -- treesj
-(function ()
+(function()
 	require("treesj").setup()
 end)();
 
 -- vim-commentary
-(function ()
-	vim.api.nvim_create_autocmd("FileType", {pattern = "terraform", command = "setlocal commentstring=//%s" })
-	vim.api.nvim_create_autocmd("FileType", {pattern = "proto", command = "setlocal commentstring=//%s" })
+(function()
+	vim.api.nvim_create_autocmd("FileType", { pattern = "terraform", command = "setlocal commentstring=//%s" })
+	vim.api.nvim_create_autocmd("FileType", { pattern = "proto", command = "setlocal commentstring=//%s" })
 end)();
 
 -- telescope
@@ -581,33 +566,33 @@ end)();
 				".git/.*"
 			}
 		},
-		extensions = {
-			coc = {
-				theme = 'ivy',
-				prefer_locations = true, -- always use Telescope locations to preview definitions/declarations/implementations etc
-				push_cursor_on_edit = true, -- save the cursor position to jump back in the future
-				timeout = 3000, -- timeout for coc commands
-			}
-		},
 	})
-	require('telescope').load_extension('coc')
 
 	local builtin = require('telescope.builtin')
-	-- local extensions = require('telescope').extensions
 	vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 	vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 	vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 	vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 	vim.keymap.set('n', '<leader>fc', builtin.commands, {})
 	vim.keymap.set('n', '<leader>fm', builtin.marks, {})
-	vim.keymap.set('n', '<leader>fs', require('telescope').extensions.coc.workspace_symbols)
-	vim.keymap.set('n', '<leader>fr', require('telescope').extensions.coc.references)
-	vim.keymap.set('n', '<leader>fw', require('telescope').extensions.coc.workspace_diagnostics)
-
+	vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
+	vim.keymap.set('n', '<leader>fs', builtin.lsp_dynamic_workspace_symbols)
+	vim.keymap.set('n', '<leader>fwd', builtin.diagnostics)
+	vim.keymap.set('n', '<leader>fi', builtin.lsp_implementations)
+	vim.keymap.set('n', '<leader>ft', builtin.lsp_type_definitions)
+	vim.keymap.set('n', '<leader>fd', builtin.lsp_definitions)
 end)();
 
+require 'plugin/lsp'
+require 'plugin/cmp'
+
+require("telescope").load_extension("ui-select")
+vim.keymap.set('n', '<leader>fa', vim.lsp.buf.code_action)
 
 -- source device specific config if it exists
-local configHome = os.getenv('XDG_CONFIG_HOME') or vim.fn.expand('$HOME/.config')
+local configHome = os.getenv('XDG_CONFIG_HOME') or vim.fn.expand('$HOME/.config')
 local deviceConfig = configHome .. '/nvim/device.init.lua'
 if vim.fn.filereadable(deviceConfig) ~= 0 then dofile(deviceConfig) end
+-- Create a keymap for vim.lsp.buf.implementation
+--
+--
