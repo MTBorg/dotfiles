@@ -134,7 +134,6 @@ require("lazy").setup({
 	'LucHermitte/lh-vim-lib',
 	'jiangmiao/auto-pairs',
 	'danilamihailov/beacon.nvim',
-	'folke/zen-mode.nvim',
 	'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
 	'ThePrimeagen/refactoring.nvim',
 	'github/copilot.vim',
@@ -464,10 +463,6 @@ end)();
 (function()
 	vim.g.beacon_size = 100
 	vim.g.beacon_minimal_jump = 1
-end)();
-
-(function()
-	require("zen-mode").setup()
 end)();
 
 (function()
