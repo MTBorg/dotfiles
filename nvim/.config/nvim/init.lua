@@ -165,7 +165,6 @@ end
 
 vim.keymap.set("n", "src", function() vim.cmd.source("~/.config/nvim/init.lua") end, { noremap = true })
 vim.keymap.set("n", "<Leader>j", vim.cmd.jumps, { silent = true })
-vim.keymap.set("n", "<Leader>o", vim.cmd.only, { silent = true, desc = "Close all windows but current" })
 vim.keymap.set("n", "<Leader>u", vim.cmd.UndotreeToggle, { silent = true, desc = "UndoTree" })
 -- vim.keymap.set("n", "<C-p>", vim.cmd.GFiles, {silent = true, desc = "FZF"})
 
