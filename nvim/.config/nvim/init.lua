@@ -74,9 +74,6 @@ require("lazy").setup({
 	'theHamsta/nvim-dap-virtual-text',
 
 	-- Styling
-	'whatyouhide/vim-gotham',
-	'dylanaraps/wal.vim',
-	'olimorris/onedarkpro.nvim',
 	'levouh/tint.nvim',
 	'nvim-tree/nvim-web-devicons',
 	'folke/tokyonight.nvim',
@@ -186,13 +183,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("i", 'jk', '<Esc>', { noremap = true, silent = true })
 vim.keymap.set("i", 'kj', '<Esc>', { noremap = true, silent = true })
 
--- Static colorscheme
--- colorscheme gotham
-
--- Pywal colorscheme
-vim.cmd("colorscheme wal")
-vim.o.termguicolors = false
-vim.api.nvim_set_hl(0, "Pmenu", {ctermbg = 0}) -- "Use XResources background as popup menu color
+vim.cmd("colorscheme tokyonight")
 
 function Upgrade()
 	vim.cmd.PlugUpgrade()
