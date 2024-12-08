@@ -154,15 +154,6 @@ require("lazy").setup({
 	'nvim-lualine/lualine.nvim',
 })
 
-function ShowDocumentation()
-	local filetype = vim.bo.filetype
-	if filetype == "vim" or filetype == "help" then
-		vim.cmd("execute 'h '.expand('<cword>')")
-	else
-		vim.fn.CocAction('doHover')
-	end
-end
-
 vim.keymap.set("n", "src", function() vim.cmd.source("~/.config/nvim/init.lua") end, { noremap = true })
 vim.keymap.set("n", "<Leader>u", vim.cmd.UndotreeToggle, { silent = true, desc = "UndoTree" })
 -- vim.keymap.set("n", "<C-p>", vim.cmd.GFiles, {silent = true, desc = "FZF"})
