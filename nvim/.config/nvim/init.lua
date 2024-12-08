@@ -531,42 +531,10 @@ end)();
 	vim.api.nvim_create_autocmd("FileType", { pattern = "proto", command = "setlocal commentstring=//%s" })
 end)();
 
--- telescope
-(function()
-	require("telescope").setup({
-		pickers = {
-			find_files = {
-				hidden = true
-			}
-		},
-		defaults = {
-			file_ignore_patterns = {
-				"gen/.+%.go$",
-				".*/pkg/go/mod/.*",
-				".git/.*"
-			}
-		},
-	})
-
-	local builtin = require('telescope.builtin')
-	vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-	vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-	vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-	vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-	vim.keymap.set('n', '<leader>fc', builtin.commands, {})
-	vim.keymap.set('n', '<leader>fm', builtin.marks, {})
-	vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
-	vim.keymap.set('n', '<leader>fs', builtin.lsp_dynamic_workspace_symbols)
-	vim.keymap.set('n', '<leader>fwd', builtin.diagnostics)
-	vim.keymap.set('n', '<leader>fi', builtin.lsp_implementations)
-	vim.keymap.set('n', '<leader>ft', builtin.lsp_type_definitions)
-	vim.keymap.set('n', '<leader>fd', builtin.lsp_definitions)
-end)();
-
 require 'plugin/lsp'
 require 'plugin/cmp'
+require 'plugin/telescope'
 
-require("telescope").load_extension("ui-select")
 vim.keymap.set('n', '<leader>fa', vim.lsp.buf.code_action)
 
 -- source device specific config if it exists
