@@ -4,11 +4,11 @@ require("mason-lspconfig").setup({
 	ensure_installed = {
 		"bashls",
 		"bufls", -- protobuf
-		"c",
+		"clangd", -- c
 		-- TODO: Installing cmake ls fails because of an invalid python version
 		-- "cmake",
 		"cssls",
-		"docker",
+		"dockerls",
 		"docker_compose_language_service",
 		"elixirls",
 		"gopls",
