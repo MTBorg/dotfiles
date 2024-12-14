@@ -8,8 +8,10 @@ require("telescope").setup({
 		file_ignore_patterns = {
 			"gen/.+%.go$",
 			".*/pkg/go/mod/.*",
-			".git/.*"
-		}
+			".git/.*",
+			".yarn/releases/.*",
+			"yarn.lock"
+		},
 	},
 })
 
