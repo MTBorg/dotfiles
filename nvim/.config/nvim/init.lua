@@ -455,6 +455,7 @@ end)();
 	vim.api.nvim_create_autocmd("FileType", { pattern = "proto", command = "setlocal commentstring=//%s" })
 end)();
 
+require 'plugin/mason'
 require 'plugin/lsp'
 require 'plugin/cmp'
 require 'plugin/telescope'
