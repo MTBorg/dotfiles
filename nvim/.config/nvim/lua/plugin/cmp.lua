@@ -46,11 +46,16 @@ cmp.setup {
 		end, { 'i', 's' }),
 	}),
 	sources = {
-		{ name = 'nvim_lsp' },
-		{ name = 'luasnip' },
+		{ name = 'nvim_lsp', priority = 10 },
+		{ name = 'luasnip',  priority = 9 },
 		{ name = 'buffer' },
 		{ name = 'path' },
 	},
+	sorting = {
+		comparators = {
+			cmp.config.compare.recently_used
+		}
+	}
 }
 
 cmp.setup.cmdline('/', {
