@@ -37,6 +37,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
 	end,
 })
 
+lspconfig.volar.setup {
+	filetypes = { 'vue' },
+	init_options = {
+		vue = {
+			hybridMode = false,
+		},
+	},
+}
+
 lspconfig.elixirls.setup {
 	capabilities = capabilities,
 	cmd = { "/opt/homebrew/bin/elixir-ls" },
