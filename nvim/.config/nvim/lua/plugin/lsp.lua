@@ -25,7 +25,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		local client = vim.lsp.get_client_by_id(args.data.client_id)
 
 		-- Format the current buffer on save
-		if client.supports_method('textDocument/formatting') then
+		-- TODO: instead of disabling format on save figure out how to integrate with prettier
+		if client.supports_method('textDocument/formatting') and client.name ~= "eslint" and client.name ~= "ts_ls" then
 			vim.api.nvim_create_autocmd('BufWritePre', {
 				buffer = args.buf,
 				callback = function()
