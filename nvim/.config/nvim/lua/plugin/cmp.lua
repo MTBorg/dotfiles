@@ -26,10 +26,7 @@ cmp.setup {
 				fallback()
 			end
 		end, { 'i', 's' }),
-		['<CR>'] = cmp.mapping.confirm {
-			behavior = cmp.ConfirmBehavior.Replace,
-			select = true,
-		},
+		['<CR>'] = cmp.mapping.confirm({ select = false }),
 		['<C-j>'] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
