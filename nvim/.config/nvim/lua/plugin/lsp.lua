@@ -36,3 +36,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		end
 	end,
 })
+
+lspconfig.elixirls.setup {
+	capabilities = capabilities,
+	cmd = { "/opt/homebrew/bin/elixir-ls" },
+}
