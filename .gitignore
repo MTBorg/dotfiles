@@ -11,3 +11,4 @@ zsh/.config/zsh/.zsh_sessions
 .device.zshrc
 device.init.lua
 config.device.fish
+alacritty/**/device.toml

@@ -79,4 +79,7 @@ live_config_reload = true
 # "window.option_as_alt" = "OnlyLeft"
 working_directory = "None"
 #enable_experimental_conpty_backend = false
-import = ["/home/martin/.config/alacritty/colorschemes.toml"]
+import = [
+	"/Users/martin/.config/alacritty/colorschemes.toml",
+	"~/.config/alacritty/device.toml"
+]
