@@ -7,30 +7,12 @@ duration = 0
 [colors]
 draw_bold_text_with_bright_colors = true
 
-[cursor]
-style = "Block"
-unfocused_hollow = true
-
-# [debug]
-# log_level = "Warn"
-# persistent_logging = false
-# print_events = false
-# ref_test = false
-# render_timer = false
-
 [env]
 TERM = "xterm-256color"
 WINIT_X11_SCALE_FACTOR = "1.6"
 
-[font]
-size = 6.0
-
 [font.bold]
 family = "FiraCode Nerd Font"
-
-[font.glyph_offset]
-x = 0
-y = 0
 
 [font.italic]
 family = "FiraCode Nerd Font"
@@ -38,10 +20,6 @@ family = "FiraCode Nerd Font"
 [font.normal]
 family = "FiraCode Nerd Font"
 style = "Regular"
-
-[font.offset]
-x = 0
-y = 0
 
 [mouse]
 hide_when_typing = false
@@ -52,33 +30,8 @@ mouse = "Middle"
 
 [scrolling]
 history = 100000
-multiplier = 3
-
-[selection]
-save_to_clipboard = false
-semantic_escape_chars = ",│`|:\"' ()[]{}<>"
-
-[window]
-decorations = "none"
-dynamic_padding = false
-startup_mode = "Windowed"
-dynamic_title = true
-# option_as_alt = "OnlyLeft" # Only for MacOS
-
-[window.dimensions]
-columns = 0
-lines = 0
-
-[window.padding]
-x = 0
-y = 0
 
 [general]
-live_config_reload = true
-# "window.dynamic_title" = true
-# "window.option_as_alt" = "OnlyLeft"
-working_directory = "None"
-#enable_experimental_conpty_backend = false
 import = [
 	"~/.config/alacritty/colorschemes.toml",
 	"~/.config/alacritty/device.toml"
