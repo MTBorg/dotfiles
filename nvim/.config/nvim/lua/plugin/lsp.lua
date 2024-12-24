@@ -76,3 +76,8 @@ lspconfig.buf_ls.setup {
 lspconfig.pyright.setup {
 	capabilities = capabilities,
 }
+
+lspconfig.csharp_ls.setup {
+	capabilities = capabilities,
+	AutomaticWorkspaceInit = true
+}

@@ -8,6 +8,7 @@ require("mason-lspconfig").setup({
 		-- TODO: Installing cmake ls fails because of an invalid python version
 		-- "cmake",
 		"cssls",
+		"csharp_ls",
 		"dockerls",
 		"docker_compose_language_service",
 		"elixirls",
