@@ -5,6 +5,12 @@ require("telescope").setup({
 		}
 	},
 	defaults = {
+		layout_config = {
+			horizontal = {
+				width = { padding = 1 },
+				height = { padding = 1 }
+			}
+		},
 		path_display = {
 			"shorten"
 		},
