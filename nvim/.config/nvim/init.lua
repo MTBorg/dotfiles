@@ -468,7 +468,7 @@ require 'plugin/treesitter'
 vim.keymap.set('n', '<leader>fa', vim.lsp.buf.code_action)
 
 -- source device specific config if it exists
-local configHome = os.getenv('XDG_CONFIG_HOME') or vim.fn.expand('$HOME/.config')
+local configHome = os.getenv('XDG_CONFIG_HOME') or vim.fn.expand('$HOME/.config')
 local deviceConfig = configHome .. '/nvim/device.init.lua'
 if vim.fn.filereadable(deviceConfig) ~= 0 then dofile(deviceConfig) end
 -- Create a keymap for vim.lsp.buf.implementation
