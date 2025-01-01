@@ -5,6 +5,9 @@ require("telescope").setup({
 		}
 	},
 	defaults = {
+		path_display = {
+			"shorten"
+		},
 		file_ignore_patterns = {
 			"gen/.+%.go$",
 			".*/pkg/go/mod/.*",
