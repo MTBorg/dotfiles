@@ -175,6 +175,9 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("i", 'jk', '<Esc>', { noremap = true, silent = true })
 vim.keymap.set("i", 'kj', '<Esc>', { noremap = true, silent = true })
 
+vim.keymap.set("n", "<Leader>cn", vim.cmd.cnext, { silent = true })
+vim.keymap.set("n", "<Leader>cp", vim.cmd.cprevious, { silent = true })
+
 vim.cmd("colorscheme tokyonight")
 
 function Upgrade()
