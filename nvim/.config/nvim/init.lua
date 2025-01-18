@@ -143,6 +143,7 @@ require("lazy").setup({
 	'github/copilot.vim',
 	'stevearc/oil.nvim',
 	'nvim-neotest/nvim-nio',
+	'olexsmir/gopher.nvim',
 
 	-- telescope
 	{
