@@ -46,10 +46,11 @@ cmp.setup {
 		end, { 'i', 's' }),
 	}),
 	sources = {
-		{ name = 'nvim_lsp', priority = 10 },
-		{ name = 'luasnip',  priority = 9 },
+		{ name = 'nvim_lsp_signature_help' },
+		{ name = 'nvim_lsp',               priority = 9 },
+		{ name = 'luasnip',                priority = 10 },
 		{ name = 'buffer' },
-		{ name = 'path' },
+		{ name = 'path' }
 	},
 	sorting = {
 		comparators = {
@@ -61,6 +62,6 @@ cmp.setup {
 cmp.setup.cmdline('/', {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
-		{ name = 'buffer' }
+		{ name = 'buffer' },
 	}
 })
