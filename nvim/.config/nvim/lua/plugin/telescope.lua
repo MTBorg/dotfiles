@@ -12,7 +12,7 @@ require("telescope").setup({
 			}
 		},
 		path_display = {
-			"shorten"
+			"truncate"
 		},
 		file_ignore_patterns = {
 			"gen/.+%.go$",
