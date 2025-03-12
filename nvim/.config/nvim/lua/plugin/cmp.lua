@@ -48,15 +48,10 @@ cmp.setup {
 	sources = {
 		{ name = 'nvim_lsp_signature_help' },
 		{ name = 'nvim_lsp',               priority = 9 },
-		{ name = 'luasnip',                priority = 10 },
+		{ name = 'luasnip', },
 		{ name = 'buffer' },
 		{ name = 'path' }
 	},
-	sorting = {
-		comparators = {
-			cmp.config.compare.recently_used
-		}
-	}
 }
 
 cmp.setup.cmdline('/', {
