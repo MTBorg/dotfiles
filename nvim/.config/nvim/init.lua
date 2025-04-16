@@ -193,26 +193,10 @@ end
 
 vim.api.nvim_create_user_command("Upgrade", Upgrade, {})
 
-function ConflictsHighlight()
-	vim.cmd("syn region conflictStart start=/^<<<<<<< .*$/ end=/^\\ze\\(=======$\\||||||||\\)/")
-	vim.cmd("syn region conflictMiddle start=/^||||||| .*$/ end=/^\\ze=======$/")
-	vim.cmd("syn region conflictEnd start=/^\\(=======$\\||||||| |\\)/ end=/^>>>>>>> .*$/")
-
-	vim.api.nvim_set_hl(0, "conflictStart", { ctermbg = "red", ctermfg = "black" })
-	vim.api.nvim_set_hl(0, "conflictMiddle", { ctermbg = "blue", ctermfg = "black" })
-	vim.api.nvim_set_hl(0, "conflictEnd", { ctermbg = "green", ctermfg = "black" })
-end
-
 vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.ts", command = "set filetype=typescript" })
 vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.tsx", command = "set filetype=typescriptreact" })
 vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.pa", command = "set filetype=conf" })
 vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.zshrc", command = "set filetype=zsh" })
-
-local conflictColors = vim.api.nvim_create_augroup("ConflictColors", { clear = true })
-vim.api.nvim_create_autocmd("BufEnter", {
-	callback = ConflictsHighlight,
-	group = conflictColors,
-})
 
 local vimrchook = vim.api.nvim_create_augroup("vimrchook", { clear = true })
 vim.api.nvim_create_autocmd("bufwritepost", {
