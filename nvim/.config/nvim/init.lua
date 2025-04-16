@@ -72,6 +72,7 @@ require("lazy").setup({
 	'leoluz/nvim-dap-go',
 	'rcarriga/nvim-dap-ui',
 	'theHamsta/nvim-dap-virtual-text',
+	'mfussenegger/nvim-dap-python',
 
 	-- Styling
 	'levouh/tint.nvim',
@@ -378,6 +379,8 @@ end)();
 			}
 		}
 	}
+
+	require("dap-python").setup("python3")
 end)();
 
 -- tmuxline
