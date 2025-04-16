@@ -54,10 +54,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	'nvim-tree/nvim-tree.lua',
-	'tpope/vim-fugitive',
-	'airblade/vim-gitgutter',
-
 	-- Tmux
 	'edkolev/tmuxline.vim',
 	'christoomey/vim-tmux-runner',
@@ -78,6 +74,11 @@ require("lazy").setup({
 	'levouh/tint.nvim',
 	'nvim-tree/nvim-web-devicons',
 	'folke/tokyonight.nvim',
+	{
+		"Fildo7525/pretty_hover",
+		event = "LspAttach",
+		opts = {}
+	},
 
 	-- Language packs
 	'baskerville/vim-sxhkdrc',
@@ -105,18 +106,14 @@ require("lazy").setup({
 			},
 		},
 	},
-	'nvim-telescope/telescope-ui-select.nvim',
+
+	-- nvim-cmp
+	'hrsh7th/nvim-cmp',
 	'hrsh7th/cmp-nvim-lsp',
 	'hrsh7th/cmp-buffer',
 	'hrsh7th/cmp-path',
 	'hrsh7th/cmp-nvim-lsp-signature-help',
-	'hrsh7th/nvim-cmp',
 	'hrsh7th/cmp-nvim-lsp',
-	{
-		"Fildo7525/pretty_hover",
-		event = "LspAttach",
-		opts = {}
-	},
 
 	-- Snippets
 	'saadparwaiz1/cmp_luasnip',
@@ -125,6 +122,7 @@ require("lazy").setup({
 		'L3MON4D3/LuaSnip',
 		version = 'v2.*'
 	},
+	'honza/vim-snippets', -- TODO: Delete if deprecated by new snippet plugins
 
 	-- for customizing vim.ui.input
 	'stevearc/dressing.nvim',
@@ -135,7 +133,6 @@ require("lazy").setup({
 	'tpope/vim-commentary',
 	'tpope/vim-surround',
 	'lukas-reineke/indent-blankline.nvim',
-	'honza/vim-snippets', -- TODO: Delete if deprecated by new snippet plugins
 	'mbbill/undotree',
 	'LucHermitte/lh-vim-lib',
 	'jiangmiao/auto-pairs',
@@ -145,6 +142,9 @@ require("lazy").setup({
 	'stevearc/oil.nvim',
 	'nvim-neotest/nvim-nio',
 	'olexsmir/gopher.nvim',
+	'nvim-tree/nvim-tree.lua',
+	'tpope/vim-fugitive',
+	'airblade/vim-gitgutter',
 
 	-- telescope
 	{
@@ -152,6 +152,7 @@ require("lazy").setup({
 		tag = '0.1.6',
 		dependencies = { 'nvim-lua/plenary.nvim' },
 	},
+	'nvim-telescope/telescope-ui-select.nvim',
 
 	-- Harpooon
 	{
