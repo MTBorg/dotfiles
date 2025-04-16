@@ -11,6 +11,7 @@ cmp.setup {
 	window = {
 		completion = cmp.config.window.bordered(),
 	},
+	preselect = cmp.PreselectMode.None,
 	mapping = cmp.mapping.preset.insert({
 		['<C-u>'] = cmp.mapping.scroll_docs(-4), -- Up
 		['<C-d>'] = cmp.mapping.scroll_docs(4), -- Down
