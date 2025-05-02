@@ -146,6 +146,7 @@ require("lazy").setup({
 	'tpope/vim-fugitive',
 	'airblade/vim-gitgutter',
 	'sindrets/diffview.nvim',
+	{ 'akinsho/git-conflict.nvim',       version = "*",      config = true },
 
 	-- telescope
 	{
@@ -357,6 +358,17 @@ end)();
 (function()
 	vim.api.nvim_create_autocmd("FileType", { pattern = "terraform", command = "setlocal commentstring=//%s" })
 	vim.api.nvim_create_autocmd("FileType", { pattern = "proto", command = "setlocal commentstring=//%s" })
+end)();
+
+-- git-conflict
+(function()
+	require 'git-conflict'.setup()
+	vim.keymap.set('n', '<Leader>gco', '<Plug>(git-conflict-ours)')
+	vim.keymap.set('n', '<Leader>gct', '<Plug>(git-conflict-theirs)')
+	vim.keymap.set('n', '<Leader>gcb', '<Plug>(git-conflict-both)')
+	vim.keymap.set('n', '<Leader>gc0', '<Plug>(git-conflict-none)')
+	vim.keymap.set('n', '<Leader>g[x', '<Plug>(git-conflict-prev-conflict)')
+	vim.keymap.set('n', '<Leader>g]x', '<Plug>(git-conflict-next-conflict)')
 end)();
 
 require 'plugin/mason'
