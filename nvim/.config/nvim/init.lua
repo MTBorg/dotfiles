@@ -145,6 +145,7 @@ require("lazy").setup({
 	'nvim-tree/nvim-tree.lua',
 	'tpope/vim-fugitive',
 	'airblade/vim-gitgutter',
+	'sindrets/diffview.nvim',
 
 	-- telescope
 	{
