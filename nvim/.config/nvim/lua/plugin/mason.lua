@@ -13,6 +13,7 @@ require("mason-lspconfig").setup({
 		"docker_compose_language_service",
 		"elixirls",
 		"gopls",
+		"templ",
 		"helm_ls",
 		"lua_ls",
 		"eslint", -- javascript/typescript

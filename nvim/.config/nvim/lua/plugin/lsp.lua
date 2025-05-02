@@ -81,3 +81,7 @@ lspconfig.csharp_ls.setup {
 	capabilities = capabilities,
 	AutomaticWorkspaceInit = true
 }
+
+lspconfig.templ.setup {
+	capabilities = capabilities,
+}
