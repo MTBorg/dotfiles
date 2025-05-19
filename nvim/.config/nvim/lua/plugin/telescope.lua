@@ -19,7 +19,8 @@ require("telescope").setup({
 			".*/pkg/go/mod/.*",
 			".git/.*",
 			".yarn/releases/.*",
-			"yarn.lock"
+			"yarn.lock",
+			"vendor/.*"
 		},
 	},
 })
