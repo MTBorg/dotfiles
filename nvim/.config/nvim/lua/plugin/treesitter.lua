@@ -24,6 +24,7 @@ require 'nvim-treesitter.configs'.setup {
 		"rasi",
 		"rust",
 		"sql",
+		"templ",
 		"toml",
 		"typescript",
 		"vim",
