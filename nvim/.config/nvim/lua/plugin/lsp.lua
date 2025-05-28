@@ -85,3 +85,8 @@ lspconfig.csharp_ls.setup {
 lspconfig.templ.setup {
 	capabilities = capabilities,
 }
+
+lspconfig.html.setup({
+	capabilities = capabilities,
+	filetypes = { "html", "templ" },
+})
