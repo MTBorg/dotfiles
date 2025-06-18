@@ -90,3 +90,7 @@ lspconfig.html.setup({
 	capabilities = capabilities,
 	filetypes = { "html", "templ" },
 })
+
+lspconfig.jsonls.setup {
+	capabilities = capabilities,
+}
