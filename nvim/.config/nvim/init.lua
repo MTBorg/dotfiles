@@ -107,6 +107,8 @@ require("lazy").setup({
 		},
 	},
 
+	'stevearc/conform.nvim',
+
 	-- nvim-cmp
 	'hrsh7th/nvim-cmp',
 	'hrsh7th/cmp-nvim-lsp',
@@ -389,6 +391,7 @@ require 'plugin/treesitter'
 require 'plugin/luasnip'
 require 'plugin/dap'
 require 'plugin/avante'
+require 'plugin/conform'
 
 vim.keymap.set('n', '<leader>fa', vim.lsp.buf.code_action)
 
