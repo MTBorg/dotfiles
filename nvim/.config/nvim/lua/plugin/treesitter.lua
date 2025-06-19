@@ -12,6 +12,7 @@ require 'nvim-treesitter.configs'.setup {
 		"gitignore",
 		"graphql",
 		"hcl",
+		"helm",
 		"html",
 		"http",
 		"javascript",
@@ -60,3 +61,12 @@ require 'nvim-treesitter.configs'.setup {
 		}
 	}
 }
+
+-- This filetype pattern lets treesitter-helm detect helm templates.
+vim.filetype.add({
+	pattern = {
+		[".*/templates/.*%.tpl"] = "helm",
+		[".*/templates/.*%.ya?ml"] = "helm",
+		["helmfile.*%.ya?ml"] = "helm",
+	},
+})
