@@ -20,7 +20,10 @@ require("telescope").setup({
 			".git/.*",
 			".yarn/releases/.*",
 			"yarn.lock",
-			"vendor/.*"
+			"vendor/.*",
+
+			-- rust
+			"target/.*",
 		},
 	},
 })
