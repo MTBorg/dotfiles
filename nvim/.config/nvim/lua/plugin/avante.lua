@@ -1,6 +1,6 @@
 require('avante').setup({
 	provider = "mistral",
-	vendors = {
+	providers = {
 		mistral = {
 			__inherited_from = "openai",
 			api_key_name = "MISTRAL_API_KEY",
