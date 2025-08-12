@@ -28,6 +28,5 @@ require("mason-lspconfig").setup({
 		"vimls",
 
 		"vuels",
-		"volar" -- vue
 	}
 })
