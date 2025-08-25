@@ -33,6 +33,7 @@ var options = map[string]string{
 	"Pubsub":            "https://console.cloud.google.com/cloudpubsub/topic/list?hl=en&project=%s",
 	"IAM":               "https://console.cloud.google.com/iam-admin/iam?hl=en&project=%s",
 	"Artifact Registry": "https://console.cloud.google.com/artifacts?hl=en&project=%s",
+	"Cloud Storage":     "https://console.cloud.google.com/storage/browser?hl=en&project=%s&prefix=&forceOnBucketsSortingFiltering=true&bucketType=live",
 }
 
 func getOptionNames() []string {
