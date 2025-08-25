@@ -24,14 +24,15 @@ var (
 )
 
 var options = map[string]string{
-	"App Engine":      "https://console.cloud.google.com/appengine?serviceId=default&hl=en&project=%s",
-	"GKE":             "https://console.cloud.google.com/kubernetes/workload/overview?hl=en&project=%s",
-	"Cloud Run":       "https://console.cloud.google.com/run?hl=en&project=%s",
-	"Cloud functions": "https://console.cloud.google.com/functions/list?referrer=search&hl=en&project=%s",
-	"Secret Manager":  "https://console.cloud.google.com/security/secret-manager?hl=en&project=%s",
-	"Cloud build":     "https://console.cloud.google.com/cloud-build/builds?hl=en&project=%s",
-	"Pubsub":          "https://console.cloud.google.com/cloudpubsub/topic/list?hl=en&project=%s",
-	"IAM":             "https://console.cloud.google.com/iam-admin/iam?hl=en&project=%s",
+	"App Engine":        "https://console.cloud.google.com/appengine?serviceId=default&hl=en&project=%s",
+	"GKE":               "https://console.cloud.google.com/kubernetes/workload/overview?hl=en&project=%s",
+	"Cloud Run":         "https://console.cloud.google.com/run?hl=en&project=%s",
+	"Cloud functions":   "https://console.cloud.google.com/functions/list?referrer=search&hl=en&project=%s",
+	"Secret Manager":    "https://console.cloud.google.com/security/secret-manager?hl=en&project=%s",
+	"Cloud build":       "https://console.cloud.google.com/cloud-build/builds?hl=en&project=%s",
+	"Pubsub":            "https://console.cloud.google.com/cloudpubsub/topic/list?hl=en&project=%s",
+	"IAM":               "https://console.cloud.google.com/iam-admin/iam?hl=en&project=%s",
+	"Artifact Registry": "https://console.cloud.google.com/artifacts?hl=en&project=%s",
 }
 
 func getOptionNames() []string {
