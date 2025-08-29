@@ -27,74 +27,76 @@ vim.api.nvim_create_autocmd('LspAttach', {
 	end,
 })
 
-lspconfig.gopls.setup {
-	capabilities = capabilities,
-}
 
-lspconfig.lua_ls.setup {
-	capabilities = capabilities,
-}
 
-lspconfig.volar.setup {
+vim.lsp.config('gopls', {
+	capabilities = capabilities,
+})
+
+vim.lsp.config('lua_ls', {
+	capabilities = capabilities,
+})
+
+vim.lsp.config('volar', {
 	filetypes = { 'vue' },
 	init_options = {
 		vue = {
 			hybridMode = false,
 		},
 	},
-}
+})
 
-lspconfig.elixirls.setup {
+vim.lsp.config('elixirls', {
 	capabilities = capabilities,
 	cmd = { "/opt/homebrew/bin/elixir-ls" },
-}
+})
 
-lspconfig.eslint.setup {
+vim.lsp.config('eslint', {
 	capabilities = capabilities,
-}
+})
 
-lspconfig.ts_ls.setup {
+vim.lsp.config('ts_ls', {
 	capabilities = capabilities,
-}
+})
 
-lspconfig.graphql.setup {
+vim.lsp.config('graphql', {
 	capabilities = capabilities,
-}
+})
 
-lspconfig.dockerls.setup {
+vim.lsp.config('dockerls', {
 	capabilities = capabilities,
-}
+})
 
-lspconfig.docker_compose_language_service.setup {
+vim.lsp.config('docker_compose_language_service', {
 	capabilities = capabilities,
-}
+})
 
-lspconfig.buf_ls.setup {
+vim.lsp.config('buf_ls', {
 	capabilities = capabilities,
-}
+})
 
-lspconfig.pyright.setup {
+vim.lsp.config('pyright', {
 	capabilities = capabilities,
-}
+})
 
-lspconfig.csharp_ls.setup {
+vim.lsp.config('csharp_ls', {
 	capabilities = capabilities,
 	AutomaticWorkspaceInit = true
-}
+})
 
-lspconfig.templ.setup {
+vim.lsp.config('templ', {
 	capabilities = capabilities,
-}
+})
 
-lspconfig.html.setup({
+vim.lsp.config('html', {
 	capabilities = capabilities,
 	filetypes = { "html", "templ" },
 })
 
-lspconfig.jsonls.setup {
+vim.lsp.config('jsonls', {
 	capabilities = capabilities,
-}
+})
 
-lspconfig.rust_analyzer.setup({
+vim.lsp.config('rust_analyzer', {
 	capabilities = capabilities,
 })
