@@ -40,6 +40,7 @@ abbr --add rw "redwood"
 abbr --add rwo "redwood open"
 abbr --add rwi "redwood import"
 abbr --add rwd "redwood delete"
+abbr --add rwn "redwood new"
 
 abbr --add sysstart "systemctl start"
 abbr --add sysstop "systemctl stop"
