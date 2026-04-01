@@ -149,16 +149,6 @@ require("lazy").setup({
 	'airblade/vim-gitgutter',
 	'sindrets/diffview.nvim',
 	{ 'akinsho/git-conflict.nvim',       version = "*",      config = true },
-	{
-		'yetone/avante.nvim',
-		build = "make",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-			"stevearc/dressing.nvim",
-			"nvim-lua/plenary.nvim",
-			"MunifTanjim/nui.nvim",
-		},
-	},
 
 	-- telescope
 	{
@@ -390,7 +380,6 @@ require 'plugin/telescope'
 require 'plugin/treesitter'
 require 'plugin/luasnip'
 require 'plugin/dap'
-require 'plugin/avante'
 require 'plugin/conform'
 
 vim.keymap.set('n', '<leader>fa', vim.lsp.buf.code_action)
