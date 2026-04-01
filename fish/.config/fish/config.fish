@@ -99,3 +99,12 @@ complete -c redwood -n "__fish_seen_subcommand_from delete" \
     -a "(redwood list --only-worktrees)"
 complete -c redwood -n "__fish_seen_subcommand_from new" \
     -a "(redwood list --only-bare-repos)"
+
+# Usage: tf-apply <target1> <target2> ...
+function tf-apply
+     set -l targets
+     for target in $argv
+         set -a targets -target=$target
+     end
+     terraform apply $targets
+end
