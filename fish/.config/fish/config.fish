@@ -102,7 +102,7 @@ complete -c redwood -n "__fish_seen_subcommand_from new" \
 
 # Usage: tf-apply <target1> <target2> ...
 function tf-apply
-     set -l targets
+			 set -l targets
      for target in $argv
          set -a targets -target=$target
      end
