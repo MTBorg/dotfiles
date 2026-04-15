@@ -1,66 +1,57 @@
-require 'nvim-treesitter.configs'.setup {
-	ensure_installed = {
-		"bash",
-		"c",
-		"cmake",
-		"cpp",
-		"css",
-		"diff",
-		"dockerfile",
-		"go",
-		"gomod",
-		"gitignore",
-		"graphql",
-		"hcl",
-		"helm",
-		"html",
-		"http",
-		"javascript",
-		"json",
-		"json5",
-		"make",
-		"markdown",
-		"proto",
-		"python",
-		"rasi",
-		"rust",
-		"sql",
-		"templ",
-		"toml",
-		"typescript",
-		"vim",
-		"vimdoc",
-		"yaml",
-	},
-	auto_install = true,
-	highlight = {
-		enable = true,
-		-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-		-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-		-- Using this option may slow down your editor, and you may see some duplicate highlights.
-		-- Instead of true it can also be a list of languages
-		additional_vim_regex_highlighting = false,
-	},
-	incremental_selection = {
-		enable = true,
-		keymaps = {
-			init_selection = "<C-n>",
-			node_incremental = "<C-n>",
-			node_decremental = "<C-m>",
-			scope_incremental = "<C-b>",
-		},
-	},
-	textobjects = {
-		select = {
-			enable = true,
-			lookahead = true,
-			keymaps = {
-				["af"] = "@function.outer",
-				["if"] = "@function.inner",
-			},
-		}
-	}
+require('nvim-treesitter').install {
+	"bash",
+	"c",
+	"cmake",
+	"cpp",
+	"css",
+	"diff",
+	"dockerfile",
+	"go",
+	"gomod",
+	"gitignore",
+	"graphql",
+	"hcl",
+	"helm",
+	"html",
+	"http",
+	"javascript",
+	"json",
+	"json5",
+	"lua",
+	"make",
+	"markdown",
+	"proto",
+	"python",
+	"rasi",
+	"rust",
+	"sql",
+	"templ",
+	"toml",
+	"typescript",
+	"vim",
+	"vimdoc",
+	"yaml",
 }
+
+-- Incremental selection (built into neovim, removed from nvim-treesitter v1)
+local sel = require('vim.treesitter._select')
+vim.keymap.set('n', '<C-n>', function() sel.select_parent(1) end)
+vim.keymap.set('x', '<C-n>', function() sel.select_parent(vim.v.count1) end)
+vim.keymap.set('x', '<C-m>', function() sel.select_child(vim.v.count1) end)
+vim.keymap.set('x', '<C-b>', function() sel.select_next(vim.v.count1) end)
+
+require('nvim-treesitter-textobjects').setup({
+	select = {
+		lookahead = true,
+	},
+})
+
+vim.keymap.set({ 'x', 'o' }, 'af', function()
+	require('nvim-treesitter-textobjects.select').select_textobject('@function.outer')
+end)
+vim.keymap.set({ 'x', 'o' }, 'if', function()
+	require('nvim-treesitter-textobjects.select').select_textobject('@function.inner')
+end)
 
 -- This filetype pattern lets treesitter-helm detect helm templates.
 vim.filetype.add({

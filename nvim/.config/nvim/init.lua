@@ -84,7 +84,13 @@ require("lazy").setup({
 	'baskerville/vim-sxhkdrc',
 
 	-- Treesitter
-	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+	{
+		'nvim-treesitter/nvim-treesitter',
+		dependencies = { 'neovim-treesitter/treesitter-parser-registry' },
+		lazy = false,
+		build = ':TSUpdate',
+	},
+
 	'nvim-treesitter/nvim-treesitter-context',
 	'nvim-treesitter/nvim-treesitter-textobjects',
 	'Wansmer/treesj',
@@ -148,12 +154,12 @@ require("lazy").setup({
 	'tpope/vim-fugitive',
 	'airblade/vim-gitgutter',
 	'sindrets/diffview.nvim',
-	{ 'akinsho/git-conflict.nvim',       version = "*",      config = true },
+	{ 'akinsho/git-conflict.nvim', version = "*", config = true },
 
 	-- telescope
 	{
 		'nvim-telescope/telescope.nvim',
-		tag = '0.1.8',
+		tag = 'v0.2.1',
 		dependencies = { 'nvim-lua/plenary.nvim' },
 	},
 	'nvim-telescope/telescope-ui-select.nvim',

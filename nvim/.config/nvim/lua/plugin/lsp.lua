@@ -1,11 +1,10 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-local lspconfig = require('lspconfig')
 
 require 'lazydev'.setup {}
 
 vim.keymap.set('n', 'gf', vim.lsp.buf.rename)
-vim.keymap.set("n", "gn", vim.diagnostic.goto_next)
-vim.keymap.set("n", "gp", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "gn", function() vim.diagnostic.jump({ count = 1 }) end)
+vim.keymap.set("n", "gp", function() vim.diagnostic.jump({ count = -1 }) end)
 
 vim.keymap.set('n', 'K', function()
 	require("pretty_hover").hover()
@@ -16,7 +15,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 		-- Format the current buffer on save
 		-- TODO: instead of disabling format on save figure out how to integrate with prettier
-		if client.supports_method('textDocument/formatting') and client.name ~= "eslint" and client.name ~= "ts_ls" then
+		if client:supports_method('textDocument/formatting') and client.name ~= "eslint" and client.name ~= "ts_ls" then
 			vim.api.nvim_create_autocmd('BufWritePre', {
 				buffer = args.buf,
 				callback = function()
