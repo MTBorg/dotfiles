@@ -36,6 +36,8 @@ var options = map[string]string{
 	"Cloud Storage":     "https://console.cloud.google.com/storage/browser?hl=en&project=%s&prefix=&forceOnBucketsSortingFiltering=true&bucketType=live",
 	"Cloud SQL":         "https://console.cloud.google.com/sql/instances?hl=en&project=%s",
 	"Cost Explorer":     "https://console.cloud.google.com/monitoring/cost-explorer?project=%s",
+	"Service Accounts":  "https://console.cloud.google.com/iam-admin/serviceaccounts?hl=en&project=%s",
+	"IP Addresses":      "https://console.cloud.google.com/networking/addresses/list?project=%s",
 }
 
 func getOptionNames() []string {
