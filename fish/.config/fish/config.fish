@@ -89,17 +89,6 @@ if test -f $DEVICE_CONFIG_FILE
     source $DEVICE_CONFIG_FILE
 end
 
-# Redwood completions
-set -l rw_commands delete help list new open version
-complete -c redwood --no-files -n "not __fish_seen_subcommand_from $rw_commands"\
-	-a 'delete help list new open version'
-complete -c redwood -n "__fish_seen_subcommand_from open" \
-	-a "(redwood list)"
-complete -c redwood -n "__fish_seen_subcommand_from delete" \
-    -a "(redwood list --only-worktrees)"
-complete -c redwood -n "__fish_seen_subcommand_from new" \
-    -a "(redwood list --only-bare-repos)"
-
 # Usage: tf-apply <target1> <target2> ...
 function tf-apply
 			 set -l targets
