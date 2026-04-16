@@ -37,7 +37,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 	end,
 })
 vim.diagnostic.config({
-	virtual_text = false
+	float = true,
+})
+vim.api.nvim_create_autocmd("CursorHold", {
+	callback = function()
+		vim.diagnostic.open_float()
+	end,
 })
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -84,15 +89,17 @@ require("lazy").setup({
 	'baskerville/vim-sxhkdrc',
 
 	-- Treesitter
+	-- TODO: Get rid of this as it has been deprecated by the built in treesitter client.
 	{
 		'nvim-treesitter/nvim-treesitter',
 		dependencies = { 'neovim-treesitter/treesitter-parser-registry' },
+		branch = 'main',
 		lazy = false,
 		build = ':TSUpdate',
 	},
 
 	'nvim-treesitter/nvim-treesitter-context',
-	'nvim-treesitter/nvim-treesitter-textobjects',
+	{ 'nvim-treesitter/nvim-treesitter-textobjects', branch = 'main' },
 	'Wansmer/treesj',
 
 	-- LSP
@@ -154,12 +161,11 @@ require("lazy").setup({
 	'tpope/vim-fugitive',
 	'airblade/vim-gitgutter',
 	'sindrets/diffview.nvim',
-	{ 'akinsho/git-conflict.nvim', version = "*", config = true },
+	{ 'akinsho/git-conflict.nvim',                   version = "*",  config = true },
 
 	-- telescope
 	{
 		'nvim-telescope/telescope.nvim',
-		tag = 'v0.2.1',
 		dependencies = { 'nvim-lua/plenary.nvim' },
 	},
 	'nvim-telescope/telescope-ui-select.nvim',
