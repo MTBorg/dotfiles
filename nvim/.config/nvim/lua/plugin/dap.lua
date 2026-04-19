@@ -66,6 +66,21 @@ dap.configurations.rust = {
 	}
 }
 
+dap.configurations.python = {
+	{
+		type = 'python',
+		request = 'attach',
+		name = 'attach (include external code)',
+		justMyCode = false,
+		connect = function()
+			local host = vim.fn.input('Host [127.0.0.1]: ')
+			host = host ~= '' and host or '127.0.0.1'
+			local port = tonumber(vim.fn.input('Port [5678]: ')) or 5678
+			return { host = host, port = port }
+		end,
+	}
+}
+
 vim.api.nvim_create_user_command("DapScope", function()
 	local widgets = require "dap.ui.widgets";
 	widgets.centered_float(widgets.scopes)
