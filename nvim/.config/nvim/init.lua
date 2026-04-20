@@ -150,7 +150,7 @@ require("lazy").setup({
 	'lukas-reineke/indent-blankline.nvim',
 	'mbbill/undotree',
 	'LucHermitte/lh-vim-lib',
-	'jiangmiao/auto-pairs',
+	{ 'windwp/nvim-autopairs',                       event = 'InsertEnter', opts = {} },
 	'danilamihailov/beacon.nvim',
 	'ThePrimeagen/refactoring.nvim',
 	'github/copilot.vim',
