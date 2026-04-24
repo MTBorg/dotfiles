@@ -41,6 +41,13 @@ vim.diagnostic.config({
 })
 vim.api.nvim_create_autocmd("CursorHold", {
 	callback = function()
+		-- Skip if a float (e.g. hover docs via K) is already open, otherwise the
+		-- diagnostic float fires after updatetime and closes the hover window.
+		for _, win in ipairs(vim.api.nvim_list_wins()) do
+			if vim.api.nvim_win_get_config(win).relative ~= '' then
+				return
+			end
+		end
 		vim.diagnostic.open_float()
 	end,
 })
@@ -161,7 +168,7 @@ require("lazy").setup({
 	'tpope/vim-fugitive',
 	'airblade/vim-gitgutter',
 	'sindrets/diffview.nvim',
-	{ 'akinsho/git-conflict.nvim',                   version = "*",  config = true },
+	{ 'akinsho/git-conflict.nvim', version = "*", config = true },
 
 	-- telescope
 	{
