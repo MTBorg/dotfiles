@@ -207,6 +207,13 @@ vim.keymap.set("n", "<Leader>cn", vim.cmd.cnext, { silent = true })
 vim.keymap.set("n", "<Leader>cp", vim.cmd.cprevious, { silent = true })
 
 vim.cmd("colorscheme tokyonight")
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "*",
+	callback = function()
+		vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#888888" })
+		vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#888888" })
+	end,
+})
 
 function Upgrade()
 	vim.cmd.PlugUpgrade()
