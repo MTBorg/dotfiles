@@ -5,6 +5,8 @@ set -gx XDG_CONFIG_HOME $HOME/.config
 set -gx XDG_CACHE_HOME $HOME/.cache
 set -gx XDG_DATA_HOME $HOME/.local/share
 
+set -gx CLAUDE_CONFIG_DIR $XDG_CONFIG_HOME/claude
+
 # Enable fzf for tab completion
 # "2" enables using taB to cycle alternati ves
 set -U FZF_COMPLETE 2
