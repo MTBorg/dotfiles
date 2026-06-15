@@ -39,6 +39,7 @@
     "enabled": true,
     "mode": "hold"
   },
+  "theme": "dark",
   "editorMode": "vim",
   "preferredNotifChannel": "ghostty",
   "skipAutoPermissionPrompt": true,
