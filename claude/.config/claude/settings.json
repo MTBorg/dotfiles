@@ -56,7 +56,8 @@
   },
   "enabledPlugins": {
     "planning-with-files@planning-with-files": true,
-    "atlassian@claude-plugins-official": true
+    "atlassian@claude-plugins-official": true,
+    "gopls-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "planning-with-files": {
