@@ -26,7 +26,8 @@
       "mcp__plugin_atlassian_atlassian__getPagesInConfluenceSpace",
       "mcp__plugin_atlassian_atlassian__getCompassComponent",
       "mcp__plugin_atlassian_atlassian__getCompassComponents",
-      "mcp__plugin_atlassian_atlassian__getCompassCustomFieldDefinitions"
+      "mcp__plugin_atlassian_atlassian__getCompassCustomFieldDefinitions",
+      "Bash(go build:*)"
     ]
   },
   "hooks": {
