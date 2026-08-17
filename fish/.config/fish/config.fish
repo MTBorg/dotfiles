@@ -99,3 +99,13 @@ function tf-apply
      end
      terraform apply $targets
 end
+export PATH="$HOME/.local/bin:$PATH"
+
+direnv hook fish | source
+fnm env --use-on-cd | source
+
+set -gx GITHUB_TOKEN (gh auth token)
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :

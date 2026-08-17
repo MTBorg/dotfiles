@@ -1,80 +1,115 @@
 {
-  "model": "sonnet",
-  "permissions": {
-    "allow": [
-      "mcp__plugin_atlassian_atlassian__atlassianUserInfo",
-      "mcp__plugin_atlassian_atlassian__getAccessibleAtlassianResources",
-      "mcp__plugin_atlassian_atlassian__getJiraIssue",
-      "mcp__plugin_atlassian_atlassian__getJiraIssueRemoteIssueLinks",
-      "mcp__plugin_atlassian_atlassian__getJiraIssueTypeMetaWithFields",
-      "mcp__plugin_atlassian_atlassian__getJiraProjectIssueTypesMetadata",
-      "mcp__plugin_atlassian_atlassian__getIssueLinkTypes",
-      "mcp__plugin_atlassian_atlassian__getTransitionsForJiraIssue",
-      "mcp__plugin_atlassian_atlassian__getVisibleJiraProjects",
-      "mcp__plugin_atlassian_atlassian__lookupJiraAccountId",
-      "mcp__plugin_atlassian_atlassian__search",
-      "mcp__plugin_atlassian_atlassian__searchJiraIssuesUsingJql",
-      "mcp__plugin_atlassian_atlassian__fetch",
-      "mcp__plugin_atlassian_atlassian__getTeamworkGraphContext",
-      "mcp__plugin_atlassian_atlassian__getTeamworkGraphObject",
-      "mcp__plugin_atlassian_atlassian__getConfluencePage",
-      "mcp__plugin_atlassian_atlassian__getConfluencePageDescendants",
-      "mcp__plugin_atlassian_atlassian__getConfluencePageFooterComments",
-      "mcp__plugin_atlassian_atlassian__getConfluencePageInlineComments",
-      "mcp__plugin_atlassian_atlassian__getConfluenceCommentChildren",
-      "mcp__plugin_atlassian_atlassian__getConfluenceSpaces",
-      "mcp__plugin_atlassian_atlassian__getPagesInConfluenceSpace",
-      "mcp__plugin_atlassian_atlassian__getCompassComponent",
-      "mcp__plugin_atlassian_atlassian__getCompassComponents",
-      "mcp__plugin_atlassian_atlassian__getCompassCustomFieldDefinitions",
-      "Bash(go build:*)",
-      "Bash(redwood list:*)",
-      "Bash(redwood new:*)"
-    ]
-  },
-  "hooks": {
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "osascript -e 'display notification \"Claude Code finished responding\" with title \"Claude Code\" sound name \"Glass\"'"
-          }
-        ]
-      }
-    ],
-    "Notification": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "osascript -e 'display notification \"Claude Code is waiting for your input\" with title \"Claude Code\" sound name \"Glass\"'"
-          }
-        ]
-      }
-    ]
-  },
-  "enabledPlugins": {
-    "planning-with-files@planning-with-files": true,
-    "atlassian@claude-plugins-official": true,
-    "gopls-lsp@claude-plugins-official": true
-  },
-  "extraKnownMarketplaces": {
-    "planning-with-files": {
-      "source": {
-        "source": "github",
-        "repo": "OthmanAdi/planning-with-files"
-      }
-    }
-  },
-  "alwaysThinkingEnabled": true,
-  "voice": {
-    "enabled": true,
-    "mode": "hold"
-  },
-  "theme": "dark",
-  "editorMode": "vim",
-  "preferredNotifChannel": "ghostty",
-  "skipAutoPermissionPrompt": true,
-  "voiceEnabled": true
+	"permissions": {
+		"allow": [
+			"mcp__plugin_atlassian_atlassian__atlassianUserInfo",
+			"mcp__plugin_atlassian_atlassian__getAccessibleAtlassianResources",
+			"mcp__plugin_atlassian_atlassian__getJiraIssue",
+			"mcp__plugin_atlassian_atlassian__getJiraIssueRemoteIssueLinks",
+			"mcp__plugin_atlassian_atlassian__getJiraIssueTypeMetaWithFields",
+			"mcp__plugin_atlassian_atlassian__getJiraProjectIssueTypesMetadata",
+			"mcp__plugin_atlassian_atlassian__getIssueLinkTypes",
+			"mcp__plugin_atlassian_atlassian__getTransitionsForJiraIssue",
+			"mcp__plugin_atlassian_atlassian__getVisibleJiraProjects",
+			"mcp__plugin_atlassian_atlassian__lookupJiraAccountId",
+			"mcp__plugin_atlassian_atlassian__search",
+			"mcp__plugin_atlassian_atlassian__searchJiraIssuesUsingJql",
+			"mcp__plugin_atlassian_atlassian__fetch",
+			"mcp__plugin_atlassian_atlassian__getTeamworkGraphContext",
+			"mcp__plugin_atlassian_atlassian__getTeamworkGraphObject",
+			"mcp__plugin_atlassian_atlassian__getConfluencePage",
+			"mcp__plugin_atlassian_atlassian__getConfluencePageDescendants",
+			"mcp__plugin_atlassian_atlassian__getConfluencePageFooterComments",
+			"mcp__plugin_atlassian_atlassian__getConfluencePageInlineComments",
+			"mcp__plugin_atlassian_atlassian__getConfluenceCommentChildren",
+			"mcp__plugin_atlassian_atlassian__getConfluenceSpaces",
+			"mcp__plugin_atlassian_atlassian__getPagesInConfluenceSpace",
+			"mcp__plugin_atlassian_atlassian__getCompassComponent",
+			"mcp__plugin_atlassian_atlassian__getCompassComponents",
+			"mcp__plugin_atlassian_atlassian__getCompassCustomFieldDefinitions",
+			"Bash(go build:*)",
+			"Bash(redwood list:*)",
+			"Bash(redwood new:*)",
+			"Read",
+			"Edit",
+			"Write",
+			"Glob",
+			"Grep",
+			"mcp__codegraph__*"
+		],
+		"ask": [
+			"Bash(rm -rf*)",
+			"Bash(rm -r -f*)",
+			"Bash(trash*)",
+			"Bash(git reset --hard*)",
+			"Bash(git push --force*)",
+			"Bash(git push -f*)",
+			"Bash(git branch -D*)",
+			"Bash(git checkout --*)",
+			"Bash(git restore*)",
+			"Bash(git clean*)",
+			"Bash(npm i -g*)",
+			"Bash(npm install -g*)",
+			"Bash(brew install*)",
+			"Bash(brew uninstall*)",
+			"Bash(brew remove*)",
+			"Edit(~/.config/claude/**)",
+			"Edit(~/.config/opencode/**)",
+			"Edit(~/.zshrc)",
+			"Edit(~/.config/fish/**)"
+		]
+	},
+	"model": "sonnet",
+	"hooks": {
+		"UserPromptSubmit": [
+			{
+				"hooks": [
+					{
+						"type": "command",
+						"command": "codegraph prompt-hook"
+					}
+				]
+			}
+		],
+		"Stop": [
+			{
+				"hooks": [
+					{
+						"type": "command",
+						"command": "osascript -e 'display notification \"Claude Code finished responding\" with title \"Claude Code\" sound name \"Glass\"'"
+					}
+				]
+			}
+		],
+		"Notification": [
+			{
+				"hooks": [
+					{
+						"type": "command",
+						"command": "osascript -e 'display notification \"Claude Code is waiting for your input\" with title \"Claude Code\" sound name \"Glass\"'"
+					}
+				]
+			}
+		]
+	},
+	"enabledPlugins": {
+		"planning-with-files@planning-with-files": true,
+		"gopls-lsp@claude-plugins-official": true
+	},
+	"extraKnownMarketplaces": {
+		"planning-with-files": {
+			"source": {
+				"source": "github",
+				"repo": "OthmanAdi/planning-with-files"
+			}
+		}
+	},
+	"alwaysThinkingEnabled": true,
+	"voice": {
+		"enabled": true,
+		"mode": "hold"
+	},
+	"theme": "dark",
+	"editorMode": "vim",
+	"preferredNotifChannel": "ghostty",
+	"voiceEnabled": true
 }
