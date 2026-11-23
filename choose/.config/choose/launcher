@@ -1,0 +1,19 @@
+#!/bin/sh
+# App launcher bound to cmd+space in Karabiner. Lists custom commands (the
+# executables in commands/) followed by apps, and runs or opens the pick.
+
+export PATH="/opt/homebrew/bin:/usr/local/bin:$HOME/.local/bin:$PATH"
+commands="$(dirname "$0")/commands"
+
+pick=$({
+	ls "$commands"
+	find /Applications /System/Applications /System/Applications/Utilities "$HOME/Applications" \
+		-maxdepth 1 -name '*.app' -not -name '.*' 2>/dev/null |
+		sed 's#.*/##; s/\.app$//' | sort -u
+} | choose) || exit 0
+
+if [ -x "$commands/$pick" ]; then
+	exec "$commands/$pick"
+else
+	open -a "$pick"
+fi

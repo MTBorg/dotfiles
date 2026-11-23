@@ -1,0 +1,41 @@
+#!/bin/sh
+# Fuzzy-pick an organization from prod and open it in the app.
+#
+# Lists the orgs the app's own search surfaces: those with a loan and those on
+# a case (choose freezes on all ~50k orgs). Read from a cache that is refreshed
+# in the background once it is older than an hour.
+
+cache="${XDG_CACHE_HOME:-$HOME/.cache}/choose/dbt-orgs"
+mkdir -p "$(dirname "$cache")"
+
+refresh() {
+	tmp="$cache.tmp.$$"
+	(cd "$HOME/src/monorepo" && direnv exec . repo db --remote standard -- psql -At -F '  ' -c "
+		WITH current_case_attributes AS (
+			SELECT DISTINCT ON (case_id) org_ids FROM portfolio.case_attributes ORDER BY case_id, id DESC
+		), listed AS (
+			SELECT org_id FROM lake_portfolio.loans_current
+			UNION
+			SELECT unnest(org_ids) FROM current_case_attributes
+		)
+		SELECT org_id, coalesce(name, '') FROM listed LEFT JOIN portfolio.organizations USING (org_id)
+		ORDER BY name") >"$tmp" 2>"$cache.log" &&
+		[ -s "$tmp" ] && mv "$tmp" "$cache"
+	rm -f "$tmp"
+}
+
+notify() {
+	osascript -e "display notification \"$1\" with title \"dbt-org\""
+}
+
+if [ ! -s "$cache" ]; then
+	notify "Fetching organizations from prod..."
+	refresh
+	[ -s "$cache" ] || { notify "Fetching organizations failed, see $cache.log"; exit 1; }
+elif [ -n "$(find "$cache" -mmin +60)" ]; then
+	touch "$cache" # so presses during the refresh don't start another one
+	refresh &
+fi
+
+org_id=$(choose <"$cache" | cut -d' ' -f1)
+[ -n "$org_id" ] && open "https://app.dbt.se/org/$org_id"

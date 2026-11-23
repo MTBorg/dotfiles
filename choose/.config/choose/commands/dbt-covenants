@@ -1,0 +1,3 @@
+#!/bin/sh
+# Open the monitoring covenants page in the app.
+open 'https://app.dbt.se/monitoring/covenants?staff='

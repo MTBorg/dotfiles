@@ -1,3 +1,5 @@
+local actions = require("telescope.actions")
+
 require("telescope").setup({
 	pickers = {
 		find_files = {
@@ -13,6 +15,18 @@ require("telescope").setup({
 		},
 		path_display = {
 			"truncate"
+		},
+		-- macOS: Option-q types "œ" instead of sending <M-q>.
+		-- "Œ" (Shift-Option-q) inverts the selection first, sending the non-selected entries.
+		mappings = {
+			i = {
+				["œ"] = actions.send_selected_to_qflist + actions.open_qflist,
+				["Œ"] = actions.toggle_all + actions.send_selected_to_qflist + actions.open_qflist,
+			},
+			n = {
+				["œ"] = actions.send_selected_to_qflist + actions.open_qflist,
+				["Œ"] = actions.toggle_all + actions.send_selected_to_qflist + actions.open_qflist,
+			},
 		},
 		file_ignore_patterns = {
 			"gen/.+%.go$",

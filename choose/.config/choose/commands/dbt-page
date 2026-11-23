@@ -1,0 +1,14 @@
+#!/bin/sh
+# Pick one of the app's top-level pages and open it.
+
+page=$(printf '%s\n' \
+	inbox \
+	cases \
+	loans \
+	organizations \
+	monitoring \
+	kpis \
+	growth \
+	analysis-models | choose) || exit 0
+
+open "https://app.dbt.se/$page"

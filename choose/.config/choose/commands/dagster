@@ -1,0 +1,3 @@
+#!/bin/sh
+# Open the Dagster activity timeline.
+open 'https://dagster.p.dbt.se/overview/activity/timeline'

@@ -1,0 +1,3 @@
+#!/bin/sh
+# Open the S3 console (eu-north-1).
+open 'https://eu-north-1.console.aws.amazon.com/s3'

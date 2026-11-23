@@ -86,6 +86,7 @@ require("lazy").setup({
 	'levouh/tint.nvim',
 	'nvim-tree/nvim-web-devicons',
 	'folke/tokyonight.nvim',
+	{ 'bluz71/vim-moonfly-colors', name = 'moonfly', lazy = false, priority = 1000 },
 	{
 		"Fildo7525/pretty_hover",
 		event = "LspAttach",
@@ -220,7 +221,7 @@ vim.keymap.set("i", 'kj', '<Esc>', { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>cn", vim.cmd.cnext, { silent = true })
 vim.keymap.set("n", "<Leader>cp", vim.cmd.cprevious, { silent = true })
 
-vim.cmd("colorscheme tokyonight")
+vim.cmd("colorscheme moonfly")
 vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "*",
 	callback = function()
@@ -240,6 +241,12 @@ vim.api.nvim_create_user_command("Upgrade", Upgrade, {})
 vim.api.nvim_create_user_command("CopyPath", function()
 	vim.fn.setreg('+', vim.fn.expand('%:.') .. ':' .. vim.fn.line('.'))
 end, {})
+
+-- Diff the branch (incl. uncommitted changes) against its merge base: :DiffviewOpenBase [base]
+vim.api.nvim_create_user_command("DiffviewOpenBase", function(opts)
+	local base = opts.args ~= "" and opts.args or "origin/HEAD" -- remote's default branch
+	vim.cmd("DiffviewOpen " .. base .. "...HEAD --imply-local")
+end, { nargs = "?" })
 
 vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.ts", command = "set filetype=typescript" })
 vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.tsx", command = "set filetype=typescriptreact" })
@@ -366,7 +373,7 @@ end)();
 (function()
 	require('lualine').setup({
 		options = {
-			theme = 'tokyonight'
+			theme = 'auto'
 		},
 		sections = {
 			lualine_c = { { 'filename', path = 3 } },

@@ -60,6 +60,27 @@ For multi-step tasks, state a brief plan:
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
 
+## 5. Make Questions Addressable
+
+**Whenever you need input from me (questions, decisions, confirmations), structure it so I can answer by reference.**
+
+- Put all questions in a separate block at the end of the reply, never inside running prose.
+- Label questions `Q1`, `Q2`, …; label options under each with `a)`, `b)`, `c)`. Mark the one you recommend.
+- One decision per question, so I can answer like "Q1b, Q2a, Q3: skip".
+- Running prose may point to a question by its label (e.g. "this depends on Q2"), but the question itself lives only in the block.
+- Don't start implementing while any question is open. Wait until every question has been answered.
+- This format applies only to that question block. Use normal numbered lists freely elsewhere (plans, steps, findings).
+
+Example:
+```
+Q1. Where should the config live?
+   a) `config.toml` (recommended, matches existing setup)
+   b) env vars
+Q2. Keep the old flag for compatibility?
+   a) yes
+   b) no
+```
+
 ---
 
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.

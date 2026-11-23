@@ -1,0 +1,32 @@
+#!/bin/sh
+# Fuzzy-pick a case from prod and open it in the app.
+#
+# Cases are read from a cache that is refreshed in the background once it is
+# older than an hour. A case's current name is its newest attributes row.
+
+cache="${XDG_CACHE_HOME:-$HOME/.cache}/choose/dbt-cases"
+mkdir -p "$(dirname "$cache")"
+
+refresh() {
+	tmp="$cache.tmp.$$"
+	(cd "$HOME/src/monorepo" && direnv exec . repo db --remote standard -- psql -At -F '  ' -c \
+		"SELECT DISTINCT ON (case_id) case_id, name FROM portfolio.case_attributes ORDER BY case_id DESC, id DESC") \
+		>"$tmp" 2>"$cache.log" && [ -s "$tmp" ] && mv "$tmp" "$cache"
+	rm -f "$tmp"
+}
+
+notify() {
+	osascript -e "display notification \"$1\" with title \"dbt-case\""
+}
+
+if [ ! -s "$cache" ]; then
+	notify "Fetching cases from prod..."
+	refresh
+	[ -s "$cache" ] || { notify "Fetching cases failed, see $cache.log"; exit 1; }
+elif [ -n "$(find "$cache" -mmin +60)" ]; then
+	touch "$cache" # so presses during the refresh don't start another one
+	refresh &
+fi
+
+case_id=$(choose <"$cache" | cut -d' ' -f1)
+[ -n "$case_id" ] && open "https://app.dbt.se/cases/$case_id"
